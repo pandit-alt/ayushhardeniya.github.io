@@ -1,112 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ayush Hardeniya - Personal Website</title>
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ayush Hardeniya | Developer & Innovator</title>
+  <!-- Google Fonts for a modern look -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* Basic Reset */
+    /* Global Styles */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+    html {
+      scroll-behavior: smooth;
+    }
     body {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
       line-height: 1.6;
       color: #333;
-      background: #f4f4f4;
+      background-color: #fff;
     }
-    
-    /* Navbar */
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Header & Navigation */
+    header {
+      position: fixed;
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
     .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 40px;
-      background: #fff;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      z-index: 1000;
+      padding: 1rem 2rem;
     }
     .navbar .logo {
-      font-size: 1.5em;
-      font-weight: bold;
-      color: #333;
-      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #007BFF;
     }
     .navbar ul {
       list-style: none;
       display: flex;
     }
-    .navbar ul li {
-      margin-left: 20px;
+    .navbar li {
+      margin-left: 1.5rem;
     }
-    .navbar ul li a {
-      color: #333;
-      text-decoration: none;
-      font-size: 1em;
+    .navbar a {
+      font-size: 1rem;
+      font-weight: 500;
       transition: color 0.3s;
     }
-    .navbar ul li a:hover {
+    .navbar a:hover {
       color: #007BFF;
     }
-    
+    /* Mobile Navigation */
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .navbar ul {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        align-items: center;
+        display: none;
+      }
+      .navbar ul.active {
+        display: flex;
+      }
+      .navbar li {
+        margin: 1rem 0;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+
     /* Hero Section */
     .hero {
-      background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
       height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://source.unsplash.com/1600x900/?technology');
+      background-size: cover;
+      background-position: center;
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-    }
-    .hero-content {
-      position: relative;
       text-align: center;
       color: #fff;
+      padding: 0 1rem;
     }
-    .hero-content h1 {
-      font-size: 3em;
-      margin-bottom: 20px;
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
     }
-    .hero-content p {
-      font-size: 1.2em;
-      margin-bottom: 40px;
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    .hero-content a {
-      padding: 10px 30px;
+    .hero .btn {
       background: #007BFF;
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 25px;
       color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
       transition: background 0.3s;
     }
-    .hero-content a:hover {
+    .hero .btn:hover {
       background: #0056b3;
     }
-    
-    /* Section Styling */
+
+    /* Sections */
     section {
-      padding: 80px 40px;
+      padding: 80px 0;
     }
     section h2 {
-      font-size: 2.5em;
       text-align: center;
-      margin-bottom: 40px;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
       position: relative;
     }
     section h2::after {
@@ -115,249 +157,286 @@
       height: 4px;
       background: #007BFF;
       display: block;
-      margin: 10px auto;
+      margin: 0.5rem auto;
     }
-    
+    section p.section-subtitle {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+
     /* About Section */
-    .about-content {
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
-    }
-    .about-content p {
-      font-size: 1.1em;
-      line-height: 1.8;
-      margin-bottom: 20px;
-    }
-    
-    /* Skills Section */
-    .skills {
+    .about {
       display: flex;
+      align-items: center;
       flex-wrap: wrap;
-      justify-content: center;
+      gap: 2rem;
     }
-    .skill {
-      background: #fff;
-      margin: 10px;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      width: 280px;
+    .about .about-text {
+      flex: 1;
+      min-width: 300px;
+    }
+    .about .about-text p {
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+      color: #555;
+    }
+    .about .about-image {
+      flex: 1;
+      min-width: 300px;
+    }
+    .about .about-image img {
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Expertise / Services Section */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 0 2rem;
+    }
+    .service {
+      background: #f9f9f9;
+      padding: 2rem;
+      border-radius: 10px;
       text-align: center;
-      transition: transform 0.3s;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
-    .skill:hover {
+    .service:hover {
       transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    .skill i {
-      font-size: 2em;
-      margin-bottom: 10px;
+    .service i {
+      font-size: 2.5rem;
       color: #007BFF;
+      margin-bottom: 1rem;
     }
-    .skill h3 {
-      font-size: 1.2em;
-      margin-bottom: 10px;
+    .service h3 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      color: #333;
     }
-    .skill p {
-      font-size: 0.95em;
+    .service p {
+      font-size: 1rem;
+      color: #666;
+      line-height: 1.6;
     }
-    
+
     /* Portfolio Section */
     .portfolio-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      padding: 0 2rem;
     }
     .portfolio-item {
-      margin: 10px;
-      background: #fff;
-      width: calc(33% - 20px);
-      border-radius: 8px;
+      position: relative;
       overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       transition: transform 0.3s;
+    }
+    .portfolio-item:hover {
+      transform: scale(1.02);
     }
     .portfolio-item img {
       width: 100%;
-      height: auto;
     }
-    .portfolio-item:hover {
-      transform: translateY(-5px);
-    }
-    
-    /* Contact Section */
-    .contact {
-      background: #007BFF;
+    .portfolio-item .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 123, 255, 0.7);
       color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s;
       text-align: center;
-      padding: 60px 40px;
+      padding: 1rem;
     }
-    .contact h2 {
-      color: #fff;
+    .portfolio-item:hover .overlay {
+      opacity: 1;
     }
-    .contact p {
-      font-size: 1.1em;
-      margin-bottom: 20px;
+
+    /* Contact Section */
+    .contact-info {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #555;
     }
-    .contact a {
-      color: #fff;
-      text-decoration: underline;
+    .contact-info a {
+      color: #007BFF;
+      transition: color 0.3s;
     }
-    
+    .contact-info a:hover {
+      color: #0056b3;
+    }
+    .social-links {
+      margin-top: 1rem;
+    }
+    .social-links a {
+      margin: 0 0.5rem;
+      font-size: 1.5rem;
+      color: #007BFF;
+      transition: color 0.3s;
+    }
+    .social-links a:hover {
+      color: #0056b3;
+    }
+
     /* Footer */
     footer {
-      text-align: center;
-      padding: 20px;
       background: #333;
       color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
     }
-    footer p {
-      font-size: 0.9em;
-    }
-    
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .navbar {
-        padding: 15px 20px;
-      }
-      .navbar ul {
-        flex-direction: column;
-        align-items: center;
-      }
-      .navbar ul li {
-        margin: 10px 0;
-      }
-      .hero-content h1 {
-        font-size: 2.5em;
-      }
-      .portfolio-item {
-        width: calc(50% - 20px);
-      }
-    }
-    @media (max-width: 480px) {
-      .hero-content h1 {
-        font-size: 2em;
-      }
-      .portfolio-item {
-        width: 100%;
-        margin: 10px 0;
-      }
-      .skills {
-        flex-direction: column;
-        align-items: center;
-      }
-      .skill {
-        width: 90%;
-      }
+    footer a {
+      color: #fff;
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <a href="#" class="logo">Ayush Hardeniya</a>
-    <ul>
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-  
+  <!-- Header & Navigation -->
+  <header>
+    <div class="navbar container">
+      <div class="logo">Ayush Hardeniya</div>
+      <i class="fas fa-bars menu-toggle" id="mobile-menu"></i>
+      <ul id="nav-list">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Expertise</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
   <!-- Hero Section -->
-  <section id="hero" class="hero">
-    <div class="hero-content">
-      <h1>Hi, I'm Ayush Hardeniya</h1>
-      <p>Innovator, Developer, and Thought Leader</p>
-      <a href="#about">Learn More</a>
+  <section class="hero" id="hero">
+    <div class="container">
+      <h1>Hello, I'm Ayush Hardeniya</h1>
+      <p>A passionate developer, innovator, and thought leader dedicated to crafting digital experiences that inspire and transform.</p>
+      <button class="btn" onclick="document.querySelector('#about').scrollIntoView({behavior: 'smooth'})">Discover More</button>
     </div>
   </section>
-  
+
   <!-- About Section -->
   <section id="about">
-    <h2>About Me</h2>
-    <div class="about-content">
-      <p>
-        I'm Ayush Hardeniya – a passionate developer and creative thinker dedicated to building innovative digital solutions. My journey in technology has been fueled by a desire to learn continuously and apply creative ideas to real-world challenges.
-      </p>
-      <p>
-        Drawing inspiration from industry leaders and the spirit of innovation, my work focuses on developing high-quality web and mobile experiences. I believe in a blend of clean design, thoughtful user experience, and robust technology to make a meaningful impact.
-      </p>
-    </div>
-  </section>
-  
-  <!-- Skills Section -->
-  <section id="skills">
-    <h2>My Skills</h2>
-    <div class="skills">
-      <div class="skill">
-        <i class="fas fa-code"></i>
-        <h3>Web Development</h3>
-        <p>Expert in crafting responsive, high-performance websites using modern web technologies.</p>
-      </div>
-      <div class="skill">
-        <i class="fas fa-mobile-alt"></i>
-        <h3>Mobile Apps</h3>
-        <p>Building intuitive mobile applications for both Android and iOS platforms.</p>
-      </div>
-      <div class="skill">
-        <i class="fas fa-paint-brush"></i>
-        <h3>UI/UX Design</h3>
-        <p>Designing engaging, user-centric interfaces that blend aesthetics with functionality.</p>
-      </div>
-      <div class="skill">
-        <i class="fas fa-lightbulb"></i>
-        <h3>Innovation</h3>
-        <p>Always exploring new ideas and leveraging emerging technologies for creative solutions.</p>
+    <div class="container">
+      <h2>About Me</h2>
+      <p class="section-subtitle">My professional journey in technology and innovation</p>
+      <div class="about">
+        <div class="about-text">
+          <p>I'm Ayush Hardeniya—a developer and entrepreneur with a keen eye for design and innovation. With a strong foundation in both software development and creative problem solving, I transform ideas into impactful digital solutions.</p>
+          <p>My expertise spans web and mobile development, as well as crafting intuitive user interfaces that drive engagement. I am committed to continuous learning and pushing the boundaries of technology.</p>
+        </div>
+        <div class="about-image">
+          <img src="https://source.unsplash.com/600x600/?portrait" alt="Ayush Hardeniya">
+        </div>
       </div>
     </div>
   </section>
-  
+
+  <!-- Expertise / Services Section -->
+  <section id="services">
+    <div class="container">
+      <h2>Expertise</h2>
+      <p class="section-subtitle">Areas I excel in and bring value</p>
+      <div class="services">
+        <div class="service">
+          <i class="fas fa-code"></i>
+          <h3>Web Development</h3>
+          <p>Building scalable and responsive web applications using modern frameworks and best practices.</p>
+        </div>
+        <div class="service">
+          <i class="fas fa-mobile-alt"></i>
+          <h3>Mobile Apps</h3>
+          <p>Designing and developing intuitive mobile applications for both Android and iOS platforms.</p>
+        </div>
+        <div class="service">
+          <i class="fas fa-paint-brush"></i>
+          <h3>UI/UX Design</h3>
+          <p>Creating visually appealing and user-centric interfaces that enhance engagement and usability.</p>
+        </div>
+        <div class="service">
+          <i class="fas fa-lightbulb"></i>
+          <h3>Innovation & Strategy</h3>
+          <p>Leveraging emerging technologies to drive innovation and deliver strategic digital solutions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Portfolio Section -->
   <section id="portfolio">
-    <h2>Portfolio</h2>
-    <div class="portfolio-grid">
-      <div class="portfolio-item">
-        <img src="https://via.placeholder.com/600x400" alt="Project 1" />
-      </div>
-      <div class="portfolio-item">
-        <img src="https://via.placeholder.com/600x400" alt="Project 2" />
-      </div>
-      <div class="portfolio-item">
-        <img src="https://via.placeholder.com/600x400" alt="Project 3" />
+    <div class="container">
+      <h2>Portfolio</h2>
+      <p class="section-subtitle">A showcase of my latest projects and creative works</p>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="https://source.unsplash.com/600x400/?website" alt="Project One">
+          <div class="overlay">
+            <h3>Project One</h3>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="https://source.unsplash.com/600x400/?app" alt="Project Two">
+          <div class="overlay">
+            <h3>Project Two</h3>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="https://source.unsplash.com/600x400/?design" alt="Project Three">
+          <div class="overlay">
+            <h3>Project Three</h3>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-  
+
   <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <h2>Get In Touch</h2>
-    <p>Have a project in mind or just want to say hi? Let's connect!</p>
-    <p>Email: <a href="mailto:ayushhardeniya.vn@outlook.in">collab@ayushhardeniya.com</a></p>
-    <p>Follow me on social media:</p>
-    <p>
-      <a href="https://twitter.com/ayushHardeniya" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="https://linkedin.com/in/ayushHardeniya" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/ayushHardeniya" target="_blank"><i class="fab fa-github"></i></a>
-    </p>
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p class="section-subtitle">Let's connect and create something amazing</p>
+      <div class="contact-info">
+        <p>Email: <a href="mailto:ayush@hardeniya.com">ayush@hardeniya.com</a></p>
+        <p>Follow me:</p>
+        <div class="social-links">
+          <a href="https://twitter.com/ayushHardeniya" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://linkedin.com/in/ayushHardeniya" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/ayushHardeniya" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
   </section>
-  
+
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Ayush Hardeniya. All rights reserved.</p>
+    <div class="container">
+      <p>&copy; 2025 Ayush Hardeniya. All rights reserved.</p>
+    </div>
   </footer>
-  
-  <!-- Smooth Scrolling Script -->
+
+  <!-- JavaScript for Mobile Menu Toggle -->
   <script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
+    const menuToggle = document.getElementById('mobile-menu');
+    const navList = document.getElementById('nav-list');
+
+    menuToggle.addEventListener('click', () => {
+      navList.classList.toggle('active');
     });
   </script>
 </body>
-  </html>
+</html>
