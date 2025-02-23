@@ -1,322 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayush Hardeniya | Aspiring Technologist & Thought Leader</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #2A2A2A;
-            --accent-color: #2563EB;
-            --text-color: #444444;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-
-        body {
-            line-height: 1.7;
-            color: var(--text-color);
-        }
-
-        /* Header Styles */
-        .header {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 1rem 5%;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-            backdrop-filter: blur(10px);
-        }
-
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: 2px solid var(--accent-color);
-        }
-
-        .nav-links a {
-            margin-left: 2.5rem;
-            text-decoration: none;
-            color: var(--primary-color);
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 12rem 5% 6rem;
-            text-align: center;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary-color);
-            line-height: 1.2;
-            max-width: 900px;
-            margin: 0 auto 2rem;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto 3rem;
-        }
-
-        .cta-button {
-            padding: 1rem 2.5rem;
-            border-radius: 30px;
-            text-decoration: none;
-            color: white;
-            background-color: var(--accent-color);
-        }
-
-        /* Content Sections */
-        .section {
-            padding: 6rem 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            text-align: center;
-            color: var(--primary-color);
-            position: relative;
-        }
-
-        .section h2::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background: var(--accent-color);
-            margin: 1rem auto 0;
-        }
-
-        /* About Section */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-image {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .about-content {
-            text-align: left;
-        }
-
-        .highlight {
-            color: var(--accent-color);
-            font-weight: 600;
-        }
-
-        /* Values Section */
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .value-card {
-            padding: 2rem;
-            border-radius: 8px;
-            background: #fff;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            text-align: center;
-        }
-
-        .value-icon {
-            font-size: 2rem;
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-        }
-
-        /* Blog Section */
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .blog-card {
-            background: #fff;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease;
-        }
-
-        .blog-card:hover {
-            transform: translateY(-5px);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--primary-color);
-            color: #fff;
-            padding: 4rem 5%;
-            text-align: center;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .social-links {
-            margin: 2rem 0;
-        }
-
-        .social-links a {
-            color: #fff;
-            margin: 0 1rem;
-            font-size: 1.25rem;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: var(--accent-color);
-        }
-
-        @media (max-width: 768px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .section h2 {
-                font-size: 2rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header class="header">
-        <nav class="nav">
-            <img src="profilePic.jpg" alt="Ayush Hardeniya" class="logo">
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#values">Values</a>
-                <a href="#blogs">Blogs</a>
-                <a href="#contact">Contact</a>
-                <a href="https://ayushhardeniya.carrd.co/" target="_blank" class="highlight">Links</a>
-            </div>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <h1>Transforming Challenges into Technological Opportunities</h1>
-        <p>BTech Student | AI Enthusiast | Resilience Architect</p>
-        <div style="margin-top: 3rem;">
-            <a href="#contact" class="cta-button">Let's Collaborate</a>
-            <a href="https://medium.com/@ayushhardeniya.profile" target="_blank" style="padding: 1rem 2.5rem; border: 2px solid var(--accent-color); border-radius: 30px; text-decoration: none; color: var(--accent-color);">Read My Thoughts</a>
-        </div>
-    </section>
-
-    <section class="section" id="about">
-        <h2>My Story of Resilience</h2>
-        <div class="about-grid">
-            <img src="header-image.jpg" alt="Ayush Hardeniya" class="about-image">
-            <div class="about-content">
-                <p>Born into a lower-middle-class family in India, I learned early that <span class="highlight">true opportunities are created, not given</span>. My parents' unwavering support in my education and technology exploration fuels my mission to bridge the gap between limited resources and limitless potential.</p>
-                
-                <p style="margin: 2rem 0;">Currently pursuing my BTech while simultaneously:
-                    <br>• Exploring ethical AI implementations
-                    <br>• Developing problem-solving frameworks for startups
-                    <br>• Documenting my learning journey through technical writing
-                </p>
-
-                <p>I approach technology as a <span class="highlight">force multiplier for social impact</span>, constantly seeking ways to combine emerging technologies with sustainable business models. My recent focus includes machine learning applications in education accessibility and automation solutions for small businesses.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="values">
-        <h2>Core Principles</h2>
-        <div class="values-grid">
-            <div class="value-card">
-                <i class="fas fa-brain value-icon"></i>
-                <h3>Continuous Evolution</h3>
-                <p>Daily commitment to skill development through curated learning paths and practical implementation</p>
-            </div>
-            <div class="value-card">
-                <i class="fas fa-users value-icon"></i>
-                <h3>Collaboration Over Competition</h3>
-                <p>Strong belief in community-driven growth where every individual’s progress is celebrated</p>
-            </div>
-            <div class="value-card">
-                <i class="fas fa-leaf value-icon"></i>
-                <h3>Technology for Sustainability</h3>
-                <p>Dedicated to building solutions that positively impact the environment and society at large</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="blogs">
-        <h2>Recent Thoughts & Articles</h2>
-        <div class="blog-grid">
-            <div class="blog-card">
-                <h3>Leveraging AI for Educational Equity</h3>
-                <p>Explore how AI-powered tools are shaping the future of accessible education...</p>
-                <a href="#">Read More</a>
-            </div>
-            <div class="blog-card">
-                <h3>Building Ethical AI</h3>
-                <p>How we can ensure AI remains a force for good, addressing challenges of bias and fairness...</p>
-                <a href="#">Read More</a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 Ayush Hardeniya. All Rights Reserved.</p>
-            <div class="social-links">
-                <a href="https://twitter.com/ayushhardeniya" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://instagram.com/ayushhardeniya" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://facebook.com/ayushhardeniya" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://youtube.com/ayushhardeniya" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a href="https://linkedin.com/in/ayushhardeniya" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/ayushhardeniya" target="_blank"><i class="fab fa-github"></i></a>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ayush Hardeniya | Aspiring Technologist & Thought Leader. 18 years old, BTech student, passionate about ethical AI, innovation, and continuous self-improvement.">
+  <meta name="keywords" content="Ayush Hardeniya, Ayush Sharma, developer, AI, technology, BTech, blog, innovation, ethical AI">
+  <meta name="author" content="Ayush Hardeniya">
+  <title>Ayush Hardeniya | Aspiring Technologist & Thought Leader</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.png" type="image/png">
+  
+  <!-- Google Fonts: Inter & Poppins mix for variation -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --primary-color: #2A2A2A;
+      --accent-color: #2563EB;
+      --text-color: #444444;
+      --bg-color: #f7f7f7;
+      --white: #ffffff;
+    }
+    
+    /* Reset & Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.7;
+      scroll-behavior: smooth;
+    }
+    
+    a { text-decoration: none; color: inherit; }
+    
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    /* Header & Navigation */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+      padding: 1rem 5%;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+    }
+    
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .logo {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid var(--accent-color);
+      object-fit: cover;
+    }
+    
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+    
+    .nav-links a {
+      margin-left: 2.5rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      color: var(--primary-color);
+    }
+    
+    .nav-links a:hover {
+      color: var(--accent-color);
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        display: none;
+      }
+      .nav-links.active { display: flex; }
+      .nav-links a { margin: 1rem 0; }
+      .menu-toggle { display: block; font-size: 1.5rem; cursor: pointer; }
+    }
+    
+    .menu-toggle { display: none; }
+    
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 100vh;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12rem 5% 6rem;
+      text-align: center;
+    }
+    
+    .hero-content {
+      z-index: 2;
+    }
+    
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+      font-weight: 700;
+    }
+    
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      color: #666;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .cta-button {
+      background: var(--accent-color);
+      color: var(--white);
+      padding: 1rem 2.5rem;
+      border-radius: 30px;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+      margin-right: 1rem;
+    }
+    
+    .cta-button:hover { background: #1d4ed8; }
+    
+    /* Hero Character Image (from heroay.png) */    
+    .hero-image {\n  position: absolute;\n  right: 5%;\n  bottom: 5%;\n  width: 250px;\n  height: auto;\n  border-radius: 12px;\n  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);\n  z-index: 1;\n}\n\n    /* Section Styles */\n    .section {\n      padding: 6rem 5%;\n      max-width: 1200px;\n      margin: 0 auto;\n      opacity: 0;\n      transform: translateY(20px);\n      transition: all 0.6s ease-out;\n    }\n\n    .section.visible { opacity: 1; transform: translateY(0); }\n\n    .section h2 {\n      font-size: 2.5rem;\n      margin-bottom: 3rem;\n      text-align: center;\n      color: var(--primary-color);\n      position: relative;\n    }\n\n    .section h2::after {\n      content: '';\n      display: block;\n      width: 60px;\n      height: 3px;\n      background: var(--accent-color);\n      margin: 1rem auto 0;\n    }\n\n    /* About Section */\n    .about-grid {\n      display: grid;\n      grid-template-columns: 1fr 1fr;\n      gap: 3rem;\n      align-items: center;\n    }\n\n    .about-image {\n      width: 100%;\n      border-radius: 12px;\n      box-shadow: 0 10px 30px rgba(0,0,0,0.1);\n    }\n\n    .about-content { text-align: left; }\n\n    .highlight { color: var(--accent-color); font-weight: 600; }\n\n    /* Values Section */\n    .values-grid {\n      display: grid;\n      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n      gap: 2rem;\n      margin-top: 3rem;\n    }\n\n    .value-card {\n      padding: 2rem;\n      border-radius: 8px;\n      background: var(--white);\n      box-shadow: 0 5px 15px rgba(0,0,0,0.08);\n      text-align: center;\n    }\n\n    .value-icon {\n      font-size: 2rem;\n      color: var(--accent-color);\n      margin-bottom: 1rem;\n    }\n\n    /* Blog Section */\n    .blog-grid {\n      display: grid;\n      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n      gap: 2rem;\n      margin-top: 3rem;\n    }\n\n    .blog-card {\n      background: var(--white);\n      padding: 1.5rem;\n      border-radius: 8px;\n      box-shadow: 0 5px 15px rgba(0,0,0,0.08);\n      transition: transform 0.3s ease;\n    }\n\n    .blog-card:hover {\n      transform: translateY(-5px);\n    }\n\n    /* Footer */\n    footer {\n      background: var(--primary-color);\n      color: var(--white);\n      padding: 4rem 5%;\n      text-align: center;\n    }\n\n    .footer-content { max-width: 1200px; margin: 0 auto; }\n\n    .social-links {\n      margin: 2rem 0;\n    }\n\n    .social-links a {\n      color: var(--white);\n      margin: 0 1rem;\n      font-size: 1.25rem;\n      transition: color 0.3s ease;\n    }\n\n    .social-links a:hover { color: var(--accent-color); }\n\n    @media (max-width: 768px) {\n      .about-grid { grid-template-columns: 1fr; text-align: center; }\n      .hero h1 { font-size: 2rem; }\n      .section h2 { font-size: 2rem; }\n    }\n  </style>\n</head>\n<body>\n    <!-- Header & Navigation -->\n    <header class=\"header\">\n        <div class=\"nav container\">\n            <img src=\"profilePic.jpg\" alt=\"Ayush Hardeniya\" class=\"logo\">\n            <div class=\"nav-links\">\n                <a href=\"#about\">About</a>\n                <a href=\"#values\">Values</a>\n                <a href=\"#blogs\">Blogs</a>\n                <a href=\"#contact\">Contact</a>\n                <a href=\"https://ayushhardeniya.carrd.co/\" target=\"_blank\" class=\"highlight\">Links</a>\n            </div>\n            <div class=\"menu-toggle\"><i class=\"fas fa-bars\"></i></div>\n        </div>\n    </header>\n\n    <!-- Hero Section -->\n    <section class=\"hero\">\n        <div class=\"hero-content\">\n            <h1>Hi, I'm Ayush Hardeniya</h1>\n            <p>Tech Enthusiast | Developer | Problem Solver</p>\n            <a href=\"#contact\" class=\"cta-button\">Let's Connect</a>\n            <a href=\"https://medium.com/@ayushhardeniya.profile\" target=\"_blank\" class=\"cta-button\" style=\"background: transparent; border: 2px solid var(--accent-color); color: var(--accent-color);\">Read My Thoughts</a>\n        </div>\n        <img src=\"heroay.png\" alt=\"Hero Character\" class=\"hero-image\">\n    </section>\n\n    <!-- About Section -->\n    <section class=\"section\" id=\"about\">\n        <h2>My Story of Resilience</h2>\n        <div class=\"about-grid\">\n            <img src=\"header-image.jpg\" alt=\"Ayush Hardeniya\" class=\"about-image\">\n            <div class=\"about-content\">\n                <p>Born into a lower-middle-class family in India, I learned early that <span class=\"highlight\">true opportunities are created, not given</span>. My parents' unwavering support in my education and technology exploration fuels my mission to bridge the gap between limited resources and limitless potential.</p>\n                <p style=\"margin: 2rem 0;\">Currently pursuing my BTech while simultaneously:\n                    <br>• Exploring ethical AI implementations\n                    <br>• Developing problem-solving frameworks for startups\n                    <br>• Documenting my learning journey through technical writing\n                </p>\n                <p>I approach technology as a <span class=\"highlight\">force multiplier for social impact</span>, constantly seeking ways to combine emerging technologies with sustainable business models. My recent focus includes machine learning applications in education accessibility and automation solutions for small businesses.</p>\n            </div>\n        </div>\n    </section>\n\n    <!-- Values Section -->\n    <section class=\"section\" id=\"values\">\n        <h2>Core Values</h2>\n        <div class=\"values-grid\">\n            <div class=\"value-card\">\n                <div class=\"value-icon\"><i class=\"fas fa-lightbulb\"></i></div>\n                <h3>Innovation</h3>\n                <p>Harnessing creativity to build disruptive, user-centric solutions.</p>\n            </div>\n            <div class=\"value-card\">\n                <div class=\"value-icon\"><i class=\"fas fa-users\"></i></div>\n                <h3>Collaboration</h3>\n                <p>Valuing teamwork and diverse perspectives to drive results.</p>\n            </div>\n            <div class=\"value-card\">\n                <div class=\"value-icon\"><i class=\"fas fa-heart\"></i></div>\n                <h3>Integrity</h3>\n                <p>Staying true to ethical standards while leading with transparency.</p>\n            </div>\n        </div>\n    </section>\n\n    <!-- Blog Section -->\n    <section class=\"section\" id=\"blogs\">\n        <h2>My Recent Blogs</h2>\n        <div class=\"blog-grid\">\n            <div class=\"blog-card\">\n                <h3>Building Scalable Web Applications</h3>\n                <p>Learn how to design and implement scalable web applications using modern frameworks and best practices.</p>\n                <a href=\"https://medium.com/@ayushhardeniya.profile\" target=\"_blank\" style=\"color: var(--accent-color); font-weight: 500;\">Read More →</a>\n            </div>\n            <div class=\"blog-card\">\n                <h3>AI in Education: The Future</h3>\n                <p>Exploring the potential of AI to transform educational methodologies and accessibility.</p>\n                <a href=\"https://medium.com/@ayushhardeniya.profile\" target=\"_blank\" style=\"color: var(--accent-color); font-weight: 500;\">Read More →</a>\n            </div>\n        </div>\n    </section>\n\n    <!-- Footer Section -->\n    <footer id=\"contact\">\n        <div class=\"footer-content\">\n            <p>Connect with me on:</p>\n            <div class=\"social-links\">\n                <a href=\"https://twitter.com/ayushhardeniya\" target=\"_blank\"><i class=\"fab fa-twitter\"></i></a>\n                <a href=\"https://instagram.com/ayushhardeniya\" target=\"_blank\"><i class=\"fab fa-instagram\"></i></a>\n                <a href=\"https://facebook.com/ayushhardeniya\" target=\"_blank\"><i class=\"fab fa-facebook\"></i></a>\n                <a href=\"https://youtube.com/ayushhardeniya\" target=\"_blank\"><i class=\"fab fa-youtube\"></i></a>\n                <a href=\"https://linkedin.com/in/ayushhardeniya\" target=\"_blank\"><i class=\"fab fa-linkedin\"></i></a>\n                <a href=\"https://github.com/ayushhardeniya\" target=\"_blank\"><i class=\"fab fa-github\"></i></a>\n            </div>\n            <p style=\"margin: 1.5rem 0;\">\n                <a href=\"mailto:ayushhardeniya.vn@outlook.in\" style=\"color: var(--white); font-size: 1.1rem;\">collab@ayushhardeniya.com</a>\n            </p>\n            <div class=\"legal-note\">\n                [Legal Name: Ayush Sharma] | © 2025 Ayush Hardeniya. All Rights Reserved.\n            </div>\n        </div>\n    </footer>\n\n    <script>\n        // Mobile menu toggle\n        const menuToggle = document.querySelector('.menu-toggle');\n        const navLinks = document.querySelector('.nav-links');\n        menuToggle.addEventListener('click', () => {\n            navLinks.classList.toggle('active');\n        });\n\n        // Intersection Observer for fade-in sections\n        const sections = document.querySelectorAll('.section');\n        const observer = new IntersectionObserver((entries) => {\n            entries.forEach(entry => {\n                if(entry.isIntersecting){\n                    entry.target.classList.add('visible');\n                }\n            });\n        }, { threshold: 0.2 });\n\n        sections.forEach(section => {\n            observer.observe(section);\n        });\n    </script>\n</body>\n</html>\n"}
