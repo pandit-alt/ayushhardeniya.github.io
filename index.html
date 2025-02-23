@@ -1,253 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayush Hardeniya - AI Enthusiast & Tech Innovator</title>
-    <meta name="description" content="Portfolio of Ayush Hardeniya, a BTech student and AI specialist passionate about technology and social impact">
-    <meta name="keywords" content="AI, Machine Learning, Technology, Portfolio, BTech, India">
-    <link rel="icon" href="profilePic.jpg" type="image/jpeg">
-    <style>
-        :root {
-            --primary: #2b51c5;
-            --secondary: #8ea4e6;
-            --background: #d5ddf6;
-            --accent: #c9d3f3;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        body {
-            background-color: var(--background);
-            line-height: 1.6;
-        }
-
-        /* Header Styles */
-        header {
-            padding: 1rem 5%;
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo {
-            height: 40px;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 120px 5% 60px;
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            margin-top: 60px;
-        }
-
-        .hero-text {
-            flex: 1 1 400px;
-        }
-
-        .hero-image {
-            flex: 1 1 400px;
-            text-align: center;
-        }
-
-        .hero-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 15px;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        /* Sections */
-        section {
-            padding: 60px 5%;
-        }
-
-        .about-content {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .value-card {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        /* Blog Section */
-        .blog-links {
-            display: flex;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .blog-button {
-            padding: 12px 30px;
-            background: var(--primary);
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: transform 0.3s ease;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--primary);
-            color: white;
-            padding: 40px 5%;
-            text-align: center;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            color: white;
-            text-decoration: none;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .values-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-        }
-
-        /* Mobile Menu */
-        .mobile-menu {
-            display: none;
-        }
-
-        @media (max-width: 480px) {
-            .nav-links {
-                display: none;
-            }
-
-            .mobile-menu {
-                display: block;
-            }
-        }
-    </style>
+  <!-- Basic Meta Tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ayush Hardeniya's personal portfolio. An 18-year-old BTech student passionate about technology and AI.">
+  <meta name="keywords" content="Ayush Hardeniya, Portfolio, BTech, Technology, AI, Personal Website">
+  <meta name="author" content="Ayush Hardeniya">
+  <title>Ayush Hardeniya</title>
+  
+  <!-- Favicon & Logo -->
+  <link rel="icon" href="profilePic.jpg" type="image/jpg">
+  
+  <!-- Internal CSS -->
+  <style>
+    /* Color Palette */
+    :root {
+      --light-bg: #d5ddf6;
+      --medium-blue: #8ea4e6;
+      --lighter-blue: #c9d3f3;
+      --dark-blue: #2b51c5;
+      --text-color: #333;
+      --white: #fff;
+    }
+    
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text-color);
+      line-height: 1.6;
+      background-color: var(--light-bg);
+    }
+    a {
+      text-decoration: none;
+      color: var(--dark-blue);
+    }
+    ul {
+      list-style: none;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem 0;
+    }
+    
+    /* Header */
+    header {
+      background-color: var(--white);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+    .logo {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+    }
+    nav li {
+      font-size: 1rem;
+    }
+    /* Mobile Menu Toggle */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .menu-toggle .bar {
+      height: 3px;
+      width: 25px;
+      background-color: var(--dark-blue);
+      margin: 4px 0;
+      transition: 0.3s;
+    }
+    
+    /* Hero Section */
+    #hero {
+      position: relative;
+      background-color: var(--lighter-blue);
+      text-align: center;
+      padding: 4rem 1rem;
+    }
+    .hero-image {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      opacity: 0.8;
+    }
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: var(--white);
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    }
+    .hero-text h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero-text p {
+      font-size: 1.2rem;
+    }
+    
+    /* Section Titles */
+    section h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: var(--dark-blue);
+    }
+    
+    /* About, Values, Blog & Resilience Sections */
+    section {
+      background-color: var(--white);
+      margin: 2rem 0;
+      padding: 2rem 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    #about p,
+    #resilience p {
+      max-width: 800px;
+      margin: 1rem auto;
+      text-align: center;
+    }
+    #values ul {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      font-weight: bold;
+    }
+    #blog ul {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--dark-blue);
+      color: var(--white);
+      padding: 1.5rem 0;
+      text-align: center;
+    }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .social-links a {
+      color: var(--white);
+      font-weight: bold;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: var(--white);
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        border-radius: 5px;
+      }
+      nav ul.show {
+        display: flex;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+      .hero-text p {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <img src="profilePic.jpg" alt="Ayush Hardeniya Logo" class="logo">
-    </header>
-
-    <section class="hero">
-        <div class="hero-text">
-            <h1>Hi, I'm Ayush Hardeniya</h1>
-            <p>A tech enthusiast and aspiring AI specialist</p>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <img src="signtrans.png" alt="Ayush Hardeniya Logo" class="logo">
+      <nav>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#values">Values</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#resilience">My Story of Resilience</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
         </div>
-        <div class="hero-image">
-            <img src="heroay.png" alt="Ayush Hardeniya">
-        </div>
-    </section>
-
-    <section id="about">
-        <div class="about-content">
-            <h2>About Me</h2>
-            <p>18-year-old BTech student passionate about artificial intelligence and its potential for social impact...</p>
-            
-            <div class="resilience-story">
-                <h3>My Story of Resilience</h3>
-                <p>Coming from a lower-middle-class background, I've learned to create opportunities...</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="values">
-        <h2>Core Values</h2>
-        <div class="values-grid">
-            <div class="value-card">
-                <h3>Innovation</h3>
-                <p>Pushing boundaries in AI technology</p>
-            </div>
-            <div class="value-card">
-                <h3>Collaboration</h3>
-                <p>Building solutions through teamwork</p>
-            </div>
-            <div class="value-card">
-                <h3>Integrity</h3>
-                <p>Ethical approach to technology</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="blog">
-        <h2>My Writings</h2>
-        <div class="blog-links">
-            <a href="[Medium URL]" class="blog-button">Medium Blog</a>
-            <a href="[Carrd URL]" class="blog-button">Projects Portfolio</a>
-        </div>
-    </section>
-
-    <footer>
-        <div class="social-links">
-            <a href="https://twitter.com/ayushhardeniya">Twitter</a>
-            <a href="https://instagram.com/ayushhardeniya">Instagram</a>
-            <a href="https://facebook.com/ayushhardeniya">Facebook</a>
-            <a href="https://youtube.com/ayushhardeniya">YouTube</a>
-            <a href="https://linkedin.com/in/ayushhardeniya">LinkedIn</a>
-            <a href="https://github.com/ayushhardeniya">GitHub</a>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile menu functionality
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
-            const nav = document.querySelector('.nav-links');
-            nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Hero Section -->
+  <section id="hero">
+    <img src="heroimage.jpeg" alt="Hero Image" class="hero-image">
+    <div class="hero-text">
+      <h1>Hi, I'm Ayush Hardeniya</h1>
+      <p>A tech enthusiast and aspiring AI specialist.</p>
+    </div>
+  </section>
+  
+  <!-- About Me Section -->
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        I am an 18-year-old BTech student with a deep passion for technology and AI. My journey in the world of tech began at a young age, fueled by curiosity and a desire to innovate. Currently, I am immersed in my studies while constantly exploring the latest advancements in artificial intelligence and software development.
+      </p>
+    </div>
+  </section>
+  
+  <!-- Values Section -->
+  <section id="values">
+    <div class="container">
+      <h2>My Values</h2>
+      <ul>
+        <li>Innovation</li>
+        <li>Collaboration</li>
+        <li>Integrity</li>
+      </ul>
+    </div>
+  </section>
+  
+  <!-- Blog Section -->
+  <section id="blog">
+    <div class="container">
+      <h2>Blog</h2>
+      <ul>
+        <li><a href="https://medium.com/@ayushhardeniya" target="_blank">Medium Blog</a></li>
+        <li><a href="https://ayushhardeniya.carrd.co" target="_blank">Carrd Profile</a></li>
+      </ul>
+    </div>
+  </section>
+  
+  <!-- My Story of Resilience Section -->
+  <section id="resilience">
+    <div class="container">
+      <h2>My Story of Resilience</h2>
+      <p>
+        Growing up in a lower-middle-class background, I faced numerous challenges that only strengthened my determination to succeed. Technology became my pathway to creating opportunities and breaking barriers. Today, my journey through BTech and my passion for AI underscore the belief that innovation can drive social impact and transform lives.
+      </p>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="social-links">
+        <a href="https://twitter.com/ayushhardeniya" target="_blank">Twitter</a>
+        <a href="https://instagram.com/ayushhardeniya" target="_blank">Instagram</a>
+        <a href="https://facebook.com/ayushhardeniya" target="_blank">Facebook</a>
+        <a href="https://youtube.com/ayushhardeniya" target="_blank">YouTube</a>
+        <a href="https://linkedin.com/in/ayushhardeniya" target="_blank">LinkedIn</a>
+        <a href="https://github.com/ayushhardeniya" target="_blank">GitHub</a>
+      </div>
+      <p>&copy; 2025 Ayush Hardeniya. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <!-- JavaScript for Mobile Navigation Toggle -->
+  <script>
+    const mobileMenu = document.getElementById("mobile-menu");
+    const navUl = document.querySelector("nav ul");
+    
+    mobileMenu.addEventListener("click", () => {
+      navUl.classList.toggle("show");
+    });
+  </script>
 </body>
 </html>
