@@ -292,16 +292,14 @@
       color: #0056b3;
     }
     .social-links {
-      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
     }
     .social-links a {
-      margin: 0 0.5rem;
-      font-size: 1.5rem;
-      color: #007BFF;
-      transition: color 0.3s;
-    }
-    .social-links a:hover {
-      color: #0056b3;
+      color: var(--white);
+      font-weight: bold;
     }
 
     /* Footer */
@@ -323,8 +321,7 @@
   <header>
     <div class="navbar container">
       <div class="logo">
-        <img src="signtrans.png" alt="ayushHardeniya">
-        <span>Ayush Hardeniya</span>
+        <span><img src="signtrans.png" alt="ayushHardeniya" width="400px"></span>
       </div>
       <i class="fas fa-bars menu-toggle" id="mobile-menu"></i>
       <ul id="nav-list">
@@ -339,7 +336,7 @@
 
   <!-- Hero Section -->
   <section class="hero" id="hero">
-    <img src="heroay.png" alt="Hero Image" class="hero-image">
+    <img src="heroimage.jpeg" alt="Hero Image" class="hero-image">
     <div class="container">
       <h1>Hello, I'm Ayush Hardeniya</h1>
       <p>
