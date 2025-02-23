@@ -1,281 +1,453 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Basic Meta Tags -->
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Ayush Hardeniya's personal portfolio. An 18-year-old BTech student passionate about technology and AI.">
-  <meta name="keywords" content="Ayush Hardeniya, Portfolio, BTech, Technology, AI, Personal Website">
-  <meta name="author" content="Ayush Hardeniya">
-  <title>Ayush Hardeniya</title>
-  
-  <!-- Favicon & Logo -->
-  <link rel="icon" href="profilePic.jpg" type="image/jpg">
-  
-  <!-- Internal CSS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ayush Hardeniya | Aspiring Developer & Tech Enthusiast</title>
+  <!-- Google Fonts for modern typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* Color Palette */
-    :root {
-      --light-bg: #d5ddf6;
-      --medium-blue: #8ea4e6;
-      --lighter-blue: #c9d3f3;
-      --dark-blue: #2b51c5;
-      --text-color: #333;
-      --white: #fff;
-    }
-    
     /* Global Styles */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+    html {
+      scroll-behavior: smooth;
+    }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: var(--text-color);
+      font-family: 'Poppins', sans-serif;
       line-height: 1.6;
-      background-color: var(--light-bg);
+      color: #333;
+      background-color: #fff;
     }
     a {
       text-decoration: none;
-      color: var(--dark-blue);
-    }
-    ul {
-      list-style: none;
+      color: inherit;
     }
     img {
       max-width: 100%;
-      height: auto;
       display: block;
     }
     .container {
       width: 90%;
       max-width: 1200px;
-      margin: auto;
-      padding: 2rem 0;
+      margin: 0 auto;
     }
-    
-    /* Header */
+
+    /* Header & Navigation */
     header {
-      background-color: var(--white);
+      position: fixed;
+      width: 100%;
+      background: #fff;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
       z-index: 1000;
     }
-    header .container {
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+    .navbar .logo {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #007BFF;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 1rem 0;
     }
-    .logo {
-      width: 50px;
-      height: 50px;
+    .navbar .logo img {
+      width: 40px;
+      height: 40px;
+      margin-right: 0.5rem;
       border-radius: 50%;
+      object-fit: cover;
     }
-    nav ul {
+    .navbar ul {
+      list-style: none;
       display: flex;
-      gap: 1.5rem;
     }
-    nav li {
+    .navbar li {
+      margin-left: 1.5rem;
+    }
+    .navbar a {
       font-size: 1rem;
+      font-weight: 500;
+      transition: color 0.3s;
     }
-    /* Mobile Menu Toggle */
+    .navbar a:hover {
+      color: #007BFF;
+    }
+    /* Mobile Navigation */
     .menu-toggle {
       display: none;
-      flex-direction: column;
+      font-size: 1.5rem;
       cursor: pointer;
     }
-    .menu-toggle .bar {
-      height: 3px;
-      width: 25px;
-      background-color: var(--dark-blue);
-      margin: 4px 0;
-      transition: 0.3s;
-    }
-    
-    /* Hero Section */
-    #hero {
-      position: relative;
-      background-color: var(--lighter-blue);
-      text-align: center;
-      padding: 4rem 1rem;
-    }
-    .hero-image {
-      width: 100%;
-      max-height: 500px;
-      object-fit: cover;
-      opacity: 0.8;
-    }
-    .hero-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: var(--white);
-      text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
-    }
-    .hero-text h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    .hero-text p {
-      font-size: 1.2rem;
-    }
-    
-    /* Section Titles */
-    section h2 {
-      text-align: center;
-      margin-bottom: 1rem;
-      color: var(--dark-blue);
-    }
-    
-    /* About, Values, Blog & Resilience Sections */
-    section {
-      background-color: var(--white);
-      margin: 2rem 0;
-      padding: 2rem 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
-    #about p,
-    #resilience p {
-      max-width: 800px;
-      margin: 1rem auto;
-      text-align: center;
-    }
-    #values ul {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      font-weight: bold;
-    }
-    #blog ul {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-    }
-    
-    /* Footer */
-    footer {
-      background-color: var(--dark-blue);
-      color: var(--white);
-      padding: 1.5rem 0;
-      text-align: center;
-    }
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 0.5rem;
-    }
-    .social-links a {
-      color: var(--white);
-      font-weight: bold;
-    }
-    
-    /* Responsive Styles */
     @media (max-width: 768px) {
-      nav ul {
-        display: none;
-        flex-direction: column;
-        background-color: var(--white);
-        position: absolute;
+      .navbar ul {
+        position: fixed;
         top: 70px;
-        right: 20px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        border-radius: 5px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        align-items: center;
+        display: none;
       }
-      nav ul.show {
+      .navbar ul.active {
         display: flex;
+      }
+      .navbar li {
+        margin: 1rem 0;
       }
       .menu-toggle {
-        display: flex;
+        display: block;
       }
-      .hero-text h1 {
-        font-size: 2rem;
-      }
-      .hero-text p {
-        font-size: 1rem;
-      }
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('AyushHardeniya.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      padding: 0 1rem;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero .btn {
+      background: #007BFF;
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 25px;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .hero .btn:hover {
+      background: #0056b3;
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 0;
+    }
+    section h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    section h2::after {
+      content: "";
+      width: 80px;
+      height: 4px;
+      background: #007BFF;
+      display: block;
+      margin: 0.5rem auto;
+    }
+    section p.section-subtitle {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+
+    /* About Section */
+    .about {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .about .about-text {
+      flex: 1;
+      min-width: 300px;
+    }
+    .about .about-text p {
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+      color: #555;
+    }
+    .about .about-image {
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
+    }
+    .about .about-image img {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Expertise / Services Section */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 0 2rem;
+    }
+    .service {
+      background: #f9f9f9;
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .service:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .service i {
+      font-size: 2.5rem;
+      color: #007BFF;
+      margin-bottom: 1rem;
+    }
+    .service h3 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      color: #333;
+    }
+    .service p {
+      font-size: 1rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* Portfolio / Digital Footprint Section */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      padding: 0 2rem;
+    }
+    .portfolio-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .portfolio-item:hover {
+      transform: scale(1.02);
+    }
+    .portfolio-item img {
+      width: 100%;
+    }
+    .portfolio-item .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 123, 255, 0.7);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+      text-align: center;
+      padding: 1rem;
+    }
+    .portfolio-item:hover .overlay {
+      opacity: 1;
+    }
+
+    /* Contact Section */
+    .contact-info {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #555;
+    }
+    .contact-info a {
+      color: #007BFF;
+      transition: color 0.3s;
+    }
+    .contact-info a:hover {
+      color: #0056b3;
+    }
+    .social-links {
+      margin-top: 1rem;
+    }
+    .social-links a {
+      margin: 0 0.5rem;
+      font-size: 1.5rem;
+      color: #007BFF;
+      transition: color 0.3s;
+    }
+    .social-links a:hover {
+      color: #0056b3;
+    }
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: #fff;
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
+  <!-- Header & Navigation -->
   <header>
-    <div class="container">
-      <img src="signtrans.png" alt="Ayush Hardeniya Logo" class="logo">
-      <nav>
-        <ul>
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#values">Values</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#resilience">My Story of Resilience</a></li>
-        </ul>
-        <div class="menu-toggle" id="mobile-menu">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
-      </nav>
+    <div class="navbar container">
+      <div class="logo">
+        <img src="signtrans.png" alt="ayushHardeniya">
+        <span>Ayush Hardeniya</span>
+      </div>
+      <i class="fas fa-bars menu-toggle" id="mobile-menu"></i>
+      <ul id="nav-list">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Expertise</a></li>
+        <li><a href="#portfolio">Digital Footprint</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </div>
   </header>
-  
+
   <!-- Hero Section -->
-  <section id="hero">
-    <img src="heroimage.jpeg" alt="Hero Image" class="hero-image">
-    <div class="hero-text">
-      <h1>Hi, I'm Ayush Hardeniya</h1>
-      <p>A tech enthusiast and aspiring AI specialist.</p>
+  <section class="hero" id="hero">
+    <img src="heroay.png" alt="Hero Image" class="hero-image">
+    <div class="container">
+      <h1>Hello, I'm Ayush Hardeniya</h1>
+      <p>
+        Aspiring Developer | [Legal Name: Ayush Sharma] | 18 | Btech Student<br>
+        Passionate about tech, AI innovations, and continuous self-improvement.
+      </p>
+      <button class="btn" onclick="document.querySelector('#about').scrollIntoView({behavior: 'smooth'})">Discover More</button>
     </div>
   </section>
-  
-  <!-- About Me Section -->
+
+  <!-- About Section -->
   <section id="about">
     <div class="container">
       <h2>About Me</h2>
-      <p>
-        I am an 18-year-old BTech student with a deep passion for technology and AI. My journey in the world of tech began at a young age, fueled by curiosity and a desire to innovate. Currently, I am immersed in my studies while constantly exploring the latest advancements in artificial intelligence and software development.
-      </p>
+      <p class="section-subtitle">My journey, challenges, and aspirations</p>
+      <div class="about">
+        <div class="about-text">
+          <p>
+            I'm Ayush Hardeniya—an 18-year-old aspiring developer currently pursuing my Btech.
+            Though I come from a lower-middle-class family, my parents’ unwavering support has fueled my passion for technology.
+          </p>
+          <p>
+            I love sharing my thoughts with like-minded individuals and write blogs on Medium.
+            Whether it's exploring rising AI technologies, product-based tech innovations, or diving into a good book, I see every challenge as an opportunity to grow.
+          </p>
+          <p>
+            On this continuous journey of becoming better than my past self, I strive to convert every obstacle into a stepping stone toward success.
+          </p>
+        </div>
+        <div class="about-image">
+          <img src="profilePic.jpg" alt="Ayush Hardeniya">
+        </div>
+      </div>
     </div>
   </section>
-  
-  <!-- Values Section -->
-  <section id="values">
+
+  <!-- Expertise / Services Section -->
+  <section id="services">
     <div class="container">
-      <h2>My Values</h2>
-      <ul>
-        <li>Innovation</li>
-        <li>Collaboration</li>
-        <li>Integrity</li>
-      </ul>
+      <h2>Expertise</h2>
+      <p class="section-subtitle">What I’m exploring and learning</p>
+      <div class="services">
+        <div class="service">
+          <i class="fas fa-code"></i>
+          <h3>Aspiring Developer</h3>
+          <p>Learning modern web and mobile development techniques, and building projects step by step.</p>
+        </div>
+        <div class="service">
+          <i class="fas fa-robot"></i>
+          <h3>Tech Enthusiast</h3>
+          <p>Exploring emerging AI technologies and product-based tech innovations to stay ahead of trends.</p>
+        </div>
+        <div class="service">
+          <i class="fas fa-pen"></i>
+          <h3>Content Creator</h3>
+          <p>Sharing thoughts and ideas through blogs on Medium to inspire and connect with others.</p>
+        </div>
+        <div class="service">
+          <i class="fas fa-heartbeat"></i>
+          <h3>Life-long Learner</h3>
+          <p>Committed to self-improvement—turning challenges into opportunities every day.</p>
+        </div>
+      </div>
     </div>
   </section>
-  
-  <!-- Blog Section -->
-  <section id="blog">
+
+  <!-- Digital Footprint Section -->
+  <section id="portfolio">
     <div class="container">
-      <h2>Blog</h2>
-      <ul>
-        <li><a href="https://medium.com/@ayushhardeniya" target="_blank">Medium Blog</a></li>
-        <li><a href="https://ayushhardeniya.carrd.co" target="_blank">Carrd Profile</a></li>
-      </ul>
+      <h2>Digital Footprint</h2>
+      <p class="section-subtitle">Where you can explore my work and ideas</p>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <a href="https://medium.com/@ayushhardeniya.profile" target="_blank">
+            <img src="https://source.unsplash.com/600x400/?blog,writing" alt="Medium Blog">
+            <div class="overlay">
+              <h3>Medium Blog</h3>
+            </div>
+          </a>
+        </div>
+        <div class="portfolio-item">
+          <a href="https://ayushhardeniya.carrd.co/" target="_blank">
+            <img src="https://source.unsplash.com/600x400/?digital,profile" alt="Digital Footprint">
+            <div class="overlay">
+              <h3>Digital Footprint</h3>
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
-  
-  <!-- My Story of Resilience Section -->
-  <section id="resilience">
+
+  <!-- Contact Section -->
+  <section id="contact">
     <div class="container">
-      <h2>My Story of Resilience</h2>
-      <p>
-        Growing up in a lower-middle-class background, I faced numerous challenges that only strengthened my determination to succeed. Technology became my pathway to creating opportunities and breaking barriers. Today, my journey through BTech and my passion for AI underscore the belief that innovation can drive social impact and transform lives.
-      </p>
+      <h2>Contact</h2>
+      <p class="section-subtitle">Let's connect and build something together</p>
+      <div class="contact-info">
+        <p>Email: <a href="mailto:ayushhardeniya.vn@outlook.in">collab@ayushhardeniya.com</a></p>
+        <p>Follow my journey on Medium and explore my digital footprint:</p>
+        <div class="social-links">
+          <a href="https://medium.com/@ayushhardeniya.profile" target="_blank"><i class="fab fa-medium"></i></a>
+          <a href="https://ayushhardeniya.carrd.co/" target="_blank"><i class="fas fa-link"></i></a>
+        </div>
+      </div>
     </div>
   </section>
-  
+
   <!-- Footer -->
   <footer>
     <div class="container">
@@ -290,14 +462,14 @@
       <p>&copy; 2025 Ayush Hardeniya. All rights reserved.</p>
     </div>
   </footer>
-  
-  <!-- JavaScript for Mobile Navigation Toggle -->
+
+  <!-- JavaScript for Mobile Menu Toggle -->
   <script>
-    const mobileMenu = document.getElementById("mobile-menu");
-    const navUl = document.querySelector("nav ul");
-    
-    mobileMenu.addEventListener("click", () => {
-      navUl.classList.toggle("show");
+    const menuToggle = document.getElementById('mobile-menu');
+    const navList = document.getElementById('nav-list');
+
+    menuToggle.addEventListener('click', () => {
+      navList.classList.toggle('active');
     });
   </script>
 </body>
