@@ -3,9 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ayush Hardeniya | Aspiring Technologist & Thought Leader, focused on AI, Ethics, and Resilience.">
-    <meta name="keywords" content="Ayush Hardeniya, AI, Technology, Thought Leader, BTech, Machine Learning, Ethical AI, Resilience, India">
-    <meta name="author" content="Ayush Hardeniya">
     <title>Ayush Hardeniya | Aspiring Technologist & Thought Leader</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -26,7 +23,6 @@
         body {
             line-height: 1.7;
             color: var(--text-color);
-            padding-top: 100px; /* Space for fixed header */
         }
 
         /* Header Styles */
@@ -91,14 +87,19 @@
             margin: 0 auto 3rem;
         }
 
+        .cta-button {
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            color: white;
+            background-color: var(--accent-color);
+        }
+
         /* Content Sections */
         .section {
             padding: 6rem 5%;
             max-width: 1200px;
             margin: 0 auto;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease-out;
         }
 
         .section h2 {
@@ -244,7 +245,7 @@
         <h1>Transforming Challenges into Technological Opportunities</h1>
         <p>BTech Student | AI Enthusiast | Resilience Architect</p>
         <div style="margin-top: 3rem;">
-            <a href="#contact" class="cta-button" style="background: var(--accent-color); color: white; padding: 1rem 2.5rem; border-radius: 30px; text-decoration: none; margin-right: 1rem;">Let's Collaborate</a>
+            <a href="#contact" class="cta-button">Let's Collaborate</a>
             <a href="https://medium.com/@ayushhardeniya.profile" target="_blank" style="padding: 1rem 2.5rem; border: 2px solid var(--accent-color); border-radius: 30px; text-decoration: none; color: var(--accent-color);">Read My Thoughts</a>
         </div>
     </section>
@@ -254,57 +255,67 @@
         <div class="about-grid">
             <img src="header-image.jpg" alt="Ayush Hardeniya" class="about-image">
             <div class="about-content">
-                <p>Born into a lower-middle-class family in India, I learned early that <span class="highlight">true opportunities are created, not given</span>. My parents' unwavering support in my education and technology exploration fuels my mission to merge <span class="highlight">empathy</span> with innovation.</p>
-                <p>With a focus on AI and ethical technology, I aspire to break boundaries and advocate for the transformative potential of tech in humanity’s future.</p>
+                <p>Born into a lower-middle-class family in India, I learned early that <span class="highlight">true opportunities are created, not given</span>. My parents' unwavering support in my education and technology exploration fuels my mission to bridge the gap between limited resources and limitless potential.</p>
+                
+                <p style="margin: 2rem 0;">Currently pursuing my BTech while simultaneously:
+                    <br>• Exploring ethical AI implementations
+                    <br>• Developing problem-solving frameworks for startups
+                    <br>• Documenting my learning journey through technical writing
+                </p>
+
+                <p>I approach technology as a <span class="highlight">force multiplier for social impact</span>, constantly seeking ways to combine emerging technologies with sustainable business models. My recent focus includes machine learning applications in education accessibility and automation solutions for small businesses.</p>
             </div>
         </div>
     </section>
 
     <section class="section" id="values">
-        <h2>Core Values</h2>
+        <h2>Core Principles</h2>
         <div class="values-grid">
             <div class="value-card">
-                <div class="value-icon"><i class="fa-solid fa-brain"></i></div>
-                <h3>Innovation</h3>
-                <p>Constantly pushing the envelope in AI, striving to discover new solutions that can benefit all.</p>
+                <i class="fas fa-brain value-icon"></i>
+                <h3>Continuous Evolution</h3>
+                <p>Daily commitment to skill development through curated learning paths and practical implementation</p>
             </div>
             <div class="value-card">
-                <div class="value-icon"><i class="fa-solid fa-heart"></i></div>
-                <h3>Empathy</h3>
-                <p>Understanding diverse human experiences to ensure tech is inclusive, impactful, and sustainable.</p>
+                <i class="fas fa-users value-icon"></i>
+                <h3>Collaboration Over Competition</h3>
+                <p>Strong belief in community-driven growth where every individual’s progress is celebrated</p>
             </div>
             <div class="value-card">
-                <div class="value-icon"><i class="fa-solid fa-lock"></i></div>
-                <h3>Security</h3>
-                <p>Promoting ethical AI practices and working towards building secure digital futures for everyone.</p>
+                <i class="fas fa-leaf value-icon"></i>
+                <h3>Technology for Sustainability</h3>
+                <p>Dedicated to building solutions that positively impact the environment and society at large</p>
             </div>
         </div>
     </section>
 
     <section class="section" id="blogs">
-        <h2>Recent Blogs</h2>
+        <h2>Recent Thoughts & Articles</h2>
         <div class="blog-grid">
             <div class="blog-card">
-                <h3>The Rise of Ethical AI: Challenges & Opportunities</h3>
-                <p>Explore the evolution of artificial intelligence and the crucial role ethics plays in shaping its future.</p>
+                <h3>Leveraging AI for Educational Equity</h3>
+                <p>Explore how AI-powered tools are shaping the future of accessible education...</p>
+                <a href="#">Read More</a>
             </div>
             <div class="blog-card">
-                <h3>Why Resilience Is Key for Innovators</h3>
-                <p>How persistence, adaptability, and a positive mindset can help break through technological barriers.</p>
+                <h3>Building Ethical AI</h3>
+                <p>How we can ensure AI remains a force for good, addressing challenges of bias and fairness...</p>
+                <a href="#">Read More</a>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="footer-content">
-            <p>Connect with me on:</p>
+            <p>&copy; 2025 Ayush Hardeniya. All Rights Reserved.</p>
             <div class="social-links">
                 <a href="https://twitter.com/ayushhardeniya" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://github.com/ayushhardeniya" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://instagram.com/ayushhardeniya" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com/ayushhardeniya" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://youtube.com/ayushhardeniya" target="_blank"><i class="fab fa-youtube"></i></a>
                 <a href="https://linkedin.com/in/ayushhardeniya" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://medium.com/@ayushhardeniya" target="_blank"><i class="fab fa-medium"></i></a>
+                <a href="https://github.com/ayushhardeniya" target="_blank"><i class="fab fa-github"></i></a>
             </div>
-            <p>&copy; 2025 Ayush Hardeniya. All Rights Reserved.</p>
         </div>
     </footer>
 </body>
