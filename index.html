@@ -238,7 +238,7 @@
         }
         .social-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Ensure uniform card width */
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Uniform sizing */
     gap: 30px;
     justify-items: center;
     align-items: center;
@@ -268,16 +268,15 @@
     color: #333;
 }
 
-/* Gravatar Fix: Properly Aligned, Sized, and Colored */
-.gravatar-icon img {
+/* Fix Gravatar: Same Size, Grayscale, No Blue */
+.gravatar-icon {
     width: 60px;
     height: 60px;
     margin-bottom: 12px;
-    filter: grayscale(100%) contrast(1.2); /* Matches other icons */
-    border-radius: 50%; /* Keeps it circular */
-    object-fit: cover; /* Ensures proper image scaling */
+    filter: grayscale(100%) brightness(0.3) contrast(1.2); /* Dark gray effect */
+    border-radius: 50%;
+    object-fit: cover;
     background-color: transparent;
-    padding: 0; /* Removes any unwanted spacing */
     display: block;
 }
 
@@ -291,7 +290,6 @@
     transform: scale(1.1);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-
         .tech-stack {
             display: flex;
             gap: 1rem;
