@@ -236,49 +236,62 @@
         .ai-card:hover {
             transform: translateY(-10px);
         }
-        .social-icons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
+        .social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Ensure uniform card width */
+    gap: 30px;
+    justify-items: center;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .social-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    width: 160px;
+    height: 160px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    background: #f5f5f5;
-    padding: 20px;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
-    width: 150px;
+    text-decoration: none;
+}
+
+.social-card i {
+    font-size: 60px;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+/* Gravatar Fix: Properly Aligned, Sized, and Colored */
+.gravatar-icon img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 12px;
+    filter: grayscale(100%) contrast(1.2); /* Matches other icons */
+    border-radius: 50%; /* Keeps it circular */
+    object-fit: cover; /* Ensures proper image scaling */
+    background-color: transparent;
+    padding: 0; /* Removes any unwanted spacing */
+    display: block;
+}
+
+.social-card span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #444;
 }
 
 .social-card:hover {
     transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.social-card i {
-    font-size: 40px;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.social-card a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-}
-
-.gravatar-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    filter: grayscale(100%);
-    background-color: #f5f5f5;
-}
         .tech-stack {
             display: flex;
             gap: 1rem;
