@@ -239,11 +239,11 @@
         
         .social-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Distributes evenly */
-    gap: 30px; /* More spacing */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
     justify-items: center;
     align-items: center;
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -266,15 +266,17 @@
 .social-card i {
     font-size: 60px;
     margin-bottom: 12px;
-    color: #333; /* B&W Effect */
+    color: #333;
 }
 
 .gravatar-icon {
     width: 60px;
     height: 60px;
     margin-bottom: 12px;
-    filter: grayscale(100%); /* Makes Gravatar B&W */
+    filter: grayscale(100%);
     border-radius: 50%;
+    background-color: #ccc; /* Ensures it doesn't disappear */
+    padding: 5px;
 }
 
 .social-card span {
@@ -484,6 +486,10 @@
             <a href="https://instagram.com/ayushHardeniya" target="_blank" class="social-card">
                 <i class="fab fa-instagram"></i>
                 <span>Instagram</span>
+            </a>
+            <a href="https://medium.com/@ayushhardeniya.profile" target="_blank" class="social-card">
+                <i class="fab fa-medium-m"></i>
+                <span>Medium</span>
             </a>
         </div>
     </div>
