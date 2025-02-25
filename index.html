@@ -62,7 +62,7 @@
         /* Vibrant Navigation */
         /* General Navbar Styling */
 .navbar {
-    padding: 1rem 5%;
+    padding: 0.5rem 5%;
     background: linear-gradient(135deg, rgba(20, 20, 30, 0.85), rgba(10, 10, 20, 0.85)); /* Professional gradient */
     backdrop-filter: blur(15px);
     position: fixed;
@@ -79,8 +79,16 @@
 /* Brand Logo */
 .brand-logo {
     height: 65px;
-    transition: transform 0.3s ease-in-out, opacity 0.3s;
-    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
+    width: auto; /* Maintain aspect ratio */
+    margin: 4px 0; /* Creates 4px vertical margins */
+}
+
+/* Mobile sizing */
+@media (max-width: 768px) {
+    .brand-logo {
+        height: 60px;
+        margin: 2px 0;
+    }
 }
 
 .brand-logo:hover {
