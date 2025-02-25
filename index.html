@@ -18,12 +18,12 @@
 
     <style>
         :root {
-            --primary-light: #e0e7ff;
-            --primary-blue: #002444;
-            --accent-blue: #3b82f6;
-            --background: #f3f4f6;
-            --text-dark: #111827;
-            --section-background: #f9fafb;
+            --primary-light: #e0f7fa; /* Light Cyan */
+            --primary-blue: #00796b; /* Teal */
+            --accent-blue: #4db6ac; /* Light Teal */
+            --background: #f3f4f6; /* Light Gray */
+            --text-dark: #004d40; /* Dark Teal */
+            --section-background: #ffffff; /* White */
         }
 
         * {
@@ -63,7 +63,7 @@
         /* Navigation */
         .navbar {
             padding: 0.5rem 5%;
-            background: black;
+            background: var(--primary-blue);
             position: fixed;
             width: 100%;
             top: 0;
@@ -114,7 +114,7 @@
                 position: absolute; /* Position them absolutely */
                 top: 60px; /* Below the navbar */
                 right: 0; /* Align to the right */
-                background: black; /* Background color */
+                background: var(--primary-blue); /* Background color */
                 width: 100%; /* Full width */
                 padding: 1rem 0; /* Padding */
                 z-index: 999; /* Ensure it appears above other content */
@@ -189,36 +189,45 @@
         section {
             padding: 6rem 5%;
             margin: 2rem 0; /* Add margin to separate sections */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation */
+        }
+
+        section:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
         }
 
         /* About Section */
         #about {
-            background: #ffffff; /* White background */
+            background: #e0f7fa; /* Light Cyan */
         }
 
         /* Links Section */
         #social-links {
-            background: #e0f7fa; /* Light cyan background */
+            background: #b2ebf2; /* Lighter Cyan */
         }
 
         /* Values Section */
         #values {
-            background: #ffe0b2; /* Light orange background */
+            background: #80deea; /* Soft Teal */
         }
 
         /* Blog Section */
         #blog {
-            background: #f1f8e9; /* Light green background */
+            background: #4db6ac; /* Darker Teal */
         }
 
         /* Contact Section */
         #contact {
-            background: #fce4ec; /* Light pink background */
+            background: #00796b; /* Deep Teal */
+            color: white; /* Change text color for contrast */
         }
 
         .section-title {
             font-size: 2.8rem;
-            color: var(--primary-blue);
+            color: var(--text-dark);
             margin-bottom: 4rem;
             text-align: center;
         }
@@ -365,23 +374,23 @@
         }
         #contact h2 {
             font-size: 2.8rem;
-            color: var(--primary-blue);
+            color: var(--primary-light);
             margin-bottom: 2rem;
         }
         #contact p {
             font-size: 1.1rem;
-            color: var(--text-dark);
+            color: var(--primary-light);
             margin-bottom: 1.5rem;
         }
         #contact a.email-link {
-            color: var(--primary-blue);
+            color: var(--primary-light);
             font-weight: 600;
             font-size: 1.2rem;
             border-bottom: 2px solid transparent;
             transition: border-color 0.3s;
         }
         #contact a.email-link:hover {
-            border-color: var(--primary-blue);
+            border-color: var(--primary-light);
         }
 
         /* Enhanced Footer */
@@ -549,7 +558,7 @@
         <h2 class="section-title">Contact</h2>
         <div class="container">
             <p class="section-subtitle">Let's connect and build something together</p>
-            <p>Mail: <a class="email-link" href="mailto:ayushhardeniya.vn@outlook.in">collab@ayushhardeniya.com</a></p>
+            <p>Email: <a class="email-link" href="mailto:ayushhardeniya.vn@outlook.in">collab@ayushhardeniya.com</a></p>
         </div>
     </section>
 
@@ -581,30 +590,4 @@
             <p>&copy; 2025 Ayush Hardeniya. All rights reserved.</p>
             <div class="legal-links">
                 <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript -->
-    <script>
-    // Mobile Menu Toggle
-    const mobileMenu = document.getElementById('mobile-menu');
-    const navLinks = document.querySelector('.nav-links');
-
-    mobileMenu.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
-
-    // Smooth Scroll for internal anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-    </script>
-</body>
-</html>
+           
