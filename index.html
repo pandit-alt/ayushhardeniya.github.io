@@ -60,84 +60,130 @@
         }
 
         /* Vibrant Navigation */
-        .navbar {
-            padding: 1rem 5%;
-            background: rgba(213, 221, 246, 0.95);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-        }
+        /* General Navbar Styling */
+.navbar {
+    padding: 1rem 5%;
+    background: rgba(255, 255, 255, 0.15); /* Glass effect */
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
 
-        .brand-logo {
-            height: 70px;
-            transition: transform 0.3s;
-        }
+/* Brand Logo */
+.brand-logo {
+    height: 70px;
+    transition: transform 0.3s ease-in-out;
+}
 
-        .brand-logo:hover {
-            transform: scale(1.05);
-        }
+.brand-logo:hover {
+    transform: scale(1.08);
+}
 
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            align-items: center;
-        }
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
 
-        .nav-link {
-            color: var(--primary-blue);
-            text-decoration: none;
-            font-weight: 500;
-            position: relative;
-            padding: 0.5rem 0;
-        }
+.nav-link {
+    color: #1a237e; /* Deep Blue */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    position: relative;
+    padding: 0.5rem;
+    transition: color 0.3s ease-in-out;
+}
 
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background: var(--primary-blue);
-            transition: width 0.3s;
-        }
+.nav-link:hover {
+    color: #0d47a1; /* Darker Blue */
+}
 
-        .nav-link:hover::after {
-            width: 100%;
-        }
+/* Underline Animation */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -3px;
+    left: 50%;
+    background: #0d47a1;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
 
-        /* Mobile Navigation */
-        .menu-toggle {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
+.nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
 
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-                background: rgba(213, 221, 246, 0.95);
-                position: fixed;
-                top: 70px;
-                left: 0;
-                padding-bottom: 1rem;
-            }
-            .nav-links.active {
-                display: flex;
-            }
-            .brand-logo {
-                height: 60px;
-            }
-        }
+/* Mobile Navigation */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #1a237e;
+    transition: transform 0.3s ease-in-out;
+}
 
+.menu-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Mobile Responsive Navbar */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(15px);
+        position: fixed;
+        top: 70px;
+        left: 0;
+        padding: 1rem 0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .nav-links.active {
+        display: flex;
+        animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
+        padding: 1rem 0;
+    }
+
+    .brand-logo {
+        height: 60px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Smooth Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
         /* Hero Section */
         .hero {
             height: 50vh;
