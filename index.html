@@ -74,10 +74,30 @@
     transition: all 0.3s ease-in-out;
 }
 
+.brand-logo {
+    height: 50px; /* Set a specific height for the logo */
+    width: auto; /* Maintain aspect ratio */
+}
+
 .nav-links {
     display: flex;
     gap: 2rem;
     align-items: center;
+}
+
+.nav-link {
+    color: white; /* Change text color to white */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    position: relative;
+    padding: 0.5rem;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: var(--accent-blue); /* Change color on hover */
+    transform: translateY(-2px); /* Slight lift effect */
 }
 
 /* Mobile Styles */
