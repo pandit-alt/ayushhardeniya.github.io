@@ -402,68 +402,80 @@
         }
 
         /* Enhanced Footer */
-        footer {
-            background: var(--primary-blue); /* Keep footer primary blue */
-            color: white;
-            padding: 4rem 5%;
-            margin-top: 6rem;
-        }
+footer {
+    background: var(--primary-blue); /* Keep footer primary blue */
+    color: white;
+    padding: 4rem 5%;
+    margin-top: 6rem;
+}
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+.footer-grid {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically on small screens */
+    gap: 2rem; /* Space between sections */
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-        .footer-section {
-            display: flex;
-            flex-direction: column; /* Stack items vertically */
-            align-items: flex-start; /* Align items to the start */
-        }
+.footer-section {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the start */
+}
 
-        .footer-section h3 {
-            color: var(--primary-light);
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-        }
+.footer-section h3 {
+    color: var(--primary-light);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
 
-        .social-links {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
 
-        .social-link {
-            font-size: 1.8rem;
-            color: white;
-            transition: transform 0.3s;
-        }
+.social-link {
+    font-size: 1.8rem;
+    color: white;
+    transition: transform 0.3s;
+}
 
-        .social-link:hover {
-            color: var(--primary-light);
-            transform: translateY(-3px);
-        }
+.social-link:hover {
+    color: var(--primary-light);
+    transform: translateY(-3px);
+}
 
-        .quick-links {
-            text-align: center; /* Center align quick links */
-            margin-top: 10px;
-        }
+.quick-links {
+    text-align: center; /* Center align quick links */
+    margin-top: 10px;
+}
 
-        .quick-links nav {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+.quick-links nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
 
-        .legal {
-            text-align: center;
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-        }
+.legal {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Media Queries for Responsive Design */
+@media (min-width: 768px) {
+    .footer-grid {
+        flex-direction: row; /* Change to row layout on larger screens */
+        justify-content: space-between; /* Space out sections */
+    }
+
+    .footer-section {
+        align-items: flex-start; /* Align items to the start */
+    }
+}
     </style>
 </head>
 <body>
@@ -617,39 +629,39 @@
 
     <!-- Footer -->
     <footer>
-        <div class="footer-grid">
-            <div class="footer-section">
-                <h3>Let's Connect</h3>
-                <div class="social-links">
-                    <a href="mailto:ayushhardeniya.vn@outlook.in" class="social-link" target="_blank"><i class="fas fa-envelope"></i></a>
-                    <a href="https://twitter.com/ayushhardeniya" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://linkedin.com/in/ayushhardeniya" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/ayushhardeniya" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://youtube.com/ayushhardeniya" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
-                    <a href="https://instagram.com/ayushhardeniya" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://facebook.com/ayushhardeniya" class="social-link" target="_blank"><i class="fab fa-facebook"></i></a>
-                    <a href="https://medium.com/@ayushhardeniya.profile" class="social-link" target="_blank"><i class="fab fa-medium"></i></a>
-                </div>
-            </div>
-            <div class="footer-section quick-links">
-                <h3>Quick Navigation</h3>
-                <nav>
-                    <a href="#about" class="footer-link">My Story</a>
-                    <a href="#values" class="footer-link">Values</a>
-                    <a href="#social-links" class="footer-link">Links</a>
-                    <a href="#blog" class="footer-link">Blog</a>
-                    <a href="#contact" class="footer-link">Contact</a>
-                </nav>
-            </div>
-            <div class="legal">
-                <p>&copy; 2025 Ayush Hardeniya. All rights reserved.</p>
-                <div class="legal-links">| 
-                    <a href="https://ayushhardeniya.github.io/ayushHardeniya/">@ayushHardeniya</a> |
-                    <a href="https://ayushhardeniya.github.io/aHPay/contact.html">Contact Us</a> |
-                </div>
+    <div class="footer-grid">
+        <div class="footer-section">
+            <h3>Let's Connect</h3>
+            <div class="social-links">
+                <a href="mailto:ayushhardeniya.vn@outlook.in" class="social-link" target="_blank"><i class="fas fa-envelope"></i></a>
+                <a href="https://twitter.com/ayushhardeniya" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://linkedin.com/in/ayushhardeniya" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/ayushhardeniya" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://youtube.com/ayushhardeniya" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://instagram.com/ayushhardeniya" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com/ayushhardeniya" class="social-link" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://threads.com/ayushhardeniya" class="social-link" target="_blank"><i class="fab fa-threads"></i></a>
             </div>
         </div>
-    </footer>
+        <div class="footer-section quick-links">
+            <h3>Quick Navigation</h3>
+            <nav>
+                <a href="#about" class="footer-link">My Story</a>
+                <a href="#values" class="footer-link">Values</a>
+                <a href="#social-links" class="footer-link">Links</a>
+                <a href="#blog" class="footer-link">Blog</a>
+                <a href="#contact" class="footer-link">Contact</a>
+            </nav>
+        </div>
+        <div class="legal">
+            <p>&copy; 2025 Ayush Hardeniya. All rights reserved.</p>
+            <div class="legal-links">| 
+                <a href="https://ayushhardeniya.github.io/ayushHardeniya/">@ayushHardeniya</a> |
+                <a href="https://ayushhardeniya.github.io/aHPay/contact.html">Contact Us</a> |
+            </div>
+        </div>
+    </div>
+</footer>
 
     <!-- JavaScript -->
     <script>
