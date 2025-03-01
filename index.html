@@ -8,13 +8,13 @@
     <title>Ayush Hardeniya - HomePage</title>
     
     <!-- Favicon Links -->
-<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="192x192" href="assets/android-chrome-192x192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="assets/android-chrome-512x512.png">
-<link rel="manifest" href="assets/site.webmanifest">
-<link rel="shortcut icon" href="assets/faviconV2.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/android-chrome-512x512.png">
+    <link rel="manifest" href="assets/site.webmanifest">
+    <link rel="shortcut icon" href="assets/faviconV2.ico">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -114,7 +114,10 @@
 
         /* Mobile Styles */
         .menu-toggle {
-            display: none; /* Hide by default */
+            display: block; /* Show by default */
+            cursor: pointer; /* Pointer cursor */
+            color: white; /* Icon color */
+            font-size: 1.5rem; /* Icon size */
         }
 
         /* Media Queries */
@@ -139,50 +142,28 @@
                 opacity: 1; /* Fade in */
                 transform: translateY(0); /* Move to original position */
             }
+        }
 
-            .menu-toggle {
-                display: block; /* Show menu toggle icon */
-                cursor: pointer; /* Pointer cursor */
-                color: white; /* Icon color */
-                font-size: 1.5rem; /* Icon size */
+        @keyframes rollDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
-        @keyframes rollDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
-@keyframes rollUp {
-    from {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    to {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-}
-
-/* Modify the nav-links class */
-.nav-links {
-    display: none; /* Hide links by default */
-    flex-direction: column; /* Stack links vertically */
-    position: absolute; /* Position them absolutely */
-    top: 60px; /* Below the navbar */
-    right: 0; /* Align to the right */
-    background: black; /* Background color */
-    width: 100%; /* Full width */
-    padding: 1rem 0; /* Padding */
-    z-index: 999; /* Ensure it appears above other content */
-    opacity: 0; /* Start hidden */
-    transform: translateY(-20px); /* Start above */
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Animation */
+        @keyframes rollUp {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
         }
 
         /* Hero Section */
@@ -442,80 +423,80 @@
         }
 
         /* Enhanced Footer */
-footer {
-    background: var(--primary-blue); /* Keep footer primary blue */
-    color: white;
-    padding: 4rem 5%;
-    margin-top: 6rem;
-}
+        footer {
+            background: var(--primary-blue); /* Keep footer primary blue */
+            color: white;
+            padding: 4rem 5%;
+            margin-top: 6rem;
+        }
 
-.footer-grid {
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Stack items vertically on small screens */
-    gap: 2rem; /* Space between sections */
-    max-width: 1200px;
-    margin: 0 auto;
-}
+        .footer-grid {
+            display: flex; /* Use flexbox for layout */
+            flex-direction: column; /* Stack items vertically on small screens */
+            gap: 2rem; /* Space between sections */
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-.footer-section {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: flex-start; /* Align items to the start */
-}
+        .footer-section {
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
+            align-items: flex-start; /* Align items to the start */
+        }
 
-.footer-section h3 {
-    color: var(--primary-light);
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
-}
+        .footer-section h3 {
+            color: var(--primary-light);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
 
-.social-links {
-    display: flex;
-    gap: 1.5rem;
-    margin-top: 1rem;
-}
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
 
-.social-link {
-    font-size: 1.8rem;
-    color: white;
-    transition: transform 0.3s;
-}
+        .social-link {
+            font-size: 1.8rem;
+            color: white;
+            transition: transform 0.3s;
+        }
 
-.social-link:hover {
-    color: var(--primary-light);
-    transform: translateY(-3px);
-}
+        .social-link:hover {
+            color: var(--primary-light);
+            transform: translateY(-3px);
+        }
 
-.quick-links {
-    text-align: center; /* Center align quick links */
-    margin-top: 10px;
-}
+        .quick-links {
+            text-align: center; /* Center align quick links */
+            margin-top: 10px;
+        }
 
-.quick-links nav {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
+        .quick-links nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
 
-.legal {
-    text-align: center;
-    margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
+        .legal {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
 
-/* Media Queries for Responsive Design */
-@media (min-width: 768px) {
-    .footer-grid {
-        flex-direction: column; /* Change to row layout on larger screens */
-        justify-content: space-between; /* Space out sections */
-    }
+        /* Media Queries for Responsive Design */
+        @media (min-width: 768px) {
+            .footer-grid {
+                flex-direction: column; /* Change to row layout on larger screens */
+                justify-content: space-between; /* Space out sections */
+            }
 
-    .footer-section {
-        align-items: flex-start; /* Align items to the start */
-    }
-}
+            .footer-section {
+                align-items: flex-start; /* Align items to the start */
+            }
+        }
     </style>
 </head>
 <body>
@@ -715,23 +696,35 @@ footer {
     <!-- JavaScript -->
     <script>
     // Mobile Menu Toggle
-    // Mobile Menu Toggle
-const mobileMenu = document.getElementById('mobile-menu');
-const navLinks = document.querySelector('.nav-links');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
 
-mobileMenu.addEventListener('click', () => {
-    if (navLinks.classList.contains('active')) {
-        navLinks.classList.remove('active');
-        navLinks.style.animation = 'rollUp 1s ease forwards'; // Roll up animation
-        setTimeout(() => {
-            navLinks.style.display = 'none'; // Hide after animation
-        }, 1000); // Match timeout with animation duration
-    } else {
-        navLinks.style.display = 'flex'; // Show before animation
-        navLinks.classList.add('active');
-        navLinks.style.animation = 'rollDown 1s ease forwards'; // Roll down animation
-    }
-});
+    mobileMenu.addEventListener('click', () => {
+        if (navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            navLinks.style.animation = 'rollUp 1s ease forwards'; // Roll up animation
+            setTimeout(() => {
+                navLinks.style.display = 'none'; // Hide after animation
+            }, 1000); // Match timeout with animation duration
+        } else {
+            navLinks.style.display = 'flex'; // Show before animation
+            navLinks.classList.add('active');
+            navLinks.style.animation = 'rollDown 1s ease forwards'; // Roll down animation
+        }
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                navLinks.style.animation = 'rollUp 1s ease forwards'; // Roll up animation
+                setTimeout(() => {
+                    navLinks.style.display = 'none'; // Hide after animation
+                }, 1000); // Match timeout with animation duration
+            }
+        });
+    });
 
     // Smooth Scroll for internal anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
