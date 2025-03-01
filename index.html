@@ -147,6 +147,43 @@
                 font-size: 1.5rem; /* Icon size */
             }
         }
+        @keyframes rollDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rollUp {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+/* Modify the nav-links class */
+.nav-links {
+    display: none; /* Hide links by default */
+    flex-direction: column; /* Stack links vertically */
+    position: absolute; /* Position them absolutely */
+    top: 60px; /* Below the navbar */
+    right: 0; /* Align to the right */
+    background: black; /* Background color */
+    width: 100%; /* Full width */
+    padding: 1rem 0; /* Padding */
+    z-index: 999; /* Ensure it appears above other content */
+    opacity: 0; /* Start hidden */
+    transform: translateY(-20px); /* Start above */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Animation */
+        }
 
         /* Hero Section */
         .hero {
@@ -678,12 +715,23 @@ footer {
     <!-- JavaScript -->
     <script>
     // Mobile Menu Toggle
-    const mobileMenu = document.getElementById('mobile-menu');
-    const navLinks = document.querySelector('.nav-links');
+    // Mobile Menu Toggle
+const mobileMenu = document.getElementById('mobile-menu');
+const navLinks = document.querySelector('.nav-links');
 
-    mobileMenu.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
+mobileMenu.addEventListener('click', () => {
+    if (navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        navLinks.style.animation = 'rollUp 1s ease forwards'; // Roll up animation
+        setTimeout(() => {
+            navLinks.style.display = 'none'; // Hide after animation
+        }, 1000); // Match timeout with animation duration
+    } else {
+        navLinks.style.display = 'flex'; // Show before animation
+        navLinks.classList.add('active');
+        navLinks.style.animation = 'rollDown 1s ease forwards'; // Roll down animation
+    }
+});
 
     // Smooth Scroll for internal anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
