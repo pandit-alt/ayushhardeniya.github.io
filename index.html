@@ -542,7 +542,7 @@
         <div class="container">
             <div class="random-thought">
                 <h3>Random Thoughts Generator</h3>
-                <p id="thought"></p>
+                <p id="thought" class="thought-text">Click the button to generate a thought!</p>
                 <button onclick="generateThought()">Generate Thought</button>
             </div>
             <div class="future-self">
@@ -550,6 +550,10 @@
                 <p>Dear Future Ayush,</p>
                 <p>As you read this, I hope you have achieved your dreams and continue to strive for greatness. Remember to stay humble and keep learning.</p>
                 <img src="signblacktrans1.png" alt="Ayush Hardeniya's Signature" class="signature">
+            </div>
+            <div class="live-transition">
+                <h3>Live Transition Text</h3>
+                <p id="live-text" class="live-text">Stay curious, keep learning!</p>
             </div>
         </div>
     </section>
@@ -649,6 +653,25 @@
         const randomIndex = Math.floor(Math.random() * thoughts.length);
         document.getElementById('thought').innerText = thoughts[randomIndex];
     }
+
+    // Live Transition Text
+    const liveText = document.getElementById('live-text');
+    const messages = [
+        "Stay curious, keep learning!",
+        "Embrace the journey!",
+        "Every day is a new opportunity!",
+        "Believe in your dreams!",
+        "Make today amazing!"
+    ];
+
+    let currentIndex = 0;
+
+    function updateLiveText() {
+        liveText.innerText = messages[currentIndex];
+        currentIndex = (currentIndex + 1) % messages.length;
+    }
+
+    setInterval(updateLiveText, 3000); // Change text every 3 seconds
     </script>
 </body>
 </html>
