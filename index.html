@@ -35,6 +35,7 @@
             --section-light-blue: #e1f5fe; /* Light Blue */
             --section-dark-blue: #b3e5fc; /* Soft Blue */
             --section-darker-blue: #81d4fa; /* Slightly Darker Blue */
+            --fun-background: #ffeb3b; /* Fun background color */
         }
 
         * {
@@ -138,7 +139,7 @@
                 display: flex; /* Show links when active */
                 opacity: 1; /* Fade in */
                 transform: translateY(0); /* Move to original position */
-                animation: slideDown 0.5s ease forwards; /* Add slide down animation */
+                animation: rollDown 1s ease forwards; /* Add roll down animation */
             }
 
             .menu-toggle {
@@ -149,7 +150,7 @@
             }
         }
 
-        @keyframes slideDown {
+        @keyframes rollDown {
             from {
                 opacity: 0;
                 transform: translateY(-20px);
@@ -157,6 +158,17 @@
             to {
                 opacity: 1;
                 transform: translateY(0);
+            }
+        }
+
+        @keyframes rollUp {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateY(-20px);
             }
         }
 
@@ -242,185 +254,13 @@
             background: var(--section-darker-blue); /* Slightly Darker Blue */
         }
 
-        /* Contact Section */
-        #contact {
-            background: var(--section-light-blue); /* Light Blue */
-            color: var(--text-dark); /* Change text color for contrast */
-        }
-
-        .section-title {
-            font-size: 2.8rem;
-            color: var(--text-dark);
-            margin-bottom: 4rem;
-            text-align: center;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 2rem;
-        }
-
-        /* About Section */
-        .about {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-        .about .about-text {
-            flex: 1;
-            min-width: 300px;
-        }
-        .about .about-text p {
-            margin-bottom: 1.2rem;
-            font-size: 1rem;
-            color: #555;
-        }
-        .about .about-image {
-            flex: 1;
-            min-width: 300px;
-            text-align: center;
-        }
-        .about .about-image img {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        /* Links Section */
-        .social-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 30px;
-            justify-items: center;
-            align-items: center;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .social-card {
-            background: #fff;
-            border-radius: 12px;
-            padding: 25px;
-            width: 160px;
-            height: 160px;
-            text-align: center;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-        }
-
-        .social-card i {
-            font-size: 60px;
-            margin-bottom: 12px;
-            color: #333;
-        }
-
-        .gravatar-icon {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 12px;
-            filter: grayscale(100%) brightness(0.3) contrast(1.2);
-            border-radius: 50%;
-            object-fit: cover;
-            background-color: transparent;
-            display: block;
-        }
-
-        .social-card span {
-            font-size: 18px;
-            font-weight: bold;
-            color: #444;
-        }
-
-        .social-card:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Values Section */
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .value-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            border-left: 4px solid var(--primary-blue);
-        }
-
-        /* Blog Section */
-        .blog-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .blog-link {
-            padding: 1.2rem 2.5rem;
-            background: var(--primary-blue);
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-
-        .blog-link i {
-            font-size: 1.2rem;
-        }
-
-        .blog-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(43,81,197,0.3);
-        }
-
-        /* Contact Section */
-        #contact {
-            padding: 6rem 5%;
-            text-align: center;
-        }
-        #contact h2 {
-            font-size: 2.8rem;
-            color: var(--text-dark);
-            margin-bottom: 2rem;
-        }
-        #contact p {
-            font-size: 1.1rem;
-            color: var(--text-dark);
-            margin-bottom: 1.5rem;
-        }
-        #contact a.email-link {
-            color: var(--primary-blue);
-            font-weight: 600;
-            font-size: 1.2rem;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.3s;
-        }
-        #contact a.email-link:hover {
-            border-color: var(--primary-blue);
-        }
-
         /* Fun Corner Section */
         #fun-corner {
-            background: var(--section-light-blue);
+            background: var(--fun-background);
             padding: 6rem 5%;
             text-align: center;
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
         }
 
         .fun-title {
@@ -440,6 +280,7 @@
             font-size: 1.2rem;
             color: #555;
             position: relative;
+            padding-bottom: 60px; /* Space for signature */
         }
 
         .signature {
@@ -447,6 +288,26 @@
             bottom: 10px;
             right: 10px;
             width: 100px; /* Adjust size as needed */
+        }
+
+        /* Contact Section */
+        #contact {
+            background: var(--section-light-blue); /* Light Blue */
+            color: var(--text-dark); /* Change text color for contrast */
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--text-dark);
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
         }
 
         /* Enhanced Footer */
@@ -747,13 +608,28 @@
     const navLinks = document.querySelector('.nav-links');
 
     mobileMenu.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
+        if (navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            navLinks.style.animation = 'rollUp 1s ease forwards'; // Roll up animation
+            setTimeout(() => {
+                navLinks.style.display = 'none'; // Hide after animation
+            }, 1000); // Match timeout with animation duration
+        } else {
+            navLinks.style.display = 'flex'; // Show before animation
+            navLinks.classList.add('active');
+            navLinks.style.animation = 'rollDown 1s ease forwards'; // Roll down animation
+        }
     });
 
     // Smooth Scroll for internal anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
+            navLinks.classList.remove('active'); // Close menu on link click
+            navLinks.style.animation = 'rollUp 1s ease forwards'; // Roll up animation
+            setTimeout(() => {
+                navLinks.style.display = 'none'; // Hide after animation
+            }, 1000); // Match timeout with animation duration
             document.querySelector(this.getAttribute('href')).scrollIntoView({
                 behavior: 'smooth'
             });
