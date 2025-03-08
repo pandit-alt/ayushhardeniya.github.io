@@ -409,7 +409,7 @@
         /* Blog Section Styles */
 #blog {
     padding: 6rem 5%;
-    background: var(--section-light-blue); /* Light Blue */
+    background: linear-gradient(to right, #e0f7fa, #b2ebf2); /* Cool gradient background */
     color: var(--text-dark);
     position: relative;
     overflow: hidden; /* Hide overflow for glimpse effect */
@@ -420,6 +420,7 @@
     width: 100%;
     display: flex;
     align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
 }
 
 .carousel-inner {
@@ -483,11 +484,11 @@
 }
 
 .prev {
-    left: 10px; /* Position left */
+    left: 20px; /* Position left */
 }
 
 .next {
-    right: 10px; /* Position right */
+    right: 20px; /* Position right */
 }
        
         /* Contact Section */
@@ -728,22 +729,19 @@
         </div>
     </section>
 
-   
-    
-  
-<!-- Blog Section -->
-<section id="blog">
-    <h2 class="section-title">Latest Writings</h2>
-    <div class="container">
-        <div class="carousel">
-            <button class="carousel-control prev" id="prevBtn">&#10094;</button>
-            <div class="carousel-inner" id="blog-posts">
-                <p>Loading latest blog posts...</p>
+    <!-- Blog Section -->
+    <section id="blog">
+        <h2 class="section-title">Latest Writings</h2>
+        <div class="container">
+            <div class="carousel">
+                <button class="carousel-control prev" id="prevBtn">&#10094;</button>
+                <div class="carousel-inner" id="blog-posts">
+                    <p>Loading latest blog posts...</p>
+                </div>
+                <button class="carousel-control next" id="nextBtn">&#10095;</button>
             </div>
-            <button class="carousel-control next" id="nextBtn">&#10095;</button>
         </div>
-    </div>
-</section>
+    </section>
     <!-- Contact Section -->
     <section id="contact">
         <h2 class="section-title">Contact</h2>
@@ -833,7 +831,7 @@
             });
         });
 
-      // Fetch and display Medium blog posts
+// Fetch and display Medium blog posts
 async function fetchMediumPosts() {
     const response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@ayushhardeniya.profile');
     const data = await response.json();
@@ -885,6 +883,12 @@ function startCarousel() {
         currentIndex = (currentIndex + 1) % totalCards; // Loop back to the first card
         showCard(currentIndex);
     });
+
+    // Auto-rotate the cards every 5 seconds
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % totalCards; // Loop back to the first card
+        showCard(currentIndex);
+    }, 5000); // Change this value for different auto-rotation speed
 }
 
 function showCard(index) {
@@ -904,8 +908,7 @@ function showCard(index) {
 }
 
 // Call the function to fetch posts
-fetchMediumPosts();
-        
+fetchMediumPosts();        
      
     </script>
 </body>
