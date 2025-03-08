@@ -406,11 +406,25 @@
         }
 
         /* Blog Section */
-       /* Blog Section Styles */
+        /* Blog Section Styles */
 #blog {
     padding: 6rem 5%;
     background: var(--section-light-blue); /* Light Blue */
     color: var(--text-dark);
+    position: relative;
+    overflow: hidden; /* Hide overflow for glimpse effect */
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* Hide overflow */
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease; /* Smooth transition */
+    width: 100%; /* Full width */
 }
 
 .blog-card {
@@ -419,17 +433,15 @@
     padding: 2rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    text-align: center;
+    min-width: 300px; /* Minimum width for cards */
+    margin: 0 10px; /* Margin for glimpse effect */
     opacity: 0; /* Start hidden for animation */
     transform: translateY(20px); /* Start below */
-    animation: floatIn 0.5s forwards; /* Animation for floating effect */
 }
 
-.blog-card:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+.blog-card.active {
+    opacity: 1; /* Show active card */
+    transform: translateY(0); /* Move to original position */
 }
 
 .blog-card i {
@@ -446,13 +458,6 @@
 .blog-card p {
     font-size: 1rem;
     color: #555;
-}
-
-/* Container for the blog cards */
-.blog-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
 }
 
 /* Animation Keyframes */
@@ -704,12 +709,13 @@
     <section id="blog">
         <h2 class="section-title">Latest Writings</h2>
         <div class="container">
-            <div class="blog-container" id="blog-posts">
-                <p>Loading latest blog posts...</p>
+            <div class="carousel">
+                <div class="carousel-inner" id="blog-posts">
+                    <p>Loading latest blog posts...</p>
+                </div>
             </div>
         </div>
     </section>
-
     <!-- Contact Section -->
     <section id="contact">
         <h2 class="section-title">Contact</h2>
@@ -806,10 +812,9 @@
             const blogPostsContainer = document.getElementById('blog-posts');
             blogPostsContainer.innerHTML = ''; // Clear loading text
         
-            data.items.forEach((item, index) => {
+            data.items.forEach((item) => {
                 const postCard = document.createElement('div');
                 postCard.classList.add('blog-card');
-                postCard.style.animationDelay = `${index * 0.1}s`; // Staggered animation
         
                 const postLink = document.createElement('a');
                 postLink.href = item.link;
@@ -823,9 +828,43 @@
                 postCard.appendChild(postLink);
                 blogPostsContainer.appendChild(postCard);
             });
+        
+            // Start the carousel after loading posts
+            startCarousel();
         }
+        
+        let currentIndex = 0;
+        const intervalTime = 3000; // Time between slides in milliseconds
+        
+        function startCarousel() {
+            const cards = document.querySelectorAll('.blog-card');
+            const totalCards = cards.length;
+        
+            // Set the first card as active
+            if (totalCards > 0) {
+                cards[currentIndex].classList.add('active');
+            }
+        
+            setInterval(() => {
+                // Remove active class from current card
+                cards[currentIndex].classList.remove('active');
+        
+                // Update index
+                currentIndex = (currentIndex + 1) % totalCards;
+        
+                // Add active class to the next card
+                cards[currentIndex].classList.add('active');
+        
+                // Move the carousel inner to show the current card
+                const carouselInner = document.querySelector('.carousel-inner');
+                const offset = -currentIndex * (100 / totalCards); // Calculate offset
+                carouselInner.style.transform = `translateX(${offset}%)`;
+            }, intervalTime);
+        }
+        
         // Call the function to fetch posts
         fetchMediumPosts();
+      
     </script>
 </body>
 </html>
