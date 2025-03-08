@@ -312,39 +312,55 @@
             border-left: 4px solid var(--primary-blue);
         }
 
-        /* Blog Section */
-        #blog {
-            background: var(--section-background);
-            padding: 4rem 5%;
-        }
-
-        .blog-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .blog-link {
-            padding: 1.2rem 2.5rem;
-            background: var(--primary-blue);
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-
-        .blog-link i {
-            font-size: 1.2rem;
-        }
-
-        .blog-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(43,81,197,0.3);
-        }
+         /* Basic styling for the blog slider section */
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .blog-section {
+      text-align: center;
+      padding: 40px;
+      background: #fff;
+    }
+    .blog-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .blog-slider {
+      position: relative;
+      max-width: 600px;
+      height: 150px; /* Adjust height as needed */
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .blog-slide {
+      position: absolute;
+      width: 100%;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+    .blog-slide.active {
+      opacity: 1;
+    }
+    .blog-slide a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #fafafa;
+    }
+    .blog-slide h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    .blog-slide p {
+      font-size: 1rem;
+    }
 
         /* Contact Section */
         #contact {
@@ -515,22 +531,12 @@
         </div>
     </section>
 
-    <!-- Blog Section -->
-    <section id="blog">
-        <h2 class="section-title">Latest Writings</h2>
-        <div class="container">
-            <div class="blog-links">
-                <a href="https://medium.com/@ayushhardeniya.profile/the-happiness-formula-gratitude-that-mindset-43f223a2a825" class="blog-link" target="_blank">
-                    <i class="fab fa-medium"></i>
-                    The Happiness Formula
-                </a>
-                <a href="https://medium.com/@ayushhardeniya.profile/direction-or-destination-what-should-i-go-for-50bdb36a7f12" class="blog-link" target="_blank">
-                    <i class="fab fa-medium"></i>
-                    Direction or Destination?
-                </a>
-            </div>
-        </div>
-    </section>
+    <section class="blog-section">
+    <h2>Blogs &amp; Insights</h2>
+    <div class="blog-slider" id="blog-slider">
+      <!-- Blog slides will be inserted here dynamically -->
+    </div>
+  </section>
 
     <!-- Contact Section -->
     <section id="contact">
@@ -576,6 +582,53 @@
 
     <!-- JavaScript -->
     <script>
+        // Replace with your Medium username (without the @ symbol)
+    const mediumUsername = "ayushhardeniya.profile"; 
+    // RSS-to-JSON API endpoint (free service from rss2json.com)
+    const feedUrl = `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@${ayushhardeniya.profile}`;
+
+    const blogSlider = document.getElementById("blog-slider");
+    let currentSlide = 0;
+    let slides = [];
+
+    async function fetchBlogs() {
+      try {
+        const response = await fetch(feedUrl);
+        const data = await response.json();
+        if (data.items && data.items.length > 0) {
+          data.items.slice(0, 5).forEach((post, index) => {
+            // Create a slide for each blog post
+            const slide = document.createElement("div");
+            slide.className = "blog-slide";
+            if (index === 0) slide.classList.add("active");
+            slide.innerHTML = `
+              <a href="${post.link}" target="_blank" rel="noopener noreferrer">
+                <h3>${post.title}</h3>
+                <p>${post.description.substring(0, 150)}...</p>
+              </a>
+            `;
+            blogSlider.appendChild(slide);
+            slides.push(slide);
+          });
+          // Start automatic rotation of blog posts
+          setInterval(nextSlide, 5000); // Change every 5 seconds
+        } else {
+          blogSlider.innerHTML = "<p>No blog posts found.</p>";
+        }
+      } catch (error) {
+        console.error("Error fetching blogs:", error);
+        blogSlider.innerHTML = "<p>Error loading blog posts.</p>";
+      }
+    }
+
+    function nextSlide() {
+      if (slides.length === 0) return;
+      slides[currentSlide].classList.remove("active");
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add("active");
+    }
+
+    fetchBlogs();
     // Mobile Menu Toggle
     const mobileMenu = document.getElementById('mobile-menu');
     const navLinks = document.querySelector('.nav-links');
