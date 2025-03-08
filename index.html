@@ -418,30 +418,33 @@
 .carousel {
     position: relative;
     width: 100%;
-    overflow: hidden; /* Hide overflow */
+    display: flex;
+    align-items: center; /* Center vertically */
 }
 
 .carousel-inner {
     display: flex;
     transition: transform 0.5s ease; /* Smooth transition */
     width: 100%; /* Full width */
+    justify-content: center; /* Center the cards */
 }
 
 .blog-card {
     background: white;
     border-radius: 15px;
-    padding: 2rem;
+    padding: 1.5rem; /* Adjust padding */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
     min-width: 300px; /* Minimum width for cards */
+    max-width: 400px; /* Maximum width for cards */
     margin: 0 10px; /* Margin for glimpse effect */
     opacity: 0; /* Start hidden for animation */
-    transform: translateY(20px); /* Start below */
+    transform: scale(0.9); /* Start slightly smaller */
 }
 
 .blog-card.active {
     opacity: 1; /* Show active card */
-    transform: translateY(0); /* Move to original position */
+    transform: scale(1); /* Scale to original size */
 }
 
 .blog-card i {
@@ -460,13 +463,33 @@
     color: #555;
 }
 
-/* Animation Keyframes */
-@keyframes floatIn {
-    to {
-        opacity: 1; /* Fade in */
-        transform: translateY(0); /* Move to original position */
-    }
+/* Navigation Buttons */
+.carousel-control {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 2rem;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    transition: background-color 0.3s;
 }
+
+.carousel-control:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.prev {
+    left: 10px; /* Position left */
+}
+
+.next {
+    right: 10px; /* Position right */
+}
+       
         /* Contact Section */
         #contact {
             padding: 6rem 5%;
@@ -705,17 +728,20 @@
         </div>
     </section>
 
+   
     <!-- Blog Section -->
-    <section id="blog">
-        <h2 class="section-title">Latest Writings</h2>
-        <div class="container">
-            <div class="carousel">
-                <div class="carousel-inner" id="blog-posts">
-                    <p>Loading latest blog posts...</p>
-                </div>
+<section id="blog">
+    <h2 class="section-title">Latest Writings</h2>
+    <div class="container">
+        <div class="carousel">
+            <button class="carousel-control prev" id="prevBtn">&#10094;</button>
+            <div class="carousel-inner" id="blog-posts">
+                <p>Loading latest blog posts...</p>
             </div>
+            <button class="carousel-control next" id="nextBtn">&#10095;</button>
         </div>
-    </section>
+    </div>
+</section>
     <!-- Contact Section -->
     <section id="contact">
         <h2 class="section-title">Contact</h2>
@@ -806,65 +832,79 @@
         });
 
         // Fetch and display Medium blog posts
-        async function fetchMediumPosts() {
-            const response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@ayushhardeniya.profile');
-            const data = await response.json();
-            const blogPostsContainer = document.getElementById('blog-posts');
-            blogPostsContainer.innerHTML = ''; // Clear loading text
-        
-            data.items.forEach((item) => {
-                const postCard = document.createElement('div');
-                postCard.classList.add('blog-card');
-        
-                const postLink = document.createElement('a');
-                postLink.href = item.link;
-                postLink.target = '_blank'; // Open in new tab
-                postLink.innerHTML = `
-                    <i class="fab fa-medium"></i>
-                    <h3>${item.title}</h3>
-                    <p>${item.description ? item.description.substring(0, 100) + '...' : 'Read more...'}</p>
-                `;
-        
-                postCard.appendChild(postLink);
-                blogPostsContainer.appendChild(postCard);
-            });
-        
-            // Start the carousel after loading posts
-            startCarousel();
+async function fetchMediumPosts() {
+    const response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@ayushhardeniya.profile');
+    const data = await response.json();
+    const blogPostsContainer = document.getElementById('blog-posts');
+    blogPostsContainer.innerHTML = ''; // Clear loading text
+
+    data.items.forEach((item) => {
+        const postCard = document.createElement('div');
+        postCard.classList.add('blog-card');
+
+        const postLink = document.createElement('a');
+        postLink.href = item.link;
+        postLink.target = '_blank'; // Open in new tab
+        postLink.innerHTML = `
+            <i class="fab fa-medium"></i>
+            <h3>${item.title}</h3>
+            <p>${item.description ? item.description.substring(0, 100) + '...' : 'Read more...'}</p>
+        `;
+
+        postCard.appendChild(postLink);
+        blogPostsContainer.appendChild(postCard);
+    });
+
+    // Start the carousel after loading posts
+    startCarousel();
+}
+
+let currentIndex = 0;
+
+function startCarousel() {
+    const cards = document.querySelectorAll('.blog-card');
+    const totalCards = cards.length;
+
+    // Set the first card as active
+    if (totalCards > 0) {
+        cards[currentIndex].classList.add('active');
+    }
+
+    // Show the current card
+    showCard(currentIndex);
+
+    // Add event listeners for navigation buttons
+    document.getElementById('prevBtn').addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + totalCards) % totalCards; // Loop back to the last card
+        showCard(currentIndex);
+    });
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % totalCards; // Loop back to the first card
+        showCard(currentIndex);
+    });
+}
+
+function showCard(index) {
+    const cards = document.querySelectorAll('.blog-card');
+    cards.forEach((card, i) => {
+        if (i === index) {
+            card.classList.add('active'); // Show active card
+        } else {
+            card.classList.remove('active'); // Hide inactive cards
         }
+    });
+
+    // Move the carousel inner to show the current card
+    const carouselInner = document.querySelector('.carousel-inner');
+    const offset = -index * (100 / cards.length); // Calculate offset
+    carouselInner.style.transform = `translateX(${offset}%)`;
+}
+
+// Call the function to fetch posts
+fetchMediumPosts();
         
-        let currentIndex = 0;
-        const intervalTime = 3000; // Time between slides in milliseconds
-        
-        function startCarousel() {
-            const cards = document.querySelectorAll('.blog-card');
-            const totalCards = cards.length;
-        
-            // Set the first card as active
-            if (totalCards > 0) {
-                cards[currentIndex].classList.add('active');
-            }
-        
-            setInterval(() => {
-                // Remove active class from current card
-                cards[currentIndex].classList.remove('active');
-        
-                // Update index
-                currentIndex = (currentIndex + 1) % totalCards;
-        
-                // Add active class to the next card
-                cards[currentIndex].classList.add('active');
-        
-                // Move the carousel inner to show the current card
-                const carouselInner = document.querySelector('.carousel-inner');
-                const offset = -currentIndex * (100 / totalCards); // Calculate offset
-                carouselInner.style.transform = `translateX(${offset}%)`;
-            }, intervalTime);
-        }
-        
-        // Call the function to fetch posts
-        fetchMediumPosts();
-      
+     
     </script>
 </body>
 </html>
