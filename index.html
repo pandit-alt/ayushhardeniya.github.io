@@ -729,7 +729,9 @@
     </section>
 
    
-    <!-- Blog Section -->
+    
+  
+<!-- Blog Section -->
 <section id="blog">
     <h2 class="section-title">Latest Writings</h2>
     <div class="container">
@@ -831,7 +833,7 @@
             });
         });
 
-        // Fetch and display Medium blog posts
+      // Fetch and display Medium blog posts
 async function fetchMediumPosts() {
     const response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@ayushhardeniya.profile');
     const data = await response.json();
