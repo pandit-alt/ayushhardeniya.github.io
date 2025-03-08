@@ -25,7 +25,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
-        /* Your existing styles here... */
         :root {
             --primary-light: #e0f7fa; /* Light Cyan */
             --primary-blue: #002444; /* Original Primary Blue */
@@ -145,28 +144,6 @@
             }
         }
 
-        @keyframes rollDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes rollUp {
-            from {
-                opacity: 1;
-                transform: translateY(0);
-            }
-            to {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-        }
-
         /* Hero Section */
         .hero {
             height: 100vh; /* Full height */
@@ -187,48 +164,48 @@
         }
 
         /* Hero Section Styling */
-.hero h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem); /* Responsive font size */
-    margin-bottom: 1.5rem; /* Space below heading */
-    margin-top: 2rem; /* Space above heading */
-    line-height: 1.2; /* Line height */
-}
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem); /* Responsive font size */
+            margin-bottom: 1.5rem; /* Space below heading */
+            margin-top: 2rem; /* Space above heading */
+            line-height: 1.2; /* Line height */
+        }
 
-/* Animated Name: Ayush Hardeniya */
-.highlight {
-    font-size: clamp(3rem, 6vw, 5rem); /* Bigger size for name */
-    font-weight: bold;
-    color: #00FFFF; /* Electric Blue */
-}
+        /* Animated Name: Ayush Hardeniya */
+        .highlight {
+            font-size: clamp(3rem, 6vw, 5rem); /* Bigger size for name */
+            font-weight: bold;
+            color: #00FFFF; /* Electric Blue */
+        }
 
-/* Letter-by-letter Animation */
-.highlight span {
-    opacity: 0; /* Initially hidden */
-    animation: fadeIn 3s forwards;
-}
+        /* Letter-by-letter Animation */
+        .highlight span {
+            opacity: 0; /* Initially hidden */
+            animation: fadeIn 3s forwards;
+        }
 
-/* Animation Keyframes */
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
+        /* Animation Keyframes */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
 
-/* Delay each letter (including !) */
-.highlight span:nth-child(1) { animation-delay: 0.2s; }
-.highlight span:nth-child(2) { animation-delay: 0.4s; }
-.highlight span:nth-child(3) { animation-delay: 0.6s; }
-.highlight span:nth-child(4) { animation-delay: 0.8s; }
-.highlight span:nth-child(5) { animation-delay: 1s; }
-.highlight span:nth-child(6) { animation-delay: 1.2s; }
-.highlight span:nth-child(7) { animation-delay: 1.4s; }
-.highlight span:nth-child(8) { animation-delay: 1.6s; }
-.highlight span:nth-child(9) { animation-delay: 1.8s; }
-.highlight span:nth-child(10) { animation-delay: 2s; }
-.highlight span:nth-child(11) { animation-delay: 2.2s; }
-.highlight span:nth-child(12) { animation-delay: 2.4s; }
-.highlight span:nth-child(13) { animation-delay: 2.6s; }
-.highlight span:nth-child(14) { animation-delay: 2.8s; }
-.highlight span:nth-child(15) { animation-delay: 3s; } /* Added for '!' */
+        /* Delay each letter (including !) */
+        .highlight span:nth-child(1) { animation-delay: 0.2s; }
+        .highlight span:nth-child(2) { animation-delay: 0.4s; }
+        .highlight span:nth-child(3) { animation-delay: 0.6s; }
+        .highlight span:nth-child(4) { animation-delay: 0.8s; }
+        .highlight span:nth-child(5) { animation-delay: 1s; }
+        .highlight span:nth-child(6) { animation-delay: 1.2s; }
+        .highlight span:nth-child(7) { animation-delay: 1.4s; }
+        .highlight span:nth-child(8) { animation-delay: 1.6s; }
+        .highlight span:nth-child(9) { animation-delay: 1.8s; }
+        .highlight span:nth-child(10) { animation-delay: 2s; }
+        .highlight span:nth-child(11) { animation-delay: 2.2s; }
+        .highlight span:nth-child(12) { animation-delay: 2.4s; }
+        .highlight span:nth-child(13) { animation-delay: 2.6s; }
+        .highlight span:nth-child(14) { animation-delay: 2.8s; }
+        .highlight span:nth-child(15) { animation-delay: 3s; } /* Added for '!' */
 
         .hero p {
             font-size: 1.5rem; /* Paragraph size for desktop */
@@ -407,90 +384,90 @@
 
         /* Blog Section */
         /* Blog Section Styles */
-#blog {
-    padding: 6rem 5%;
-    background: linear-gradient(to right, #e0f7fa, #b2ebf2); /* Cool gradient background */
-    color: var(--text-dark);
-    position: relative;
-    overflow: hidden; /* Hide overflow for glimpse effect */
-}
+        #blog {
+            padding: 6rem 5%;
+            background: linear-gradient(to right, #e0f7fa, #b2ebf2); /* Cool gradient background */
+            color: var(--text-dark);
+            position: relative;
+            overflow: hidden; /* Hide overflow for glimpse effect */
+        }
 
-.carousel {
-    position: relative;
-    width: 100%;
-    display: flex;
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
-}
+        .carousel {
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+        }
 
-.carousel-inner {
-    display: flex;
-    transition: transform 0.5s ease; /* Smooth transition */
-    width: 100%; /* Full width */
-    justify-content: center; /* Center the cards */
-}
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease; /* Smooth transition */
+            width: 100%; /* Full width */
+            justify-content: center; /* Center the cards */
+        }
 
-.blog-card {
-    background: white;
-    border-radius: 15px;
-    padding: 1.5rem; /* Adjust padding */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
-    min-width: 300px; /* Minimum width for cards */
-    max-width: 400px; /* Maximum width for cards */
-    margin: 0 10px; /* Margin for glimpse effect */
-    opacity: 0; /* Start hidden for animation */
-    transform: scale(0.9); /* Start slightly smaller */
-}
+        .blog-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem; /* Adjust padding */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+            min-width: 300px; /* Minimum width for cards */
+            max-width: 400px; /* Maximum width for cards */
+            margin: 0 10px; /* Margin for glimpse effect */
+            opacity: 0; /* Start hidden for animation */
+            transform: scale(0.9); /* Start slightly smaller */
+        }
 
-.blog-card.active {
-    opacity: 1; /* Show active card */
-    transform: scale(1); /* Scale to original size */
-}
+        .blog-card.active {
+            opacity: 1; /* Show active card */
+            transform: scale(1); /* Scale to original size */
+        }
 
-.blog-card i {
-    font-size: 2rem;
-    color: var(--primary-blue);
-    margin-bottom: 1rem;
-}
+        .blog-card i {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
 
-.blog-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
+        .blog-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
 
-.blog-card p {
-    font-size: 1rem;
-    color: #555;
-}
+        .blog-card p {
+            font-size: 1rem;
+            color: #555;
+        }
 
-/* Navigation Buttons */
-.carousel-control {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 2rem;
-    padding: 10px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    transition: background-color 0.3s;
-}
+        /* Navigation Buttons */
+        .carousel-control {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 2rem;
+            padding: 10px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            transition: background-color 0.3s;
+        }
 
-.carousel-control:hover {
-    background-color: rgba(255, 255, 255, 1);
-}
+        .carousel-control:hover {
+            background-color: rgba(255, 255, 255, 1);
+        }
 
-.prev {
-    left: 20px; /* Position left */
-}
+        .prev {
+            left: 20px; /* Position left */
+        }
 
-.next {
-    right: 20px; /* Position right */
-}
-       
+        .next {
+            right: 20px; /* Position right */
+        }
+
         /* Contact Section */
         #contact {
             padding: 6rem 5%;
@@ -592,7 +569,6 @@
                 align-items: flex-start; /* Align items to the start */
             }
         }
-        /* (Omitted for brevity) */
     </style>
 </head>
 <body>
@@ -742,6 +718,7 @@
             </div>
         </div>
     </section>
+
     <!-- Contact Section -->
     <section id="contact">
         <h2 class="section-title">Contact</h2>
@@ -790,126 +767,115 @@
 
     <!-- JavaScript -->
     <script>
-        // Mobile Menu Toggle
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
+    // Mobile Menu Toggle
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
 
-        mobileMenu.addEventListener('click', () => {
+    mobileMenu.addEventListener('click', () => {
+        if (navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            navLinks.style.animation = 'rollUp 1s ease forwards'; // Roll up animation
+            setTimeout(() => {
+                navLinks.style.display = 'none'; // Hide after animation
+            }, 1000); // Match timeout with animation duration
+        } else {
+            navLinks.style.display = 'flex'; // Show before animation
+            navLinks.classList.add('active');
+            navLinks.style.animation = 'rollDown 1s ease forwards'; // Roll down animation
+        }
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
             if (navLinks.classList.contains('active')) {
                 navLinks.classList.remove('active');
                 navLinks.style.animation = 'rollUp 1s ease forwards'; // Roll up animation
                 setTimeout(() => {
                     navLinks.style.display = 'none'; // Hide after animation
                 }, 1000); // Match timeout with animation duration
+            }
+        });
+    });
+
+    // Fetch and display Medium blog posts
+    async function fetchMediumPosts() {
+        const response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@ayushhardeniya.profile');
+        const data = await response.json();
+        const blogPostsContainer = document.getElementById('blog-posts');
+        blogPostsContainer.innerHTML = ''; // Clear loading text
+
+        data.items.forEach((item) => {
+            const postCard = document.createElement('div');
+            postCard.classList.add('blog-card');
+
+            const postLink = document.createElement('a');
+            postLink.href = item.link;
+            postLink.target = '_blank'; // Open in new tab
+            postLink.innerHTML = `
+                <i class="fab fa-medium"></i>
+                <h3>${item.title}</h3>
+                <p>${item.description ? item.description.substring(0, 100) + '...' : 'Read more...'}</p>
+            `;
+
+            postCard.appendChild(postLink);
+            blogPostsContainer.appendChild(postCard);
+        });
+
+        // Start the carousel after loading posts
+        startCarousel();
+    }
+
+    let currentIndex = 0;
+
+    function startCarousel() {
+        const cards = document.querySelectorAll('.blog-card');
+        const totalCards = cards.length;
+
+        // Set the first card as active
+        if (totalCards > 0) {
+            cards[currentIndex].classList.add('active');
+        }
+
+        // Show the current card
+        showCard(currentIndex);
+
+        // Add event listeners for navigation buttons
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalCards) % totalCards; // Loop back to the last card
+            showCard(currentIndex);
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalCards; // Loop back to the first card
+            showCard(currentIndex);
+        });
+
+        // Auto-rotate the cards every 5 seconds
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % totalCards; // Loop back to the first card
+            showCard(currentIndex);
+        }, 5000); // Change this value for different auto-rotation speed
+    }
+
+    function showCard(index) {
+        const cards = document.querySelectorAll('.blog-card');
+        cards.forEach((card, i) => {
+            if (i === index) {
+                card.classList.add('active'); // Show active card
             } else {
-                navLinks.style.display = 'flex'; // Show before animation
-                navLinks.classList.add('active');
-                navLinks.style.animation = 'rollDown 1s ease forwards'; // Roll down animation
+                card.classList.remove('active'); // Hide inactive cards
             }
         });
 
-        // Close menu when a link is clicked
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                if (navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                    navLinks.style.animation = 'rollUp 1s ease forwards'; // Roll up animation
-                    setTimeout(() => {
-                        navLinks.style.display = 'none'; // Hide after animation
-                    }, 1000); // Match timeout with animation duration
-                }
-            });
-        });
-
-        // Smooth Scroll for internal anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-// Fetch and display Medium blog posts
-async function fetchMediumPosts() {
-    const response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@ayushhardeniya.profile');
-    const data = await response.json();
-    const blogPostsContainer = document.getElementById('blog-posts');
-    blogPostsContainer.innerHTML = ''; // Clear loading text
-
-    data.items.forEach((item) => {
-        const postCard = document.createElement('div');
-        postCard.classList.add('blog-card');
-
-        const postLink = document.createElement('a');
-        postLink.href = item.link;
-        postLink.target = '_blank'; // Open in new tab
-        postLink.innerHTML = `
-            <i class="fab fa-medium"></i>
-            <h3>${item.title}</h3>
-            <p>${item.description ? item.description.substring(0, 100) + '...' : 'Read more...'}</p>
-        `;
-
-        postCard.appendChild(postLink);
-        blogPostsContainer.appendChild(postCard);
-    });
-
-    // Start the carousel after loading posts
-    startCarousel();
-}
-
-let currentIndex = 0;
-
-function startCarousel() {
-    const cards = document.querySelectorAll('.blog-card');
-    const totalCards = cards.length;
-
-    // Set the first card as active
-    if (totalCards > 0) {
-        cards[currentIndex].classList.add('active');
+        // Move the carousel inner to show the current card
+        const carouselInner = document.querySelector('.carousel-inner');
+        const offset = -index * (100 / cards.length); // Calculate offset
+        carouselInner.style.transform = `translateX(${offset}%)`;
     }
 
-    // Show the current card
-    showCard(currentIndex);
-
-    // Add event listeners for navigation buttons
-    document.getElementById('prevBtn').addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + totalCards) % totalCards; // Loop back to the last card
-        showCard(currentIndex);
-    });
-
-    document.getElementById('nextBtn').addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % totalCards; // Loop back to the first card
-        showCard(currentIndex);
-    });
-
-    // Auto-rotate the cards every 5 seconds
-    setInterval(() => {
-        currentIndex = (currentIndex + 1) % totalCards; // Loop back to the first card
-        showCard(currentIndex);
-    }, 5000); // Change this value for different auto-rotation speed
-}
-
-function showCard(index) {
-    const cards = document.querySelectorAll('.blog-card');
-    cards.forEach((card, i) => {
-        if (i === index) {
-            card.classList.add('active'); // Show active card
-        } else {
-            card.classList.remove('active'); // Hide inactive cards
-        }
-    });
-
-    // Move the carousel inner to show the current card
-    const carouselInner = document.querySelector('.carousel-inner');
-    const offset = -index * (100 / cards.length); // Calculate offset
-    carouselInner.style.transform = `translateX(${offset}%)`;
-}
-
-// Call the function to fetch posts
-fetchMediumPosts();        
-     
-    </script>
+    // Call the function to fetch posts
+    fetchMediumPosts();
+</script>
 </body>
 </html>
