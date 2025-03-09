@@ -682,7 +682,7 @@
 
     <!-- Blog Section -->
    <section id="blog">
-    <h2 class="section-title">Blog Snippet</h2>
+    <h2 class="section-title">My Blogs</h2>
     <div class="container">
         <div class="blog-container">
             <div class="blog-card" id="blog-card">
@@ -786,7 +786,7 @@
         });
     });
 
-    const mediumFeedUrl = 'https://cors-anywhere.herokuapp.com/https://medium.com/feed/@ayushhardeniya.profile';
+    const mediumFeedUrl = 'https://api.allorigins.win/get?url=' + encodeURIComponent('https://medium.com/feed/@ayushhardeniya.profile');
     const blogCard = document.getElementById('blog-card');
     const prevButton = document.getElementById('prev');
     const nextButton = document.getElementById('next');
