@@ -405,7 +405,7 @@
         }
 
         /* Blog Section */
-       .blog-container {
+        .blog-container {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -681,8 +681,8 @@
     </section>
 
     <!-- Blog Section -->
-    <section id="blog">
-    <h2 class="section-title">Latest Writings</h2>
+   <section id="blog">
+    <h2 class="section-title">Blog Snippet</h2>
     <div class="container">
         <div class="blog-container">
             <div class="blog-card" id="blog-card">
@@ -803,14 +803,19 @@
             const xml = parser.parseFromString(text, 'text/xml');
             const items = xml.querySelectorAll('item');
 
+            // Debugging: Log the number of items fetched
+            console.log(`Fetched ${items.length} items from Medium RSS feed.`);
+
             items.forEach(item => {
                 const title = item.querySelector('title').textContent;
                 const link = item.querySelector('link').textContent;
                 const description = item.querySelector('description').textContent;
-                const pubDate = item.querySelector('pubDate').textContent;
 
-                posts.push({ title, link, description, pubDate });
+                posts.push({ title, link, description });
             });
+
+            // Debugging: Log the posts array
+            console.log(posts);
 
             if (posts.length > 0) {
                 displayPost(currentIndex);
