@@ -685,7 +685,7 @@
    
     <!-- Blog Section -->
 <section id="blog">
-    <h2 class="section-title">My Blogs & INSIGHTS</h2>
+    <h2 class="section-title">My Blog</h2>
     <div class="container">
         <div class="blog-card" id="blog-card">
             <h3 id="blog-title">Loading...</h3>
@@ -788,7 +788,7 @@
             });
         });
 
-
+    
     const blogCard = document.getElementById('blog-card');
     const blogTitle = document.getElementById('blog-title');
     const blogDescription = document.getElementById('blog-description');
@@ -823,7 +823,7 @@
                 const description = item.getElementsByTagName("description")[0];
                 const link = item.getElementsByTagName("link")[0];
 
-                // Check if the elements exist before accessing textContent
+                // Return the title, description, and link
                 return {
                     title: title ? title.textContent : "No title available",
                     description: description ? description.textContent : "No description available",
@@ -887,6 +887,6 @@
     window.onload = fetchBlogs;
 
 
-        
+    
 </body>
 </html>
