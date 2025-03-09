@@ -662,95 +662,97 @@
     <!-- JavaScript -->
     <script>
     // Mobile Menu Toggle
-const mobileMenu = document.getElementById('mobile-menu');
-const navLinks = document.querySelector('.nav-links');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
 
-mobileMenu.addEventListener('click', () => {
-    if (navLinks.classList.contains('active')) {
-        navLinks.classList.remove('active');
-        navLinks.style.animation = 'rollUp 1s ease forwards'; // Roll up animation
-        setTimeout(() => {
-            navLinks.style.display = 'none'; // Hide after animation
-        }, 1000); // Match timeout with animation duration
-    } else {
-        navLinks.style.display = 'flex'; // Show before animation
-        navLinks.classList.add('active');
-        navLinks.style.animation = 'rollDown 1s ease forwards'; // Roll down animation
-    }
-});
-
-// Close menu when a link is clicked
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
+    mobileMenu.addEventListener('click', () => {
         if (navLinks.classList.contains('active')) {
             navLinks.classList.remove('active');
             navLinks.style.animation = 'rollUp 1s ease forwards'; // Roll up animation
             setTimeout(() => {
                 navLinks.style.display = 'none'; // Hide after animation
             }, 1000); // Match timeout with animation duration
+        } else {
+            navLinks.style.display = 'flex'; // Show before animation
+            navLinks.classList.add('active');
+            navLinks.style.animation = 'rollDown 1s ease forwards'; // Roll down animation
         }
     });
-});
 
-// Fetch and display Medium blog posts
-async function fetchMediumPosts() {
-    const response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@ayushhardeniya.profile');
-    const data = await response.json();
-    const blogPostsContainer = document.getElementById('blog-posts');
-    blogPostsContainer.innerHTML = ''; // Clear loading text
-
-    data.items.forEach((item) => {
-        const postCard = document.createElement('div');
-        postCard.classList.add('blog-card');
-
-        const postLink = document.createElement('a');
-        postLink.href = item.link;
-        postLink.target = '_blank'; // Open in new tab
-        postLink.innerHTML = `
-            <i class="fab fa-medium"></i>
-            <h3>${item.title}</h3>
-            <p>${item.description ? item.description.substring(0, 100) + '...' : 'Read more...'}</p>
-        `;
-
-        postCard.appendChild(postLink);
-        blogPostsContainer.appendChild(postCard);
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                navLinks.style.animation = 'rollUp 1s ease forwards'; // Roll up animation
+                setTimeout(() => {
+                    navLinks.style.display = 'none'; // Hide after animation
+                }, 1000); // Match timeout with animation duration
+            }
+        });
     });
 
-    // Start the carousel after loading posts
-    startCarousel();
-}
+    // Fetch and display Medium blog posts
+    async function fetchMediumPosts() {
+        const response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@ayushhardeniya.profile');
+        const data = await response.json();
+        const blogPostsContainer = document.getElementById('blog-posts');
+        blogPostsContainer.innerHTML = ''; // Clear loading text
 
-let currentIndex = 0;
+        data.items.forEach((item) => {
+            const postCard = document.createElement('div');
+            postCard.classList.add('blog-card');
 
-function startCarousel() {
-    const cards = document.querySelectorAll('.blog-card');
-    const totalCards = cards.length;
+            const postLink = document.createElement('a');
+            postLink.href = item.link;
+            postLink.target = '_blank'; // Open in new tab
+            postLink.innerHTML = `
+                <i class="fab fa-medium"></i>
+                <h3>${item.title}</h3>
+                <p>${item.description ? item.description.substring(0, 100) + '...' : 'Read more...'}</p>
+            `;
 
-    // Set the first card as active
-    if (totalCards > 0) {
-        cards[currentIndex].classList.add('active');
+            postCard.appendChild(postLink);
+            blogPostsContainer.appendChild(postCard);
+        });
+
+        // Start the carousel after loading posts
+        startCarousel();
     }
 
-    // Show the current card
-    showCard(currentIndex);
+    let currentIndex = 0;
 
-    // Add event listeners for navigation buttons
-    document.getElementById('prevBtn').addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + totalCards) % totalCards; // Loop back to the last card
-        showCard(currentIndex);
-    });
+    function startCarousel() {
+        const cards = document.querySelectorAll('.blog-card');
+        const totalCards = cards.length;
 
-    document.getElementById('nextBtn').addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % totalCards; // Loop back to the first card
-        showCard(currentIndex);
-    });
+        // Set the first card as active
+        if (totalCards > 0) {
+            cards[currentIndex].classList.add('active');
+            cards[currentIndex].style.opacity = 1; // Show the first card
+        }
 
-    // Auto-rotate the cards every 5 seconds
-    setInterval(() => {
-        currentIndex = (currentIndex + 1) % totalCards; // Loop back to the first card
+        // Show the current card
         showCard(currentIndex);
-    }, 5000); // Change this value for different auto-rotation speed
-}
+
+        // Add event listeners for navigation buttons
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalCards) % totalCards; // Loop back to the last card
+            showCard(currentIndex);
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalCards; // Loop back to the first card
+            showCard(currentIndex);
+        });
+
+        // Auto-rotate the cards every 5 seconds
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % totalCards; // Loop back to the first card
+            showCard(currentIndex);
+        }, 5000); // Change this value for different auto-rotation speed
+    }
+
 
 function showCard(index) {
     const cards = document.querySelectorAll('.blog-card');
