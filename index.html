@@ -682,7 +682,7 @@
 
     <!-- Blog Section -->
    <section id="blog">
-    <h2 class="section-title">My Blogs</h2>
+    <h2 class="section-title">Blog Snippet</h2>
     <div class="container">
         <div class="blog-container">
             <div class="blog-card" id="blog-card">
@@ -744,7 +744,7 @@
 </footer>
 
     <!-- JavaScript -->
-    <script>
+  <script>
     // Mobile Menu Toggle
     const mobileMenu = document.getElementById('mobile-menu');
     const navLinks = document.querySelector('.nav-links');
@@ -798,29 +798,23 @@
         try {
             const response = await fetch(mediumFeedUrl);
             if (!response.ok) throw new Error('Network response was not ok');
-            const text = await response.text();
-            const parser = new DOMParser();
-            const xml = parser.parseFromString(text, 'text/xml');
-            const items = xml.querySelectorAll('item');
+            const data = await response.json(); // Parse as JSON
 
-            // Debugging: Log the number of items fetched
-            console.log(`Fetched ${items.length} items from Medium RSS feed.`);
+            // Debugging: Log the fetched data
+            console.log('Fetched data:', data);
 
-            items.forEach(item => {
-                const title = item.querySelector('title').textContent;
-                const link = item.querySelector('link').textContent;
-                const description = item.querySelector('description').textContent;
+            if (data.status === 'ok') {
+                posts = data.items; // Get the items from the response
+                console.log(`Fetched ${posts.length} items from Medium RSS feed.`);
 
-                posts.push({ title, link, description });
-            });
-
-            // Debugging: Log the posts array
-            console.log(posts);
-
-            if (posts.length > 0) {
-                displayPost(currentIndex);
+                if (posts.length > 0) {
+                    displayPost(currentIndex);
+                } else {
+                    blogCard.innerHTML = '<p>No blog posts found.</p>';
+                }
             } else {
-                blogCard.innerHTML = '<p>No blog posts found.</p>';
+                console.error('Error fetching blog posts:', data.message);
+                blogCard.innerHTML = '<p>Error fetching blog posts. Please try again later.</p>';
             }
         } catch (error) {
             console.error('Error fetching Medium posts:', error);
@@ -834,9 +828,11 @@
 
         const post = posts[index];
         blogCard.innerHTML = `
-            <h3>${post.title}</h3>
-            <p>${post.description}</p>
-            <a href="${post.link}" target="_blank">Read more</a>
+            <div class="blog-card">
+                <h3>${post.title}</h3>
+                <p>${post.description}</p>
+                <a href="${post.link}" target="_blank">Read more</a>
+            </div>
         `;
         blogCard.style.display = 'block'; // Show the card
         setTimeout(() => {
@@ -863,6 +859,6 @@
 
     // Fetch posts on page load
     fetchMediumPosts();
-    </script>
+</script>
 </body>
 </html>
