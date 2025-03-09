@@ -58,15 +58,20 @@ const fetchBlogs = async () => {
         if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
 
         const data = await response.json();
-        console.log("Fetched Data:", data); // Debugging output
+        console.log("Fetched Data:", data); // ✅ Log the full response for debugging
 
         // Ensure data is an array
-        if (!Array.isArray(data) || data.length === 0) {
-            throw new Error('No blog posts found or incorrect data format');
+        if (!data || typeof data !== "object") {
+            throw new Error('Invalid response format: Expected an object');
         }
 
-        // Process data into a usable format
-        posts = data.map(item => ({
+        // Check where the actual blog posts are located
+        if (!Array.isArray(data.items)) {
+            throw new Error('Blog posts not found in expected format');
+        }
+
+        // Process the data
+        posts = data.items.map(item => ({
             title: item.title || "No title available",
             description: item.description || "No description available",
             link: item.link || "#"
@@ -83,6 +88,7 @@ const fetchBlogs = async () => {
         showErrorMessage("Error loading posts. Please try again later.");
     }
 };
+
 
 // Display the current blog post
 const displayPost = (index) => {
