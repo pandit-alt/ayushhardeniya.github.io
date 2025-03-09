@@ -685,7 +685,7 @@
    
     <!-- Blog Section -->
 <section id="blog">
-    <h2 class="section-title">Latest Writings</h2>
+    <h2 class="section-title">Writings</h2>
     <div class="container">
         <div class="blog-card" id="blog-card">
             <h3 id="blog-title">Loading...</h3>
@@ -789,6 +789,7 @@
         });
 
         
+    
     const blogCard = document.getElementById('blog-card');
     const blogTitle = document.getElementById('blog-title');
     const blogDescription = document.getElementById('blog-description');
@@ -799,14 +800,23 @@
     let posts = [];
     let currentIndex = 0;
 
-    // Fetch Medium RSS feed directly
+    // Fetch Medium RSS feed directly using a CORS proxy
     const fetchBlogs = async () => {
         try {
-            const response = await fetch('https://medium.com/feed/@ayushhardeniya.profile');
-            const text = await response.text();
+            const response = await fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://medium.com/feed/@ayushhardeniya.profile'));
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            const text = data.contents; // Get the contents of the response
             const parser = new DOMParser();
             const xml = parser.parseFromString(text, "text/xml");
             const items = xml.getElementsByTagName("item");
+
+            // Check if items were found
+            if (items.length === 0) {
+                throw new Error('No blog posts found');
+            }
 
             posts = Array.from(items).map(item => ({
                 title: item.getElementsByTagName("title")[0].textContent,
@@ -819,12 +829,6 @@
                 prevBtn.disabled = false;
                 nextBtn.disabled = false;
                 displayPost(currentIndex);
-            } else {
-                blogTitle.innerText = "No posts found.";
-                blogDescription.innerText = "";
-                blogLink.style.display = "none";
-                prevBtn.disabled = true;
-                nextBtn.disabled = true;
             }
         } catch (error) {
             console.error("Error fetching blog posts:", error);
@@ -864,6 +868,7 @@
 
     // Fetch blogs on page load
     window.onload = fetchBlogs;
+
     </script>
 </body>
 </html>
