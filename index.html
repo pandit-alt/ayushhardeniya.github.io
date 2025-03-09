@@ -787,29 +787,41 @@
             });
         });
 
-        // Fetch and display Medium blog posts
-    async function fetchMediumPosts() {
-        const response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@ayushhardeniya.profile');
-        const data = await response.json();
-        const blogPostsContainer = document.getElementById('blog-posts');
-        blogPostsContainer.innerHTML = ''; // Clear loading text
+        const mediumFeedUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent('https://medium.com/feed/@ayushhardeniya.profile');
+        const blogCard = document.getElementById('blog-card');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        let posts = [];
+        let currentIndex = 0;
 
-        data.items.forEach((item) => {
-            const postCard = document.createElement('div');
-            postCard.classList.add('blog-card');
+        // Fetch Medium RSS feed
+        async function fetchMediumPosts() {
+            try {
+                const response = await fetch(mediumFeedUrl);
+                if (!response.ok) throw new Error('Network response was not ok');
+                const data = await response.json(); // Parse as JSON
 
-            const postLink = document.createElement('a');
-            postLink.href = item.link;
-            postLink.target = '_blank'; // Open in new tab
-            postLink.innerHTML = `
-                <i class="fab fa-medium"></i>
-                <h3>${item.title}</h3>
-                <p>${item.description ? item.description.substring(0, 100) + '...' : 'Read more...'}</p>
-            `;
+                // Debugging: Log the fetched data
+                console.log('Fetched data:', data);
 
-            postCard.appendChild(postLink);
-            blogPostsContainer.appendChild(postCard);
-        });
+                if (data.status === 'ok') {
+                    posts = data.items; // Get the items from the response
+                    console.log(`Fetched ${posts.length} items from Medium RSS feed.`);
+
+                    if (posts.length > 0) {
+                        displayPost(currentIndex);
+                    } else {
+                        blogCard.innerHTML = '<p>No blog posts found.</p>';
+                    }
+                } else {
+                    console.error('Error fetching blog posts:', data.message);
+                    blogCard.innerHTML = '<p>Error fetching blog posts. Please try again later.</p>';
+                }
+            } catch (error) {
+                console.error('Error fetching Medium posts:', error);
+                blogCard.innerHTML = '<p>Error fetching blog posts. Please try again later.</p>';
+            }
+        }
 
         // Display the current post
         function displayPost(index) {
