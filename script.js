@@ -1,3 +1,44 @@
+ // Mobile Menu Toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                navLinks.style.animation = 'rollUp 1s ease forwards'; // Roll up animation
+                setTimeout(() => {
+                    navLinks.style.display = 'none'; // Hide after animation
+                }, 1000); // Match timeout with animation duration
+            } else {
+                navLinks.style.display = 'flex'; // Show before animation
+                navLinks.classList.add('active');
+                navLinks.style.animation = 'rollDown 1s ease forwards'; // Roll down animation
+            }
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    navLinks.style.animation = 'rollUp 1s ease forwards'; // Roll up animation
+                    setTimeout(() => {
+                        navLinks.style.display = 'none'; // Hide after animation
+                    }, 1000); // Match timeout with animation duration
+                }
+            });
+        });
+
+        // Smooth Scroll for internal anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
 const blogCard = document.getElementById('blog-card');
 const blogTitle = document.getElementById('blog-title');
 const blogDescription = document.getElementById('blog-description');
