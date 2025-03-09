@@ -694,7 +694,7 @@
             </div>
         </div>
     </div>
-    </section>
+</section>
 
 
     <!-- Contact Section -->
@@ -785,7 +785,8 @@
             });
         });
     });
-      const mediumFeedUrl = 'https://medium.com/feed/@ayushhardeniya.profile';
+
+    const mediumFeedUrl = 'https://medium.com/feed/@ayushhardeniya.profile';
     const blogCard = document.getElementById('blog-card');
     const prevButton = document.getElementById('prev');
     const nextButton = document.getElementById('next');
@@ -794,22 +795,32 @@
 
     // Fetch Medium RSS feed
     async function fetchMediumPosts() {
-        const response = await fetch(mediumFeedUrl);
-        const text = await response.text();
-        const parser = new DOMParser();
-        const xml = parser.parseFromString(text, 'text/xml');
-        const items = xml.querySelectorAll('item');
+        try {
+            const response = await fetch(mediumFeedUrl);
+            if (!response.ok) throw new Error('Network response was not ok');
+            const text = await response.text();
+            const parser = new DOMParser();
+            const xml = parser.parseFromString(text, 'text/xml');
+            const items = xml.querySelectorAll('item');
 
-        items.forEach(item => {
-            const title = item.querySelector('title').textContent;
-            const link = item.querySelector('link').textContent;
-            const description = item.querySelector('description').textContent;
-            const pubDate = item.querySelector('pubDate').textContent;
+            items.forEach(item => {
+                const title = item.querySelector('title').textContent;
+                const link = item.querySelector('link').textContent;
+                const description = item.querySelector('description').textContent;
+                const pubDate = item.querySelector('pubDate').textContent;
 
-            posts.push({ title, link, description, pubDate });
-        });
+                posts.push({ title, link, description, pubDate });
+            });
 
-        displayPost(currentIndex);
+            if (posts.length > 0) {
+                displayPost(currentIndex);
+            } else {
+                blogCard.innerHTML = '<p>No blog posts found.</p>';
+            }
+        } catch (error) {
+            console.error('Error fetching Medium posts:', error);
+            blogCard.innerHTML = '<p>Error fetching blog posts. Please try again later.</p>';
+        }
     }
 
     // Display the current post
