@@ -49,27 +49,30 @@ const nextBtn = document.getElementById('next-btn');
 let posts = [];
 let currentIndex = 0;
 
-// ✅ Replace this with your Vercel backend URL
 const API_URL = "https://medium-blog-backend-three.vercel.app/medium-feed";
 
 // Fetch blogs from the backend
 const fetchBlogs = async () => {
     try {
         const response = await fetch(API_URL);
-        if (!response.ok) throw new Error('Network response was not ok');
+        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
 
         const data = await response.json();
+        console.log("Fetched Data:", data); // Debugging output
 
-        // Check if the response contains blog posts
-        if (!data || data.length === 0) throw new Error('No blog posts found');
+        // Ensure data is an array
+        if (!Array.isArray(data) || data.length === 0) {
+            throw new Error('No blog posts found or incorrect data format');
+        }
 
+        // Process data into a usable format
         posts = data.map(item => ({
             title: item.title || "No title available",
             description: item.description || "No description available",
             link: item.link || "#"
         }));
 
-        // Enable navigation buttons if there are posts
+        // Enable navigation buttons if posts exist
         if (posts.length > 0) {
             prevBtn.disabled = false;
             nextBtn.disabled = false;
@@ -77,11 +80,7 @@ const fetchBlogs = async () => {
         }
     } catch (error) {
         console.error("Error fetching blog posts:", error);
-        blogTitle.innerText = "Error loading posts.";
-        blogDescription.innerText = "Please try again later.";
-        blogLink.style.display = "none";
-        prevBtn.disabled = true;
-        nextBtn.disabled = true;
+        showErrorMessage("Error loading posts. Please try again later.");
     }
 };
 
@@ -94,12 +93,21 @@ const displayPost = (index) => {
         blogLink.href = post.link;
         blogLink.style.display = "inline"; // Show the link
 
-        // Fade-out and fade-in effect
+        // Smooth fade-in effect
         blogCard.style.opacity = 0;
         setTimeout(() => {
             blogCard.style.opacity = 1;
-        }, 500);
+        }, 300);
     }
+};
+
+// Show error message in UI
+const showErrorMessage = (message) => {
+    blogTitle.innerText = message;
+    blogDescription.innerText = "";
+    blogLink.style.display = "none";
+    prevBtn.disabled = true;
+    nextBtn.disabled = true;
 };
 
 // Button event listeners
