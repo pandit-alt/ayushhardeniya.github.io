@@ -405,41 +405,42 @@
         }
 
         /* Blog Section */
+        /* Blog Section Styles */
         .blog-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-    }
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin-top: 2rem; /* Add some margin for spacing */
+        }
 
-    .blog-card {
-        width: 80%;
-        max-width: 600px;
-        background: white;
-        border-radius: 15px;
-        padding: 20px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        opacity: 0; /* Start hidden */
-        transform: translateY(20px); /* Start below */
-        transition: opacity 0.5s ease, transform 0.5s ease;
-        display: none; /* Hide by default */
-    }
+        .blog-card {
+            width: 80%;
+            max-width: 600px;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            opacity: 0; /* Start hidden */
+            transform: translateY(20px); /* Start below */
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            display: none; /* Hide by default */
+        }
 
-    .nav-button {
-        background: transparent;
-        border: none;
-        font-size: 2rem;
-        cursor: pointer;
-        margin: 0 20px;
-    }
+        .nav-button {
+            background: transparent;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            margin: 0 20px;
+        }
 
-    .navigation-arrows {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 20px;
-    }
-
+        .navigation-arrows {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
         /* Contact Section */
         #contact {
             padding: 6rem 5%;
@@ -745,120 +746,120 @@
 
     <!-- JavaScript -->
   <script>
-    // Mobile Menu Toggle
-    const mobileMenu = document.getElementById('mobile-menu');
-    const navLinks = document.querySelector('.nav-links');
+        // Mobile Menu Toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
 
-    mobileMenu.addEventListener('click', () => {
-        if (navLinks.classList.contains('active')) {
-            navLinks.classList.remove('active');
-            navLinks.style.animation = 'rollUp 1s ease forwards'; // Roll up animation
-            setTimeout(() => {
-                navLinks.style.display = 'none'; // Hide after animation
-            }, 1000); // Match timeout with animation duration
-        } else {
-            navLinks.style.display = 'flex'; // Show before animation
-            navLinks.classList.add('active');
-            navLinks.style.animation = 'rollDown 1s ease forwards'; // Roll down animation
-        }
-    });
-
-    // Close menu when a link is clicked
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
+        mobileMenu.addEventListener('click', () => {
             if (navLinks.classList.contains('active')) {
                 navLinks.classList.remove('active');
                 navLinks.style.animation = 'rollUp 1s ease forwards'; // Roll up animation
                 setTimeout(() => {
                     navLinks.style.display = 'none'; // Hide after animation
                 }, 1000); // Match timeout with animation duration
+            } else {
+                navLinks.style.display = 'flex'; // Show before animation
+                navLinks.classList.add('active');
+                navLinks.style.animation = 'rollDown 1s ease forwards'; // Roll down animation
             }
         });
-    });
 
-    // Smooth Scroll for internal anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    navLinks.style.animation = 'rollUp 1s ease forwards'; // Roll up animation
+                    setTimeout(() => {
+                        navLinks.style.display = 'none'; // Hide after animation
+                    }, 1000); // Match timeout with animation duration
+                }
             });
         });
-    });
 
-    const mediumFeedUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent('https://medium.com/feed/@ayushhardeniya.profile');
-    const blogCard = document.getElementById('blog-card');
-    const prevButton = document.getElementById('prev');
-    const nextButton = document.getElementById('next');
-    let posts = [];
-    let currentIndex = 0;
+        // Smooth Scroll for internal anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
 
-    // Fetch Medium RSS feed
-    async function fetchMediumPosts() {
-        try {
-            const response = await fetch(mediumFeedUrl);
-            if (!response.ok) throw new Error('Network response was not ok');
-            const data = await response.json(); // Parse as JSON
+        const mediumFeedUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent('https://medium.com/feed/@ayushhardeniya.profile');
+        const blogCard = document.getElementById('blog-card');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        let posts = [];
+        let currentIndex = 0;
 
-            // Debugging: Log the fetched data
-            console.log('Fetched data:', data);
+        // Fetch Medium RSS feed
+        async function fetchMediumPosts() {
+            try {
+                const response = await fetch(mediumFeedUrl);
+                if (!response.ok) throw new Error('Network response was not ok');
+                const data = await response.json(); // Parse as JSON
 
-            if (data.status === 'ok') {
-                posts = data.items; // Get the items from the response
-                console.log(`Fetched ${posts.length} items from Medium RSS feed.`);
+                // Debugging: Log the fetched data
+                console.log('Fetched data:', data);
 
-                if (posts.length > 0) {
-                    displayPost(currentIndex);
+                if (data.status === 'ok') {
+                    posts = data.items; // Get the items from the response
+                    console.log(`Fetched ${posts.length} items from Medium RSS feed.`);
+
+                    if (posts.length > 0) {
+                        displayPost(currentIndex);
+                    } else {
+                        blogCard.innerHTML = '<p>No blog posts found.</p>';
+                    }
                 } else {
-                    blogCard.innerHTML = '<p>No blog posts found.</p>';
+                    console.error('Error fetching blog posts:', data.message);
+                    blogCard.innerHTML = '<p>Error fetching blog posts. Please try again later.</p>';
                 }
-            } else {
-                console.error('Error fetching blog posts:', data.message);
+            } catch (error) {
+                console.error('Error fetching Medium posts:', error);
                 blogCard.innerHTML = '<p>Error fetching blog posts. Please try again later.</p>';
             }
-        } catch (error) {
-            console.error('Error fetching Medium posts:', error);
-            blogCard.innerHTML = '<p>Error fetching blog posts. Please try again later.</p>';
         }
-    }
 
-    // Display the current post
-    function displayPost(index) {
-        if (posts.length === 0) return;
+        // Display the current post
+        function displayPost(index) {
+            if (posts.length === 0) return;
 
-        const post = posts[index];
-        blogCard.innerHTML = `
-            <div class="blog-card">
-                <h3>${post.title}</h3>
-                <p>${post.description}</p>
-                <a href="${post.link}" target="_blank">Read more</a>
-            </div>
-        `;
-        blogCard.style.display = 'block'; // Show the card
-        setTimeout(() => {
-            blogCard.style.opacity = 1; // Fade in
-            blogCard.style.transform = 'translateY(0)'; // Move to original position
-        }, 100); // Delay for animation
-    }
+            const post = posts[index];
+            blogCard.innerHTML = `
+                <div class="blog-card">
+                    <h3>${post.title}</h3>
+                    <p>${post.description}</p>
+                    <a href="${post.link}" target="_blank">Read more</a>
+                </div>
+            `;
+            blogCard.style.display = 'block'; // Show the card
+            setTimeout(() => {
+                blogCard.style.opacity = 1; // Fade in
+                blogCard.style.transform = 'translateY(0)'; // Move to original position
+            }, 100); // Delay for animation
+        }
 
-    // Navigate to the previous post
-    prevButton.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + posts.length) % posts.length;
-        blogCard.style.opacity = 0; // Fade out
-        blogCard.style.transform = 'translateY(20px)'; // Move down
-        setTimeout(() => displayPost(currentIndex), 500); // Wait for fade out
-    });
+        // Navigate to the previous post
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + posts.length) % posts.length;
+            blogCard.style.opacity = 0; // Fade out
+            blogCard.style.transform = 'translateY(20px)'; // Move down
+            setTimeout(() => displayPost(currentIndex), 500); // Wait for fade out
+        });
 
-    // Navigate to the next post
-    nextButton.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % posts.length;
-        blogCard.style.opacity = 0; // Fade out
-        blogCard.style.transform = 'translateY(20px)'; // Move down
-        setTimeout(() => displayPost(currentIndex), 500); // Wait for fade out
-    });
+        // Navigate to the next post
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % posts.length;
+            blogCard.style.opacity = 0; // Fade out
+            blogCard.style.transform = 'translateY(20px)'; // Move down
+            setTimeout(() => displayPost(currentIndex), 500); // Wait for fade out
+        });
 
-    // Fetch posts on page load
-    fetchMediumPosts();
-</script>
+        // Fetch posts on page load
+        fetchMediumPosts();
+    </script>
 </body>
 </html>
