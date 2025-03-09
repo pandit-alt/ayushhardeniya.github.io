@@ -788,8 +788,7 @@
             });
         });
 
-    
-    
+        
     const blogCard = document.getElementById('blog-card');
     const blogTitle = document.getElementById('blog-title');
     const blogDescription = document.getElementById('blog-description');
@@ -799,7 +798,6 @@
 
     let posts = [];
     let currentIndex = 0;
-    let intervalId;
 
     // Fetch Medium RSS feed directly using AllOrigins
     const fetchBlogs = async () => {
@@ -824,7 +822,7 @@
                 const description = item.getElementsByTagName("description")[0];
                 const link = item.getElementsByTagName("link")[0];
 
-                // Return the title, description, and link
+                // Check if the elements exist before accessing textContent
                 return {
                     title: title ? title.textContent : "No title available",
                     description: description ? description.textContent : "No description available",
@@ -837,7 +835,6 @@
                 prevBtn.disabled = false;
                 nextBtn.disabled = false;
                 displayPost(currentIndex);
-                startAutoScroll(); // Start auto-scrolling
             }
         } catch (error) {
             console.error("Error fetching blog posts:", error);
@@ -865,28 +862,18 @@
         }
     };
 
-    const startAutoScroll = () => {
-        intervalId = setInterval(() => {
-            currentIndex = (currentIndex < posts.length - 1) ? currentIndex + 1 : 0;
-            displayPost(currentIndex);
-        }, 5000); // Change post every 5 seconds
-    };
-
     prevBtn.addEventListener('click', () => {
-        clearInterval(intervalId); // Stop auto-scroll on manual navigation
         currentIndex = (currentIndex > 0) ? currentIndex - 1 : posts.length - 1;
         displayPost(currentIndex);
     });
 
     nextBtn.addEventListener('click', () => {
-        clearInterval(intervalId); // Stop auto-scroll on manual navigation
         currentIndex = (currentIndex < posts.length - 1) ? currentIndex + 1 : 0;
         displayPost(currentIndex);
     });
 
     // Fetch blogs on page load
     window.onload = fetchBlogs;
-
 
     
 </body>
