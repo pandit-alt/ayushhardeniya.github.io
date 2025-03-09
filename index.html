@@ -685,7 +685,7 @@
    
     <!-- Blog Section -->
 <section id="blog">
-    <h2 class="section-title"> Latest Writings</h2>
+    <h2 class="section-title">Writings</h2>
     <div class="container">
         <div class="blog-card" id="blog-card">
             <h3 id="blog-title">Loading...</h3>
@@ -789,6 +789,7 @@
         });
 
         
+        
         const blogCard = document.getElementById('blog-card');
         const blogTitle = document.getElementById('blog-title');
         const blogDescription = document.getElementById('blog-description');
@@ -799,17 +800,17 @@
         let posts = [];
         let currentIndex = 0;
     
-        // Fetch Medium RSS feed directly using a different CORS proxy
+        // Fetch Medium RSS feed directly using AllOrigins
         const fetchBlogs = async () => {
             try {
-                const response = await fetch('https://thingproxy.freeboard.io/fetch/https://medium.com/feed/@ayushhardeniya.profile');
+                const response = await fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://medium.com/feed/@ayushhardeniya.profile'));
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
-                const data = await response.text(); // Get the response as text
-                console.log("Fetched data:", data); // Log the fetched data for debugging
+                const data = await response.json();
+                const text = data.contents; // Get the contents of the response
                 const parser = new DOMParser();
-                const xml = parser.parseFromString(data, "text/xml");
+                const xml = parser.parseFromString(text, "text/xml");
                 const items = xml.getElementsByTagName("item");
     
                 // Check if items were found
@@ -874,7 +875,7 @@
     
         // Fetch blogs on page load
         window.onload = fetchBlogs;
-
+    
 
     </script>
 </body>
