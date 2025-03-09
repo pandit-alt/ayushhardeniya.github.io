@@ -788,7 +788,7 @@
             });
         });
 
-        
+    
     const blogCard = document.getElementById('blog-card');
     const blogTitle = document.getElementById('blog-title');
     const blogDescription = document.getElementById('blog-description');
@@ -822,7 +822,7 @@
                 const description = item.getElementsByTagName("description")[0];
                 const link = item.getElementsByTagName("link")[0];
 
-                // Check if the elements exist before accessing textContent
+                // Return the title, description, and link
                 return {
                     title: title ? title.textContent : "No title available",
                     description: description ? description.textContent : "No description available",
@@ -849,9 +849,9 @@
     const displayPost = (index) => {
         if (posts.length > 0) {
             const post = posts[index];
-            blogTitle.innerText = post.title;
-            blogDescription.innerText = post.description;
-            blogLink.href = post.link;
+            blogTitle.innerText = post.title; // Set the title
+            blogDescription.innerText = post.description; // Set the description
+            blogLink.href = post.link; // Set the link
             blogLink.style.display = "inline"; // Show the link
 
             // Fade out and in effect
