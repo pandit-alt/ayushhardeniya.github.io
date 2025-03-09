@@ -753,15 +753,14 @@
         }, 5000); // Change this value for different auto-rotation speed
     }
 
-
-function showCard(index) {
-    const cards = document.querySelectorAll('.blog-card');
-    cards.forEach((card, i) => {
-        if (i === index) {
-            card.classList.add('active'); // Show active card
-            card.style.opacity = 1; // Set opacity to 1 for fade-in effect
-            card.style.transform = 'scale(1)'; // Scale to original size
-        } else {
+    function showCard(index) {
+        const cards = document.querySelectorAll('.blog-card');
+        cards.forEach((card, i) => {
+            if (i === index) {
+                card.classList.add('active'); // Show active card
+                card.style.opacity = 1; // Fade in effect
+                card.style.transform = 'scale(1)'; // Scale to original size
+            } else {
             card.style.opacity = 0; // Hide inactive cards
             card.style.transform = 'scale(0.9)'; // Scale down inactive cards
         }
