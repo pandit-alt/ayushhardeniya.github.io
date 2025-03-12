@@ -52,45 +52,6 @@ let currentIndex = 0;
 const API_URL = "https://medium-blog-backend-three.vercel.app/medium-feed";
 
 // Fetch blogs from the backend
-const fetchBlogs = async () => {
-    try {
-        const response = await fetch(API_URL);
-        if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
-
-        // Get the JSON response from the backend.
-        const data = await response.json();
-        console.log("Fetched Data:", data); // Debugging output
-
-        // Extract the XML string from the "contents" property.
-        const textData = data.contents;
-        console.log("XML Data:", textData); // Debugging output
-
-        // Parse XML into a DOM object.
-        const parser = new DOMParser();
-        const xml = parser.parseFromString(textData, "text/xml");
-
-        // Extract all <item> elements from the XML.
-        const items = xml.querySelectorAll("item");
-        if (items.length === 0) throw new Error("No blog posts found");
-
-        posts = Array.from(items).map(item => ({
-            title: item.querySelector("title")?.textContent || "No title available",
-            description: item.querySelector("description")?.textContent || "No description available",
-            link: item.querySelector("link")?.textContent || "#"
-        }));
-
-        prevBtn.disabled = false;
-        nextBtn.disabled = false;
-        displayPost(currentIndex);
-    } catch (error) {
-        console.error("Error fetching blog posts:", error);
-        blogTitle.innerText = "Error loading posts.";
-        blogDescription.innerText = "Please try again later.";
-        blogLink.style.display = "none";
-        prevBtn.disabled = true;
-        nextBtn.disabled = true;
-    }
-};
 
 // Display the current blog post
 const displayPost = (index) => {
@@ -109,13 +70,49 @@ const displayPost = (index) => {
     }
 };
 
-// Show error message in UI
-const showErrorMessage = (message) => {
-    blogTitle.innerText = message;
-    blogDescription.innerText = "";
-    blogLink.style.display = "none";
-    prevBtn.disabled = true;
-    nextBtn.disabled = true;
+const fetchBlogs = async () => {
+    try {
+        const response = await fetch(API_URL);
+        if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
+
+        const data = await response.json();
+        console.log("Fetched Data:", data);
+
+        if (!data.contents) throw new Error("No contents property in API response.");
+
+        const textData = data.contents;
+        console.log("XML Data:", textData);
+
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(textData, "text/xml");
+
+        // Check for parsing errors
+        if (xml.querySelector("parsererror")) {
+            throw new Error("XML Parsing Error: " + xml.querySelector("parsererror").textContent);
+        }
+
+        const items = xml.querySelectorAll("item");
+        if (items.length === 0) throw new Error("No blog posts found in XML.");
+
+        posts = Array.from(items).map(item => ({
+            title: item.querySelector("title")?.textContent || "No title available",
+            description: item.querySelector("description")?.textContent || "No description available",
+            link: item.querySelector("link")?.textContent || "#"
+        }));
+
+        if (posts.length === 0) throw new Error("Parsed posts array is empty.");
+
+        prevBtn.disabled = false;
+        nextBtn.disabled = false;
+        displayPost(currentIndex);
+    } catch (error) {
+        console.error("Error fetching blog posts:", error);
+        blogTitle.innerText = "Error loading posts.";
+        blogDescription.innerText = "Please try again later. " + error.message;
+        blogLink.style.display = "none";
+        prevBtn.disabled = true;
+        nextBtn.disabled = true;
+    }
 };
 
 // Button event listeners
