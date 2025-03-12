@@ -24,7 +24,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
             navLinks.style.animation = 'rollUp 1s ease forwards'; // Roll up animation
             setTimeout(() => {
                 navLinks.style.display = 'none'; // Hide after animation
-            }, 1000);
+            }, 1000); // Match timeout with animation duration
         }
     });
 });
@@ -39,47 +39,47 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-/* --- Blog Fetching and Display Section --- */
 const blogCard = document.getElementById('blog-card');
 const blogTitle = document.getElementById('blog-title');
 const blogDescription = document.getElementById('blog-description');
-const blogLink = document.getElementById('blog-link'); // (Not used directly; Read More is in the overlay)
+const blogLink = document.getElementById('blog-link'); // Not used separately now
 const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
 
 let posts = [];
 let currentIndex = 0;
 
-// Use your backend URL that returns JSON with a "contents" property (the XML string)
 const API_URL = "https://medium-blog-backend-three.vercel.app/medium-feed";
 
+// Fetch blogs from the backend
 const fetchBlogs = async () => {
     try {
-        console.log("Starting fetch from:", API_URL);
         const response = await fetch(API_URL);
         if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
-        
+
+        // Get the JSON response from the backend.
         const data = await response.json();
         console.log("Fetched Data:", data);
-        
-        if (!data.contents) throw new Error("Response does not contain 'contents'");
-        
+
+        // Extract the XML string from the "contents" property.
         const textData = data.contents;
         console.log("XML Data:", textData);
-        
+
+        // Parse XML into a DOM object.
         const parser = new DOMParser();
         const xml = parser.parseFromString(textData, "text/xml");
+
+        // Extract all <item> elements from the XML.
         const items = xml.querySelectorAll("item");
-        
         if (items.length === 0) throw new Error("No blog posts found");
-        
+
         posts = Array.from(items).map(item => ({
             title: item.querySelector("title")?.textContent || "No title available",
             description: item.querySelector("description")?.textContent || "No description available",
             link: item.querySelector("link")?.textContent || "#"
         }));
-        
-        console.log("Parsed Posts:", posts);
+
+        // Enable navigation buttons if posts are present.
         prevBtn.disabled = false;
         nextBtn.disabled = false;
         displayPost(currentIndex);
@@ -93,13 +93,16 @@ const fetchBlogs = async () => {
     }
 };
 
+// Display the current blog post with fade effect for the description snippet
 const displayPost = (index) => {
     if (posts.length > 0) {
         const post = posts[index];
         blogTitle.innerText = post.title;
+        // Set the blog link (used in the overlay) to the current post's link.
         blogLink.href = post.link;
-        
-        // Create a snippet (limit to 300 characters) if description is longer
+        blogLink.style.display = "none"; // We'll use the "Read More" link within the fade overlay
+
+        // Build a snippet from the description (limit to 300 characters).
         let snippet = "";
         if (post.description.trim().toLowerCase() !== "no description available" && post.description.trim() !== "") {
             snippet = post.description;
@@ -107,7 +110,8 @@ const displayPost = (index) => {
         if (snippet.length > 300) {
             snippet = snippet.substring(0, 300) + "...";
         }
-        
+
+        // Insert the snippet with a fade overlay that includes the "Read More" link.
         blogDescription.innerHTML = `
             <div class="description-container">
                 <p class="blog-description-text">${snippet}</p>
@@ -116,8 +120,8 @@ const displayPost = (index) => {
                 </div>
             </div>
         `;
-        
-        // Smooth fade-in effect
+
+        // Smooth fade-in effect for the blog card.
         blogCard.style.opacity = 0;
         setTimeout(() => {
             blogCard.style.opacity = 1;
@@ -125,6 +129,16 @@ const displayPost = (index) => {
     }
 };
 
+// Show error message in UI
+const showErrorMessage = (message) => {
+    blogTitle.innerText = message;
+    blogDescription.innerText = "";
+    blogLink.style.display = "none";
+    prevBtn.disabled = true;
+    nextBtn.disabled = true;
+};
+
+// Navigation button event listeners
 prevBtn.addEventListener('click', () => {
     currentIndex = (currentIndex > 0) ? currentIndex - 1 : posts.length - 1;
     displayPost(currentIndex);
@@ -135,7 +149,5 @@ nextBtn.addEventListener('click', () => {
     displayPost(currentIndex);
 });
 
-// Use DOMContentLoaded to ensure the DOM is ready on mobile
-document.addEventListener("DOMContentLoaded", () => {
-    fetchBlogs();
-});
+// Fetch blogs when the page loads
+window.onload = fetchBlogs;
