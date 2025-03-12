@@ -52,44 +52,42 @@ let currentIndex = 0;
 const API_URL = "https://medium-blog-backend-three.vercel.app/medium-feed";
 
 // Fetch blogs from the backend
+
 const fetchBlogs = async () => {
     try {
         const response = await fetch(API_URL);
-        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+        if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
 
-        const data = await response.json();
-        console.log("Fetched Data:", data); // ✅ Log the full response for debugging
+        const textData = await response.text(); // Get XML as text
+        console.log("Raw XML Response:", textData); // Debugging
 
-        // Ensure data is an array
-        if (!data || typeof data !== "object") {
-            throw new Error('Invalid response format: Expected an object');
-        }
+        // Parse XML into a DOM object
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(textData, "text/xml");
 
-        // Check where the actual blog posts are located
-        if (!Array.isArray(data.items)) {
-            throw new Error('Blog posts not found in expected format');
-        }
+        // Extract all <item> elements from XML
+        const items = xml.querySelectorAll("item");
 
-        // Process the data
-        posts = data.items.map(item => ({
-            title: item.title || "No title available",
-            description: item.description || "No description available",
-            link: item.link || "#"
+        if (items.length === 0) throw new Error("No blog posts found");
+
+        posts = Array.from(items).map(item => ({
+            title: item.querySelector("title")?.textContent || "No title available",
+            description: item.querySelector("description")?.textContent || "No description available",
+            link: item.querySelector("link")?.textContent || "#"
         }));
 
-        // Enable navigation buttons if posts exist
-        if (posts.length > 0) {
-            prevBtn.disabled = false;
-            nextBtn.disabled = false;
-            displayPost(currentIndex);
-        }
+        prevBtn.disabled = false;
+        nextBtn.disabled = false;
+        displayPost(currentIndex);
     } catch (error) {
         console.error("Error fetching blog posts:", error);
-        showErrorMessage("Error loading posts. Please try again later.");
+        blogTitle.innerText = "Error loading posts.";
+        blogDescription.innerText = "Please try again later.";
+        blogLink.style.display = "none";
+        prevBtn.disabled = true;
+        nextBtn.disabled = true;
     }
 };
-
-
 // Display the current blog post
 const displayPost = (index) => {
     if (posts.length > 0) {
