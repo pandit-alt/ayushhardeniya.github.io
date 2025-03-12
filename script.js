@@ -1,4 +1,4 @@
-// Mobile Menu Toggle
+// Mobile Menu Toggle (unchanged)
 const mobileMenu = document.getElementById('mobile-menu');
 const navLinks = document.querySelector('.nav-links');
 
@@ -16,7 +16,6 @@ mobileMenu.addEventListener('click', () => {
     }
 });
 
-// Close menu when a link is clicked
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
         if (navLinks.classList.contains('active')) {
@@ -29,7 +28,6 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
-// Smooth Scroll for internal anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -50,20 +48,22 @@ const nextBtn = document.getElementById('next-btn');
 let posts = [];
 let currentIndex = 0;
 
-// Use your backend URL that returns JSON with a "contents" property holding the XML string
+// Use your backend URL that returns a JSON with a "contents" property (the XML string)
 const API_URL = "https://medium-blog-backend-three.vercel.app/medium-feed";
 
-// Fetch blogs from the backend
 const fetchBlogs = async () => {
     try {
         const response = await fetch(API_URL);
         if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
 
-        // The backend returns JSON with a "contents" property containing the XML string
+        // The backend returns JSON with a "contents" property containing the XML
         const data = await response.json();
         console.log("Fetched Data:", data);
 
-        // Extract XML string from the response
+        // Verify that the response contains "contents"
+        if (!data.contents) throw new Error("Response does not contain 'contents'");
+
+        // Extract the XML string
         const textData = data.contents;
         console.log("XML Data:", textData);
 
@@ -81,7 +81,6 @@ const fetchBlogs = async () => {
             link: item.querySelector("link")?.textContent || "#"
         }));
 
-        // Enable navigation buttons if posts are present
         prevBtn.disabled = false;
         nextBtn.disabled = false;
         displayPost(currentIndex);
@@ -95,22 +94,22 @@ const fetchBlogs = async () => {
     }
 };
 
-// Display the current blog post with a description snippet and fade overlay for "Read More"
 const displayPost = (index) => {
     if (posts.length > 0) {
         const post = posts[index];
         blogTitle.innerText = post.title;
         blogLink.href = post.link;
 
-        // Prepare description snippet (limit to 300 characters if longer)
+        // Build a snippet from the description (limit to 300 characters)
         let snippet = "";
-        if (post.description.trim().toLowerCase() !== "no description available" && post.description.trim() !== "") {
+        if (post.description.trim() && post.description.trim().toLowerCase() !== "no description available") {
             snippet = post.description;
         }
         if (snippet.length > 300) {
             snippet = snippet.substring(0, 300) + "...";
         }
 
+        // Insert description snippet with a fade overlay for "Read More"
         blogDescription.innerHTML = `
             <div class="description-container">
                 <p class="blog-description-text">${snippet}</p>
@@ -128,16 +127,6 @@ const displayPost = (index) => {
     }
 };
 
-// Show error message in UI
-const showErrorMessage = (message) => {
-    blogTitle.innerText = message;
-    blogDescription.innerText = "";
-    blogLink.style.display = "none";
-    prevBtn.disabled = true;
-    nextBtn.disabled = true;
-};
-
-// Navigation button event listeners
 prevBtn.addEventListener('click', () => {
     currentIndex = (currentIndex > 0) ? currentIndex - 1 : posts.length - 1;
     displayPost(currentIndex);
