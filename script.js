@@ -5,14 +5,14 @@ const navLinks = document.querySelector('.nav-links');
 mobileMenu.addEventListener('click', () => {
     if (navLinks.classList.contains('active')) {
         navLinks.classList.remove('active');
-        navLinks.style.animation = 'rollUp 1s ease forwards';
+        navLinks.style.animation = 'rollUp 1s ease forwards'; // Roll up animation
         setTimeout(() => {
-            navLinks.style.display = 'none';
-        }, 1000);
+            navLinks.style.display = 'none'; // Hide after animation
+        }, 1000); // Match timeout with animation duration
     } else {
-        navLinks.style.display = 'flex';
+        navLinks.style.display = 'flex'; // Show before animation
         navLinks.classList.add('active');
-        navLinks.style.animation = 'rollDown 1s ease forwards';
+        navLinks.style.animation = 'rollDown 1s ease forwards'; // Roll down animation
     }
 });
 
@@ -21,15 +21,15 @@ document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
         if (navLinks.classList.contains('active')) {
             navLinks.classList.remove('active');
-            navLinks.style.animation = 'rollUp 1s ease forwards';
+            navLinks.style.animation = 'rollUp 1s ease forwards'; // Roll up animation
             setTimeout(() => {
-                navLinks.style.display = 'none';
-            }, 1000);
+                navLinks.style.display = 'none'; // Hide after animation
+            }, 1000); // Match timeout with animation duration
         }
     });
 });
 
-// Smooth Scroll for internal links
+// Smooth Scroll for internal anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -39,7 +39,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Blog Section Variables
 const blogCard = document.getElementById('blog-card');
 const blogTitle = document.getElementById('blog-title');
 const blogDescription = document.getElementById('blog-description');
@@ -49,21 +48,28 @@ const nextBtn = document.getElementById('next-btn');
 
 let posts = [];
 let currentIndex = 0;
+
 const API_URL = "https://medium-blog-backend-three.vercel.app/medium-feed";
 
-// Fetch Blogs
+// Fetch blogs from the backend
 const fetchBlogs = async () => {
     try {
         const response = await fetch(API_URL);
         if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
 
+        // Get the JSON response from the backend.
         const data = await response.json();
+        console.log("Fetched Data:", data); // Debugging output
+
+        // Extract the XML string from the "contents" property.
         const textData = data.contents;
-        
-        // Parse XML
+        console.log("XML Data:", textData); // Debugging output
+
+        // Parse XML into a DOM object.
         const parser = new DOMParser();
         const xml = parser.parseFromString(textData, "text/xml");
 
+        // Extract all <item> elements from the XML.
         const items = xml.querySelectorAll("item");
         if (items.length === 0) throw new Error("No blog posts found");
 
@@ -78,32 +84,32 @@ const fetchBlogs = async () => {
         displayPost(currentIndex);
     } catch (error) {
         console.error("Error fetching blog posts:", error);
-        showErrorMessage("Error loading posts. Please try again later.");
+        blogTitle.innerText = "Error loading posts.";
+        blogDescription.innerText = "Please try again later.";
+        blogLink.style.display = "none";
+        prevBtn.disabled = true;
+        nextBtn.disabled = true;
     }
 };
 
-// Display Blog Post
+// Display the current blog post
 const displayPost = (index) => {
     if (posts.length > 0) {
         const post = posts[index];
-        
-        // Set content
         blogTitle.innerText = post.title;
-        blogDescription.innerHTML = post.description;
+        blogDescription.innerText = post.description;
         blogLink.href = post.link;
-        blogLink.style.display = "inline"; // Show Read More button
+        blogLink.style.display = "inline"; // Show the link
 
-        // Apply fade-in effect
+        // Smooth fade-in effect
         blogCard.style.opacity = 0;
         setTimeout(() => {
             blogCard.style.opacity = 1;
         }, 300);
-    } else {
-        showErrorMessage("No posts available.");
     }
 };
 
-// Show Error Message in UI
+// Show error message in UI
 const showErrorMessage = (message) => {
     blogTitle.innerText = message;
     blogDescription.innerText = "";
@@ -112,7 +118,7 @@ const showErrorMessage = (message) => {
     nextBtn.disabled = true;
 };
 
-// Navigation Buttons
+// Button event listeners
 prevBtn.addEventListener('click', () => {
     currentIndex = (currentIndex > 0) ? currentIndex - 1 : posts.length - 1;
     displayPost(currentIndex);
@@ -123,5 +129,5 @@ nextBtn.addEventListener('click', () => {
     displayPost(currentIndex);
 });
 
-// Fetch Blogs on Load
+// Fetch blogs when the page loads
 window.onload = fetchBlogs;
