@@ -16,6 +16,7 @@ mobileMenu.addEventListener('click', () => {
     }
 });
 
+// Close menu when a link is clicked
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
         if (navLinks.classList.contains('active')) {
@@ -28,6 +29,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
+// Smooth Scroll for internal links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -37,99 +39,80 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-/* --- Blog Fetching and Display Section --- */
+// Blog Section Variables
 const blogCard = document.getElementById('blog-card');
 const blogTitle = document.getElementById('blog-title');
 const blogDescription = document.getElementById('blog-description');
-const blogLink = document.getElementById('blog-link'); // (Used only for setting href)
+const blogLink = document.getElementById('blog-link');
 const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
 
 let posts = [];
 let currentIndex = 0;
-
-// Use your backend URL that returns JSON with a "contents" property (the XML string)
 const API_URL = "https://medium-blog-backend-three.vercel.app/medium-feed";
 
+// Fetch Blogs
 const fetchBlogs = async () => {
     try {
-        console.log("Starting fetch from:", API_URL);
         const response = await fetch(API_URL);
         if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
 
-        // Get JSON response from backend
         const data = await response.json();
-        console.log("Fetched Data:", data);
+        const textData = data.contents;
         
-        // Use data.contents if available; otherwise assume data is the XML string
-        let textData = data.contents ? data.contents : data;
-        if (!textData || typeof textData !== "string") {
-            throw new Error("No valid XML content found in response");
-        }
-        console.log("XML Data:", textData);
-
-        // Parse XML into a DOM object
+        // Parse XML
         const parser = new DOMParser();
         const xml = parser.parseFromString(textData, "text/xml");
 
-        // Extract all <item> elements
-        const items = xml.getElementsByTagName("item");
-        console.log("Number of items found:", items.length);
+        const items = xml.querySelectorAll("item");
         if (items.length === 0) throw new Error("No blog posts found");
 
         posts = Array.from(items).map(item => ({
-            title: item.getElementsByTagName("title")[0]?.textContent || "No title available",
-            description: item.getElementsByTagName("description")[0]?.textContent || "No description available",
-            link: item.getElementsByTagName("link")[0]?.textContent || "#"
+            title: item.querySelector("title")?.textContent || "No title available",
+            description: item.querySelector("description")?.textContent || "No description available",
+            link: item.querySelector("link")?.textContent || "#"
         }));
-        console.log("Parsed Posts:", posts);
 
         prevBtn.disabled = false;
         nextBtn.disabled = false;
         displayPost(currentIndex);
     } catch (error) {
         console.error("Error fetching blog posts:", error);
-        blogTitle.innerText = "Error loading posts.";
-        blogDescription.innerText = "Please try again later.";
-        blogLink.style.display = "none";
-        prevBtn.disabled = true;
-        nextBtn.disabled = true;
+        showErrorMessage("Error loading posts. Please try again later.");
     }
 };
 
+// Display Blog Post
 const displayPost = (index) => {
     if (posts.length > 0) {
         const post = posts[index];
+        
+        // Set content
         blogTitle.innerText = post.title;
+        blogDescription.innerHTML = post.description;
         blogLink.href = post.link;
+        blogLink.style.display = "inline"; // Show Read More button
 
-        // Create a snippet (limit to 300 characters) from the description
-        let snippet = "";
-        if (post.description.trim().toLowerCase() !== "no description available" && post.description.trim() !== "") {
-            snippet = post.description;
-        }
-        if (snippet.length > 300) {
-            snippet = snippet.substring(0, 300) + "...";
-        }
-
-        // Build the HTML with a fade overlay containing the "Read More" link
-        blogDescription.innerHTML = `
-            <div class="description-container">
-                <p class="blog-description-text">${snippet}</p>
-                <div class="fade-overlay">
-                    <a href="${post.link}" target="_blank">Read More</a>
-                </div>
-            </div>
-        `;
-
-        // Smooth fade-in effect for the blog card
+        // Apply fade-in effect
         blogCard.style.opacity = 0;
         setTimeout(() => {
             blogCard.style.opacity = 1;
         }, 300);
+    } else {
+        showErrorMessage("No posts available.");
     }
 };
 
+// Show Error Message in UI
+const showErrorMessage = (message) => {
+    blogTitle.innerText = message;
+    blogDescription.innerText = "";
+    blogLink.style.display = "none";
+    prevBtn.disabled = true;
+    nextBtn.disabled = true;
+};
+
+// Navigation Buttons
 prevBtn.addEventListener('click', () => {
     currentIndex = (currentIndex > 0) ? currentIndex - 1 : posts.length - 1;
     displayPost(currentIndex);
@@ -140,7 +123,5 @@ nextBtn.addEventListener('click', () => {
     displayPost(currentIndex);
 });
 
-// Use DOMContentLoaded to ensure the DOM is ready (helpful on mobile)
-document.addEventListener("DOMContentLoaded", () => {
-    fetchBlogs();
-});
+// Fetch Blogs on Load
+window.onload = fetchBlogs;
