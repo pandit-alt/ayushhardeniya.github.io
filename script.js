@@ -103,10 +103,10 @@ const displayPost = (index) => {
         blogLink.href = post.link;
         
         // Build a snippet from the description (limit to 300 characters)
-        let snippet = "";
-        if (post.description.trim().toLowerCase() !== "no description available" && post.description.trim() !== "") {
-            snippet = post.description;
-        }
+        let snippet = post.description.trim().toLowerCase() !== "no description available" && post.description.trim() !== "" 
+            ? post.description 
+            : "";
+        
         if (snippet.length > 300) {
             snippet = snippet.substring(0, 300) + "...";
         }
