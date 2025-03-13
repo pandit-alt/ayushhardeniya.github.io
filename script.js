@@ -56,13 +56,9 @@ const fetchBlogs = async () => {
         const response = await fetch(API_URL);
         if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
         
-        // Get JSON response from backend
-        const data = await response.json();
-        
-        // Check that the response has the "contents" property
-        if (!data.contents) throw new Error("Response does not contain 'contents'");
-        
-        const textData = data.contents;
+        // Get the XML response from backend
+        const textData = await response.text();
+        console.log("Fetched XML Data:", textData);
         
         // Parse the XML string into a DOM object
         const parser = new DOMParser();
@@ -70,6 +66,7 @@ const fetchBlogs = async () => {
         
         // Use getElementsByTagName to capture all <item> elements
         const items = xml.getElementsByTagName("item");
+        console.log("Number of items found:", items.length);
         if (items.length === 0) throw new Error("No blog posts found");
         
         posts = Array.from(items).map(item => ({
@@ -78,7 +75,7 @@ const fetchBlogs = async () => {
             link: item.getElementsByTagName("link")[0]?.textContent || "#"
         }));
         
-        // Display the first post
+        console.log("Parsed Posts:", posts);
         displayPost(currentIndex);
     } catch (error) {
         console.error("Error fetching blog posts:", error);
