@@ -48,12 +48,12 @@ const nextBtn = document.getElementById('next-btn');
 let posts = [];
 let currentIndex = 0;
 
-// Use your backend URL that returns JSON with a "contents" property (the XML string)
-const API_URL = "https://medium-blog-backend-three.vercel.app/medium-feed";
+// Medium RSS feed URL for your profile
+const RSS_URL = "https://medium.com/feed/@ayushhardeniya.profile";
 
 const fetchBlogs = async () => {
     try {
-        const response = await fetch(API_URL);
+        const response = await fetch(RSS_URL);
         if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
         
         // Get the XML response from backend
