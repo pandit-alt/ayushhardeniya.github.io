@@ -53,19 +53,16 @@ const API_URL = "https://medium-blog-backend-three.vercel.app/medium-feed";
 
 const fetchBlogs = async () => {
     try {
-        console.log("Starting fetch from:", API_URL);
         const response = await fetch(API_URL);
         if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
         
         // Get JSON response from backend
         const data = await response.json();
-        console.log("Fetched Data:", data);
         
         // Check that the response has the "contents" property
         if (!data.contents) throw new Error("Response does not contain 'contents'");
         
         const textData = data.contents;
-        console.log("XML Data:", textData);
         
         // Parse the XML string into a DOM object
         const parser = new DOMParser();
@@ -73,7 +70,6 @@ const fetchBlogs = async () => {
         
         // Use getElementsByTagName to capture all <item> elements
         const items = xml.getElementsByTagName("item");
-        console.log("Number of items found:", items.length);
         if (items.length === 0) throw new Error("No blog posts found");
         
         posts = Array.from(items).map(item => ({
@@ -82,9 +78,7 @@ const fetchBlogs = async () => {
             link: item.getElementsByTagName("link")[0]?.textContent || "#"
         }));
         
-        console.log("Parsed Posts:", posts);
-        prevBtn.disabled = false;
-        nextBtn.disabled = false;
+        // Display the first post
         displayPost(currentIndex);
     } catch (error) {
         console.error("Error fetching blog posts:", error);
@@ -103,10 +97,7 @@ const displayPost = (index) => {
         blogLink.href = post.link;
         
         // Build a snippet from the description (limit to 300 characters)
-        let snippet = post.description.trim().toLowerCase() !== "no description available" && post.description.trim() !== "" 
-            ? post.description 
-            : "";
-        
+        let snippet = post.description.trim();
         if (snippet.length > 300) {
             snippet = snippet.substring(0, 300) + "...";
         }
