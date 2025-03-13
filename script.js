@@ -64,6 +64,12 @@ const fetchBlogs = async () => {
         const parser = new DOMParser();
         const xml = parser.parseFromString(textData, "text/xml");
         
+        // Check for parsing errors
+        const parseError = xml.getElementsByTagName("parsererror");
+        if (parseError.length > 0) {
+            throw new Error("Error parsing XML");
+        }
+        
         // Use getElementsByTagName to capture all <item> elements
         const items = xml.getElementsByTagName("item");
         console.log("Number of items found:", items.length);
