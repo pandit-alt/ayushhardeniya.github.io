@@ -51,9 +51,12 @@ let currentIndex = 0;
 // Medium RSS feed URL for your profile
 const RSS_URL = "https://medium.com/feed/@ayushhardeniya.profile";
 
+// CORS Proxy URL
+const CORS_PROXY = "https://cors-anywhere.herokuapp.com/";
+
 const fetchBlogs = async () => {
     try {
-        const response = await fetch(RSS_URL);
+        const response = await fetch(CORS_PROXY + RSS_URL);
         if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
         
         // Get the XML response from backend
