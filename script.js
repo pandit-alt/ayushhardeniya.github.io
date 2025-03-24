@@ -56,9 +56,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
 
         loadingMessage.style.display = "none"; // Hide loading message
-
-        // Show the first post initially
-        showBlog(currentIndex);
+        showBlog(currentIndex); // Show first blog initially
 
         // Navigation buttons functionality
         nextButton.addEventListener("click", () => {
@@ -80,22 +78,16 @@ document.addEventListener("DOMContentLoaded", async function () {
         const post = posts[index];
         const title = post.title || "Untitled Post";
         const link = post.link || "#";
-        const description = post["content:encoded"] || post.description || "No description available"; // Extract description properly
         const pubDate = new Date(post.pubDate).toDateString();
 
         blogContainer.innerHTML = `
             <div class="blog-card">
-                <h3>${title}</h3>
+                <h3 class="blog-title">${title}</h3>
                 <p class="date">${pubDate}</p>
-                <p class="description">${stripHtml(description)}</p>
-                <a href="${link}" target="_blank" class="read-more">Read More</a>
+                <div class="read-more-container">
+                    <a href="${link}" target="_blank" class="read-more">Read More</a>
+                </div>
             </div>
         `;
-    }
-
-    // Function to remove HTML tags from description
-    function stripHtml(html) {
-        let doc = new DOMParser().parseFromString(html, "text/html");
-        return doc.body.textContent || "";
     }
 });
