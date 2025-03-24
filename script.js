@@ -42,8 +42,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 document.addEventListener("DOMContentLoaded", async function () {
     const blogContainer = document.getElementById("blog-container");
     const loadingMessage = document.getElementById("loading-message");
-    const prevButton = document.getElementById("prev-blog");
-    const nextButton = document.getElementById("next-blog");
 
     let currentIndex = 0;
     let posts = [];
@@ -59,22 +57,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         loadingMessage.style.display = "none"; // Hide loading message
         showBlog(currentIndex); // Show first blog initially
 
-        updateNavButtons();
-
-        nextButton.addEventListener("click", () => {
-            if (currentIndex < posts.length - 1) {
-                currentIndex++;
-                showBlog(currentIndex);
-            }
-        });
-
-        prevButton.addEventListener("click", () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-                showBlog(currentIndex);
-            }
-        });
-
     } catch (error) {
         loadingMessage.innerHTML = "Error loading posts. Please try again later.";
         console.error("Error fetching Medium blogs:", error);
@@ -88,19 +70,35 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         blogContainer.innerHTML = `
             <div class="blog-card">
+                <button class="nav-arrow left-arrow" id="prev-blog">&lt;</button>
                 <h3 class="blog-title">${title}</h3>
                 <p class="date">${pubDate}</p>
                 <div class="read-more-container">
                     <a href="${link}" target="_blank" class="read-more">Read More</a>
                 </div>
+                <button class="nav-arrow right-arrow" id="next-blog">&gt;</button>
             </div>
         `;
+
+        document.getElementById("prev-blog").addEventListener("click", () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                showBlog(currentIndex);
+            }
+        });
+
+        document.getElementById("next-blog").addEventListener("click", () => {
+            if (currentIndex < posts.length - 1) {
+                currentIndex++;
+                showBlog(currentIndex);
+            }
+        });
 
         updateNavButtons();
     }
 
     function updateNavButtons() {
-        prevButton.style.display = currentIndex === 0 ? "none" : "block";
-        nextButton.style.display = currentIndex === posts.length - 1 ? "none" : "block";
+        document.getElementById("prev-blog").style.visibility = currentIndex === 0 ? "hidden" : "visible";
+        document.getElementById("next-blog").style.visibility = currentIndex === posts.length - 1 ? "hidden" : "visible";
     }
 });
