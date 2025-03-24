@@ -59,18 +59,20 @@ document.addEventListener("DOMContentLoaded", async function () {
         loadingMessage.style.display = "none"; // Hide loading message
         showBlog(currentIndex); // Show first blog initially
 
-        // Show/hide navigation arrows based on number of posts
         updateNavButtons();
 
-        // Navigation button functionality
         nextButton.addEventListener("click", () => {
-            currentIndex = (currentIndex + 1) % posts.length;
-            showBlog(currentIndex);
+            if (currentIndex < posts.length - 1) {
+                currentIndex++;
+                showBlog(currentIndex);
+            }
         });
 
         prevButton.addEventListener("click", () => {
-            currentIndex = (currentIndex - 1 + posts.length) % posts.length;
-            showBlog(currentIndex);
+            if (currentIndex > 0) {
+                currentIndex--;
+                showBlog(currentIndex);
+            }
         });
 
     } catch (error) {
@@ -98,12 +100,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 
     function updateNavButtons() {
-        if (posts.length > 1) {
-            prevButton.style.display = "block";
-            nextButton.style.display = "block";
-        } else {
-            prevButton.style.display = "none";
-            nextButton.style.display = "none";
-        }
+        prevButton.style.display = currentIndex === 0 ? "none" : "block";
+        nextButton.style.display = currentIndex === posts.length - 1 ? "none" : "block";
     }
 });
