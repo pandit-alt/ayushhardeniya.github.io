@@ -399,7 +399,7 @@
 
 /* Updated title size */
 .blog-title {
-    font-size: 1.6rem; /* Medium size */
+    font-size: 2rem; /* size */
     font-weight: bold;
     font-family: 'Zeyada', cursive;
     color: #222;
@@ -408,7 +408,7 @@
     max-height: 100px; /* Allows multi-line titles */
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* Limits to 2 lines */
+    -webkit-line-clamp: 4; /* Limits to 2 lines */
     -webkit-box-orient: vertical;
     word-wrap: break-word;
 }
