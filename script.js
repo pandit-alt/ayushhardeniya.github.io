@@ -66,13 +66,22 @@ document.addEventListener("DOMContentLoaded", async function () {
         const post = posts[index];
         const title = post.title || "Untitled Post";
         const link = post.link || "#";
-        const pubDate = new Date(post.pubDate).toDateString();
+        
+        // Handling date properly
+        let pubDate = "Date not available";
+        if (post.pubDate) {
+            try {
+                pubDate = new Date(post.pubDate).toDateString(); // Formatting to readable form
+            } catch (error) {
+                console.error("Error parsing date:", error);
+            }
+        }
 
         blogContainer.innerHTML = `
             <div class="blog-card">
                 <button class="nav-arrow left-arrow" id="prev-blog">&lt;</button>
                 <h3 class="blog-title">${title}</h3>
-                <p class="date">${pubDate}</p>
+                <p class="blog-date">${pubDate}</p>
                 <div class="read-more-container">
                     <a href="${link}" target="_blank" class="read-more">Read More</a>
                 </div>
