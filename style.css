@@ -379,20 +379,7 @@
         }
 
         /* Blog Section */
-        .blog-caaard {
-    background: white;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: opacity 0.5s ease;
-    opacity: 1;
-    width: 100%; /* Full width */
-    max-width: 600px; /* Maximum width */
-    aspect-ratio: 3 / 2; /* 3:2 aspect ratio */
-    margin: 0 auto; /* Center the card */
-}
-
+        
 @import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
 
 .blog-card {
@@ -412,15 +399,20 @@
 
 /* Updated title size */
 .blog-title {
-    font-size: 1.8rem; /* Medium size */
+    font-size: 1.6rem; /* Medium size */
     font-weight: bold;
     font-family: 'Zeyada', cursive;
     color: #222;
     letter-spacing: 1px;
     margin: 10px 0;
-    max-height: 80px; /* Prevents overflow */
+    max-height: 100px; /* Allows multi-line titles */
     overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limits to 2 lines */
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
 }
+
 
 /* Keep the date at the top */
 .date {
