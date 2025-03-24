@@ -393,6 +393,40 @@
     margin: 0 auto; /* Center the card */
 }
 
+.blog-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    text-transform: capitalize;
+    font-family: 'Merriweather', serif;
+}
+
+.date {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.read-more-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px 0;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+}
+
+.read-more {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+}
+
 .blog-navigation {
     display: flex;
     justify-content: center;
