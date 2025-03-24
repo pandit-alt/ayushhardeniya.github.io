@@ -393,10 +393,12 @@
     margin: 0 auto; /* Center the card */
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
+
 .blog-card {
     position: relative;
     background: #fff;
-    padding: 20px;
+    padding: 30px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     text-align: center;
@@ -405,12 +407,11 @@
 }
 
 .blog-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bold;
+    font-family: 'Zeyada', cursive;
     color: #222;
-    font-style: italic;
     letter-spacing: 1px;
-    font-family: 'Playfair Display', serif;
 }
 
 .date {
@@ -426,7 +427,7 @@
     left: 50%;
     transform: translateX(-50%);
     width: 80%;
-    background: rgba(0, 0, 0, 0.7);
+    background: var(--primary-blue);
     padding: 10px;
     border-radius: 5px;
     text-align: center;
@@ -444,29 +445,31 @@
     text-decoration: underline;
 }
 
-/* Navigation Buttons */
-.nav-button {
-    display: block;
-    background: #333;
+/* Navigation Arrows */
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--primary-blue);
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 15px;
     cursor: pointer;
-    margin: 10px auto;
+    font-size: 1.5rem;
     border-radius: 5px;
-    width: fit-content;
+    transition: 0.3s;
 }
 
-.nav-button:hover {
-    background: #555;
+.nav-arrow:hover {
+    background: rgba(0, 0, 0, 0.8);
 }
 
-#prev-blog {
-    display: none; /* Initially hidden */
+.left-arrow {
+    left: 10px;
 }
 
-#next-blog {
-    display: block;
+.right-arrow {
+    right: 10px;
 }
 
         /* Contact Section */
