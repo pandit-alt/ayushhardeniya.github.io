@@ -393,12 +393,24 @@
     margin: 0 auto; /* Center the card */
 }
 
+.blog-card {
+    position: relative;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+}
+
 .blog-title {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: bold;
-    color: #333;
-    text-transform: capitalize;
-    font-family: 'Merriweather', serif;
+    color: #222;
+    font-style: italic;
+    letter-spacing: 1px;
+    font-family: 'Playfair Display', serif;
 }
 
 .date {
@@ -413,40 +425,44 @@
     left: 0;
     width: 100%;
     background: rgba(0, 0, 0, 0.6);
-    padding: 15px 0;
-    border-radius: 0 0 10px 10px;
-    text-align: center;
+    padding: 15px;
 }
 
 .read-more {
-    font-size: 1.2rem;
+    display: block;
+    text-align: center;
+    font-size: 1rem;
     font-weight: bold;
     color: white;
     text-decoration: none;
-    display: block;
-    width: 100%;
 }
 
-.blog-navigation {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
+.read-more:hover {
+    text-decoration: underline;
 }
 
+/* Navigation Buttons */
 .nav-button {
-    background: var(--primary-blue);
+    display: block;
+    background: #333;
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
+    padding: 10px 20px;
     cursor: pointer;
-    margin: 0 1rem;
-    font-size: 1.5rem;
-    transition: background 0.3s;
+    margin: 10px;
+    border-radius: 5px;
 }
 
 .nav-button:hover {
-    background: var(--accent-blue);
+    background: #555;
+}
+
+#prev-blog {
+    display: none; /* Initially hidden */
+}
+
+#next-blog {
+    display: none; /* Initially hidden */
 }
 
 
