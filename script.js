@@ -38,37 +38,42 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 /* Blog Fetching */
-const API_URL = "https://medium-blog-backend-three.vercel.app/"; 
+document.addEventListener("DOMContentLoaded", async function () {
+    const blogContainer = document.getElementById("blog-container"); // Make sure this ID exists in your HTML
+    const loadingMessage = document.getElementById("loading-message");
 
-const blogContainer = document.getElementById("blog-container");
-
-async function fetchBlogs() {
     try {
-        const response = await fetch(API_URL);
-        if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
+        const response = await fetch("https://medium-blog-backend-three.vercel.app/medium-feed");
+        const posts = await response.json();
 
-        const blogs = await response.json();
-        if (!blogs.length) throw new Error("No blog posts found");
+        if (!Array.isArray(posts) || posts.length === 0) {
+            throw new Error("No posts found");
+        }
 
-        let blogHTML = "";
-        blogs.slice(0, 5).forEach(blog => {
-            const title = blog.title[0] || "Untitled";
-            const link = blog.link[0] || "#";
-            const description = blog.description[0]?.substring(0, 150) || "No description";
+        loadingMessage.style.display = "none"; // Hide loading message
 
-            blogHTML += `
-                <div class="blog-card">
-                    <h3>${title}</h3>
-                    <p>${description}...</p>
-                    <a href="${link}" target="_blank" class="read-more">Read More</a>
-                </div>
+        posts.slice(0, 6).forEach((post) => { // Display only latest 6 posts
+            const blogCard = document.createElement("div");
+            blogCard.classList.add("blog-card");
+
+            // Extract data from the post
+            const title = post.title || "Untitled Post";
+            const link = post.link || "#";
+            const description = post.description ? post.description.split("<")[0] : "No description available"; // Clean HTML tags
+            const pubDate = new Date(post.pubDate).toDateString();
+
+            // Create Blog Card
+            blogCard.innerHTML = `
+                <h3>${title}</h3>
+                <p class="date">${pubDate}</p>
+                <p class="description">${description}</p>
+                <a href="${link}" target="_blank" class="read-more">Read More</a>
             `;
+
+            blogContainer.appendChild(blogCard);
         });
-
-        blogContainer.innerHTML = blogHTML;
     } catch (error) {
-        blogContainer.innerHTML = `<p>Error loading posts. Please try again later.</p>`;
+        loadingMessage.innerHTML = "Error loading posts. Please try again later.";
+        console.error("Error fetching Medium blogs:", error);
     }
-}
-
-window.onload = fetchBlogs;
+});
