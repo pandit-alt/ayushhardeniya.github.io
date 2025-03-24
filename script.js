@@ -38,6 +38,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 /* Blog Fetching */
+
 document.addEventListener("DOMContentLoaded", async function () {
     const blogContainer = document.getElementById("blog-container");
     const loadingMessage = document.getElementById("loading-message");
@@ -58,7 +59,10 @@ document.addEventListener("DOMContentLoaded", async function () {
         loadingMessage.style.display = "none"; // Hide loading message
         showBlog(currentIndex); // Show first blog initially
 
-        // Navigation buttons functionality
+        // Show/hide navigation arrows based on number of posts
+        updateNavButtons();
+
+        // Navigation button functionality
         nextButton.addEventListener("click", () => {
             currentIndex = (currentIndex + 1) % posts.length;
             showBlog(currentIndex);
@@ -89,5 +93,17 @@ document.addEventListener("DOMContentLoaded", async function () {
                 </div>
             </div>
         `;
+
+        updateNavButtons();
+    }
+
+    function updateNavButtons() {
+        if (posts.length > 1) {
+            prevButton.style.display = "block";
+            nextButton.style.display = "block";
+        } else {
+            prevButton.style.display = "none";
+            nextButton.style.display = "none";
+        }
     }
 });
