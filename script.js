@@ -65,9 +65,10 @@ document.addEventListener("DOMContentLoaded", async function () {
         const post = posts[index];
         const title = post.title || "Untitled Post";
         const link = post.link || "#";
-        const pubDate = post.pubDate ? new Date(post.pubDate).toLocaleDateString("en-GB", {  
-        day: "2-digit", month: "short", year: "numeric"  
-        }) : "Date not available";
+        // Check for different possible date keys
+        const pubDate = post.pubDate ? new Date(post.pubDate).toDateString() : 
+        post.published ? new Date(post.published).toDateString() :
+        "Date not available";
         blogContainer.innerHTML = `
             <div class="blog-card">
                 <button class="nav-arrow left-arrow" id="prev-blog" ${currentIndex === 0 ? 'style="visibility:hidden;"' : ''}>&lt;</button>
