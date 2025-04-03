@@ -65,7 +65,8 @@ document.addEventListener("DOMContentLoaded", async function () {
         const post = posts[index];
         const title = post.title || "Untitled Post";
         const link = post.link || "#";
-        const pubDate = new Date(post.pubDate).toDateString();
+        const pubDate = post.pubDate ? new Date(post.pubDate).toDateString() : "Date not available";
+        //const pubDate = new Date(post.pubDate).toDateString();
 
         blogContainer.innerHTML = `
             <div class="blog-card">
