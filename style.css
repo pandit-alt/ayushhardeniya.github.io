@@ -490,7 +490,7 @@
 }
 
 .newsletter-title {
-    font-family: 'Zeyada', cursive;
+    font-family: 'Zeyada';
     font-size: 2rem;
     color: #222;
     margin-bottom: 5px;
@@ -626,7 +626,7 @@
 /* Responsive Blog Card */
 .blog-card {
     width: 100%;
-    max-width: 350px;
+    max-width: 360px;
     margin: 1rem auto;
     background: white;
     border-radius: 12px;
@@ -642,11 +642,11 @@
 /* Responsive Subscription Card */
 .subscription-card {
     width: 100%;
-    max-width: 400px;
+    max-width: 360px;
     margin: 2rem auto;
     background: white;
     border-radius: 12px;
-    padding: 25px;
+    padding: 20px;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
