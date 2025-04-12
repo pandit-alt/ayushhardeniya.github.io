@@ -622,4 +622,40 @@
                 align-items: flex-start; /* Align items to the start */
             }
         }
-    
+
+/* Responsive Blog Card */
+.blog-card {
+    width: 100%;
+    max-width: 350px;
+    margin: 1rem auto;
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Responsive Subscription Card */
+.subscription-card {
+    width: 100%;
+    max-width: 400px;
+    margin: 2rem auto;
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Adjustments for small screens */
+@media (max-width: 768px) {
+    .blog-card,
+    .subscription-card {
+        max-width: 90%;
+        padding: 15px;
+    }
+}
