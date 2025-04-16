@@ -146,7 +146,7 @@
             display: flex;
             align-items: center;
             justify-content: flex-start; /* Align content to the left */
-            background: url('banneraHnew.png') center/cover no-repeat; /* Center and cover */
+            background: url('/assets/heroself.jpg') center/cover no-repeat; /* Center and cover */
             padding: 0 5%; /* Add padding */
             position: relative;
             overflow: hidden; /* Prevent overflow */
