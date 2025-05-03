@@ -98,17 +98,17 @@
         @media (max-width: 768px) {
             .nav-links {
                 display: none; /* Hide links by default */
-                flex-direction: column; /* Stack links vertically */
-                position: absolute; /* Position them absolutely */
+                flex-direction: column; 
+                position: absolute; 
                 top: 60px; /* Below the navbar */
-                right: 0; /* Align to the right */
+                right: 0; 
                 background: black; /* Background color */
                 width: 100%; /* Full width */
-                padding: 1rem 0; /* Padding */
+                padding: 1rem 0; 
                 z-index: 999; /* Ensure it appears above other content */
                 opacity: 0; /* Start hidden */
-                transform: translateY(-20px); /* Start above */
-                transition: opacity 0.3s ease, transform 0.3s ease; /* Animation */
+                transform: translateY(-20px); 
+                transition: opacity 0.3s ease, transform 0.3s ease;
             }
 
             .nav-links.active {
