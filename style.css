@@ -146,7 +146,7 @@
             display: flex;
             align-items: center;
             justify-content: flex-start; /* Align content to the left */
-            background: url('/assets/heroimg-aHdesign.png') center/cover no-repeat; /* Center and cover */
+            background: url('/assets/heroimage-aHdesign.png') center/cover no-repeat; /* Center and cover */
             padding: 0 5%; 
             position: relative;
             overflow: hidden; 
