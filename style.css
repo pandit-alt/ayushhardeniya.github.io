@@ -171,7 +171,7 @@
         .highlight {
             font-size: clamp(3rem, 6vw, 5rem);
             font-weight: bold;
-            color: --primary-blue; 
+            color: var(--primary-blue); 
         }
 
         /* Letter-by-letter Animation */
