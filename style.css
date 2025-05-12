@@ -48,7 +48,7 @@
         /* Navigation */
         .navbar {
             padding: 0.5rem 5%;
-            background: black; /* Keep navbar black */
+            background: black; 
             position: fixed;
             width: 100%;
             top: 0;
@@ -72,7 +72,7 @@
         }
 
         .nav-link {
-            color: white; /* Change text color to white */
+            color: white; 
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1rem;
@@ -82,16 +82,16 @@
         }
 
         .nav-link:hover {
-            color: var(--accent-blue); /* Change color on hover */
+            color: var(--accent-blue); 
             transform: translateY(-2px); /* Slight lift effect */
         }
 
         /* Mobile Styles */
         .menu-toggle {
-            display: block; /* Show by default */
-            cursor: pointer; /* Pointer cursor */
+            display: block;
+            cursor: pointer; 
             color: white; /* Icon color */
-            font-size: 1.5rem; /* Icon size */
+            font-size: 1.5rem; /*icon*/
         }
 
         /* Media Queries */
@@ -146,32 +146,32 @@
             display: flex;
             align-items: center;
             justify-content: flex-start; /* Align content to the left */
-            background: url('/assets/heroself.jpg') center/cover no-repeat; /* Center and cover */
-            padding: 0 5%; /* Add padding */
+            background: url('/assets/heroimg-aHdesign.png') center/cover no-repeat; /* Center and cover */
+            padding: 0 5%; 
             position: relative;
-            overflow: hidden; /* Prevent overflow */
+            overflow: hidden; 
         }
 
         .hero-content {
-            text-align: left; /* Align text to the left */
-            max-width: 500px; /* Limit the width of the text */
-            color: white; /* Text color */
+            text-align: left; 
+            max-width: 500px; 
+            color: white;
             z-index: 1; /* Ensure it appears above the background */
         }
 
         /* Hero Section Styling */
 .hero h1 {
     font-size: clamp(2.5rem, 5vw, 4rem); /* Responsive font size */
-    margin-bottom: 1.5rem; /* Space below heading */
-    margin-top: 2rem; /* Space above heading */
-    line-height: 1.2; /* Line height */
+    margin-bottom: 1.5rem;
+    margin-top: 2rem; 
+    line-height: 1.2; 
 }
 
 /* Animated Name: Ayush Hardeniya */
 .highlight {
-    font-size: clamp(3rem, 6vw, 5rem); /* Bigger size for name */
+    font-size: clamp(3rem, 6vw, 5rem);
     font-weight: bold;
-    color: #00FFFF; /* Electric Blue */
+    color: #00FFFF; 
 }
 
 /* Letter-by-letter Animation */
@@ -204,65 +204,65 @@
 .highlight span:nth-child(15) { animation-delay: 3s; } /* Added for '!' */
 
         .hero p {
-            font-size: 1.5rem; /* Paragraph size for desktop */
-            margin: 0 auto 2rem; /* Space below paragraph */
+            font-size: 1.5rem; 
+            margin: 0 auto 2rem; /* space below paraa*/
         }
 
         /* Mobile Styles */
         @media (max-width: 768px) {
             .hero {
-                height: auto; /* Allow height to adjust */
-                padding: 2rem 5%; /* Add padding */
+                height: auto; 
+                padding: 2rem 5%; 
                 background: url('banneraHnew.png') center/contain no-repeat; /* Change to contain for mobile */
             }
 
             .hero h1 {
-                font-size: 2.5rem; /* Smaller font size for mobile */
+                font-size: 2.5rem; /* Smaller font for mobile */
             }
 
             .hero p {
-                font-size: 1rem; /* Smaller font size for mobile */
+                font-size: 1rem; /* Smaller fontt for mobile */
             }
         }
 
         /* Content Sections */
         section {
             padding: 6rem 5%;
-            margin: 2rem 0; /* Add margin to separate sections */
+            margin: 2rem 0; /* for separate sections */
             border-radius: 10px; /* Rounded corners */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation */
         }
 
         section:hover {
-            transform: translateY(-5px); /* Lift effect on hover */
+            transform: translateY(-5px); /* Lift effect hover */
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
         }
 
         /* About Section */
         #about {
-            background: var(--primary-light); /* Light Cyan */
+            background: var(--primary-light); 
         }
 
         /* Links Section */
         #social-links {
-            background: var(--section-dark-blue); /* Soft Blue */
+            background: var(--section-dark-blue); 
         }
 
         /* Values Section */
         #values {
-            background: var(--primary-light); /* Light Cyan */
+            background: var(--primary-light);
         }
 
         /* Blog Section */
         #blog {
-            background: var(--section-darker-blue); /* Slightly Darker Blue */
+            background: var(--section-darker-blue); 
         }
 
         /* Contact Section */
         #contact {
-            background: var(--section-light-blue); /* Light Blue */
-            color: var(--text-dark); /* Change text color for contrast */
+            background: var(--section-light-blue); 
+            color: var(--text-dark); /* text color for contrast */
         }
 
         .section-title {
@@ -399,7 +399,7 @@
 
 /* Updated title size */
 .blog-title {
-    font-size: 1.5rem; /* size */
+    font-size: 1.5rem; 
     font-weight: bold;
     font-family: 'Zeyada', cursive;
     color: #222;
@@ -509,7 +509,7 @@
 
 .subscribe-button {
     padding: 10px 20px;
-    background-color: var(--primary-blue); /* your site’s primary color */
+    background-color: var(--primary-blue);
     color: #ebe5e5;
     border: none;
     border-radius: 8px;
@@ -554,7 +554,7 @@
 
         /* Enhanced Footer */
         footer {
-            background: var(--primary-blue); /* Keep footer primary blue */
+            background: var(--primary-blue); 
             color: white;
             padding: 4rem 5%;
             margin-top: 6rem;
@@ -563,14 +563,14 @@
         .footer-grid {
             display: flex; /* Use flexbox for layout */
             flex-direction: column; /* Stack items vertically on small screens */
-            gap: 2rem; /* Space between sections */
+            gap: 2rem; /* Space b/wn sections */
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .footer-section {
             display: flex;
-            flex-direction: column; /* Stack items vertically */
+            flex-direction: column; /* Stack items verticallly */
             align-items: flex-start; /* Align items to the start */
         }
 
