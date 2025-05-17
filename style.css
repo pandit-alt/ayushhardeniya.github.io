@@ -213,7 +213,7 @@
             .hero {
                 height: auto; 
                 padding: 2rem 5%; 
-                background: url('banneraHnew.png') center/contain no-repeat; /* Change to contain for mobile */
+                background: url('/assets/portrait-transparent.png') center/contain no-repeat; /* Change to contain for mobile */
             }
 
             .hero h1 {
@@ -402,9 +402,10 @@
     font-size: 1.5rem; 
     font-weight: bold;
     font-family: 'Zeyada', cursive;
-    color: #222;
+    color: #19056e;
     letter-spacing: 1px;
     margin: 25px ;
+    margin-top: 39px;
     max-height: 240px; /* Allows multi-line titles */
     overflow:visible;
     display: -webkit-box;
@@ -420,10 +421,12 @@
     font-weight: bold;
     color: #8597ce;
     margin-bottom: 3466px;
-    text-align:left;
+    text-align:center;
+    position:fixed;
     
 
 }
+
 
 /* Read More Bar */
 .read-more-container {
