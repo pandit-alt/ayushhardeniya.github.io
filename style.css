@@ -213,7 +213,7 @@
             .hero {
                 height: auto; 
                 padding: 2rem 5%; 
-                background: url('/assets/portrait-transparent.png') center/contain no-repeat; /* Change to contain for mobile */
+                background: url('/assets/mobilesizehero.jpg') center/contain no-repeat; /* Change to contain for mobile */
             }
 
             .hero h1 {
