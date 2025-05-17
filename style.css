@@ -211,7 +211,7 @@
         /* Mobile Styles */
         @media (max-width: 768px) {
             .hero {
-                height: 575px; 
+                height: 588px; 
                 padding: 2rem 5%; 
                 background: url('/assets/mobilesizehero.jpg') center/contain no-repeat; /* Change to contain for mobile */
             }
