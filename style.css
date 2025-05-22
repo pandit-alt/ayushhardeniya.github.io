@@ -587,6 +587,52 @@
             border-color: var(--primary-blue);
         }
 
+              
+          form[name="contact-form"] {
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 25px;
+            background: #f1f1f1;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            font-family: 'Segoe UI', sans-serif;
+          }
+        
+          form[name="contact-form"] input,
+          form[name="contact-form"] textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1.5px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: 0.3s ease;
+          }
+        
+          form[name="contact-form"] input:focus,
+          form[name="contact-form"] textarea:focus {
+            border-color: #007BFF;
+            outline: none;
+          }
+        
+          form[name="contact-form"] button {
+            width: 100%;
+            background-color: #007BFF;
+            color: white;
+            padding: 12px;
+            border: none;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+          }
+        
+          form[name="contact-form"] button:hover {
+            background-color: #0056b3;
+          }
+        
+
+
         /* Enhanced Footer */
         footer {
             background: var(--primary-blue); 
