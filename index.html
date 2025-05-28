@@ -1,94 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ayush Hardeniya - A Man in the Making">
-    <meta name="keywords" content="Artificial Intelligence, Machine Learning, Python Development, Tech Innovation">
+    <!-- charset for seo-->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Ayush Hardeniya</title>
+
+    <meta name="title" content="Ayush Hardeniya" />
+    <meta name="description" content="Ayush Hardeniya - A Man in the Making">
+    <meta name="keywords" content="Ayush Hardeniya, portfolio, web developer, personal blog, frontend developer, JavaScript, India" />
+    <meta name="author" content="Ayush Hardeniya" />
+    <meta name="robots" content="index, follow" />
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ayushhardeniya.site/" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ayushhardeniya.site/" />
+    <meta property="og:title" content="Ayush Hardeniya" />
+    <meta property="og:description" content="Explore Ayush’s personal website — from his journey, values, blogs, to skills and social presence." />
+    <meta property="og:image" content="https://ayushhardeniya.site/assets/og-preview.png" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://ayushhardeniya.site/" />
+    <meta property="twitter:title" content="Ayush Hardeniya" />
+    <meta property="twitter:description" content="Explore Ayush’s personal website — from his journey, values, blogs, to skills and social presence." />
+    <meta property="twitter:image" content="https://ayushhardeniya.site/assets/og-preview.png" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ayush Hardeniya",
+      "url": "https://ayushhardeniya.site/",
+      "sameAs": [
+        "https://github.com/ayushhardeniya",
+        "https://linkedin.com/in/ayushhardeniya",
+        "https://twitter.com/ayushhardeniya"
+      ],
+      "jobTitle": "Developer-Creator",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance"
+      },
+      "image": "https://ayushhardeniya.site/assets/profile.png"
+    }
+    </script>
+
     
     <!-- Favicon Links -->
-    <!-- Bright Mode Favicons -->
-    <!-- Android Icons -->
-    <link rel="icon" type="image/png" sizes="36x36" href="assets/brightfavicon/android-icon-36x36.png" media="(prefers-color-scheme: light)">
-    <link rel="icon" type="image/png" sizes="48x48" href="assets/brightfavicon/android-icon-48x48.png" media="(prefers-color-scheme: light)">
-    <link rel="icon" type="image/png" sizes="72x72" href="assets/brightfavicon/android-icon-72x72.png" media="(prefers-color-scheme: light)">
-    <link rel="icon" type="image/png" sizes="96x96" href="assets/brightfavicon/android-icon-96x96.png" media="(prefers-color-scheme: light)">
-    <link rel="icon" type="image/png" sizes="144x144" href="assets/brightfavicon/android-icon-144x144.png" media="(prefers-color-scheme: light)">
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/brightfavicon/android-icon-192x192.png" media="(prefers-color-scheme: light)">
-    
-    <!-- Apple Touch Icons -->
-    <link rel="apple-touch-icon" sizes="57x57" href="assets/brightfavicon/apple-icon-57x57.png" media="(prefers-color-scheme: light)">
-    <link rel="apple-touch-icon" sizes="60x60" href="assets/brightfavicon/apple-icon-60x60.png" media="(prefers-color-scheme: light)">
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/brightfavicon/apple-icon-72x72.png" media="(prefers-color-scheme: light)">
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/brightfavicon/apple-icon-76x76.png" media="(prefers-color-scheme: light)">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/brightfavicon/apple-icon-114x114.png" media="(prefers-color-scheme: light)">
-    <link rel="apple-touch-icon" sizes="120x120" href="assets/brightfavicon/apple-icon-120x120.png" media="(prefers-color-scheme: light)">
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/brightfavicon/apple-icon-144x144.png" media="(prefers-color-scheme: light)">
-    <link rel="apple-touch-icon" sizes="152x152" href="assets/brightfavicon/apple-icon-152x152.png" media="(prefers-color-scheme: light)">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/brightfavicon/apple-icon-180x180.png" media="(prefers-color-scheme: light)">
-    <!-- Precomposed Apple Icon -->
-    <link rel="apple-touch-icon-precomposed" href="assets/brightfavicon/apple-icon-precomposed.png" media="(prefers-color-scheme: light)">
-    
-    <!-- Standard Favicons -->
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/brightfavicon/favicon-16x16.png" media="(prefers-color-scheme: light)">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/brightfavicon/favicon-32x32.png" media="(prefers-color-scheme: light)">
-    <link rel="icon" type="image/png" sizes="96x96" href="assets/brightfavicon/favicon-96x96.png" media="(prefers-color-scheme: light)">
-    <!-- Favicon ICO -->
-    <link rel="shortcut icon" href="assets/brightfavicon/favicon.ico" media="(prefers-color-scheme: light)">
-    
-    <!-- Microsoft Tiles -->
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="assets/brightfavicon/ms-icon-144x144.png" media="(prefers-color-scheme: light)">
-    <meta name="msapplication-square70x70logo" content="assets/brightfavicon/ms-icon-70x70.png" media="(prefers-color-scheme: light)">
-    <meta name="msapplication-square150x150logo" content="assets/brightfavicon/ms-icon-150x150.png" media="(prefers-color-scheme: light)">
-    <meta name="msapplication-square310x310logo" content="assets/brightfavicon/ms-icon-310x310.png" media="(prefers-color-scheme: light)">
-    
-    <!-- Manifest -->
-    <link rel="manifest" href="assets/pwaassets/manifest.json" media="(prefers-color-scheme: light)">
-    
-    
-    <!-- Dark Mode Favicons -->
-    <!-- Android Icons -->
-    <link rel="icon" type="image/png" sizes="36x36" href="assets/darkfavicon/android-icon-36x36.png" media="(prefers-color-scheme: dark)">
-    <link rel="icon" type="image/png" sizes="48x48" href="assets/darkfavicon/android-icon-48x48.png" media="(prefers-color-scheme: dark)">
-    <link rel="icon" type="image/png" sizes="72x72" href="assets/darkfavicon/android-icon-72x72.png" media="(prefers-color-scheme: dark)">
-    <link rel="icon" type="image/png" sizes="96x96" href="assets/darkfavicon/android-icon-96x96.png" media="(prefers-color-scheme: dark)">
-    <link rel="icon" type="image/png" sizes="144x144" href="assets/darkfavicon/android-icon-144x144.png" media="(prefers-color-scheme: dark)">
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/darkfavicon/android-icon-192x192.png" media="(prefers-color-scheme: dark)">
-    
-    <!-- Apple Touch Icons -->
-    <link rel="apple-touch-icon" sizes="57x57" href="assets/darkfavicon/apple-icon-57x57.png" media="(prefers-color-scheme: dark)">
-    <link rel="apple-touch-icon" sizes="60x60" href="assets/darkfavicon/apple-icon-60x60.png" media="(prefers-color-scheme: dark)">
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/darkfavicon/apple-icon-72x72.png" media="(prefers-color-scheme: dark)">
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/darkfavicon/apple-icon-76x76.png" media="(prefers-color-scheme: dark)">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/darkfavicon/apple-icon-114x114.png" media="(prefers-color-scheme: dark)">
-    <link rel="apple-touch-icon" sizes="120x120" href="assets/darkfavicon/apple-icon-120x120.png" media="(prefers-color-scheme: dark)">
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/darkfavicon/apple-icon-144x144.png" media="(prefers-color-scheme: dark)">
-    <link rel="apple-touch-icon" sizes="152x152" href="assets/darkfavicon/apple-icon-152x152.png" media="(prefers-color-scheme: dark)">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/darkfavicon/apple-icon-180x180.png" media="(prefers-color-scheme: dark)">
-    <!-- Precomposed Apple Icon -->
-    <link rel="apple-touch-icon-precomposed" href="assets/darkfavicon/apple-icon-precomposed.png" media="(prefers-color-scheme: dark)">
-    
-    <!-- Standard Favicons -->
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/darkfavicon/favicon-16x16.png" media="(prefers-color-scheme: dark)">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/darkfavicon/favicon-32x32.png" media="(prefers-color-scheme: dark)">
-    <link rel="icon" type="image/png" sizes="96x96" href="assets/darkfavicon/favicon-96x96.png" media="(prefers-color-scheme: dark)">
-    <!-- Favicon ICO -->
-    <link rel="shortcut icon" href="assets/darkfavicon/favicon.ico" media="(prefers-color-scheme: dark)">
-    
-    <!-- Microsoft Tiles -->
-    <meta name="msapplication-TileColor" content="#000000">
-    <meta name="msapplication-TileImage" content="assets/darkfavicon/ms-icon-144x144.png" media="(prefers-color-scheme: dark)">
-    <meta name="msapplication-square70x70logo" content="assets/darkfavicon/ms-icon-70x70.png" media="(prefers-color-scheme: dark)">
-    <meta name="msapplication-square150x150logo" content="assets/darkfavicon/ms-icon-150x150.png" media="(prefers-color-scheme: dark)">
-    <meta name="msapplication-square310x310logo" content="assets/darkfavicon/ms-icon-310x310.png" media="(prefers-color-scheme: dark)">
-    
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/darkfavicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/darkfavicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/darkfavicon/favicon-16x16.png" />
+    <link rel="icon" type="image/x-icon" href="/assets/darkfavicon/favicon.ico" />
+    <link rel="manifest" href="/assets/darkfavicon/site.webmanifest" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/darkfavicon/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/darkfavicon/android-chrome-512x512.png" />
+
+    <!--color for address bar in mobile browsers -->
+    <meta name="theme-color" content="#ffffff" />
+
     <!-- Manifest -->
     <link rel="manifest" href="assets/pwaassets/manifest.json" media="(prefers-color-scheme: dark)">
     
-        
-        
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
@@ -260,10 +238,6 @@
             <div id="loading-message">Loading... Please wait while we fetch the latest posts.</div>
             <div id="blog-container"></div>
         </div>
-        <!--<div class="blog-navigation">
-            <button id="prev-blog" class="nav-button" disabled>❮</button>
-            <button id="next-blog" class="nav-button" disabled>❯</button>
-        </div>-->
     </div>
 
 <!-- Newsletter Subscription Section -->
@@ -286,17 +260,14 @@
         <br>
         <P> Or <b>Fill the form</b>-<br>
         </P>
-    <!-- Form code, fetched with AppScript (ID used-aH.profile@ -->
+    <!-- Form code, fetched with AppScript (Mail ID used-aH.profile@ -->
 
 <form name="contact-form" method="POST" action="https://script.google.com/macros/s/AKfycbzDRvUqGJWfR-dC-vMstB9mlr5zjQFCZi1A1r978zwbh-_toCUgRV-t1Z9rihtLJLwAAg/exec">
   <input name="name" type="text" placeholder="Your Name" required>
   <input name="email" type="email" placeholder="Your Email" required>
   <textarea name="message" placeholder="Your Message" required></textarea>
   <button type="submit">Submit</button>
-</form>
-
-
-        
+</form>   
     </section>
 
     <!-- Footer -->
@@ -316,13 +287,13 @@
         </div>
         <div class="footer-section quick-links" align="left">
             <h3>Quick Navigation</h3>
-            <nav>
+            <nav><center>
                 <a href="https://ayushhardeniya.github.io/" class="footer-link"><U>Home</a><br><br><br>
                 <a href="#about" class="footer-link">My Story</a><br><br><br>
                 <a href="#values" class="footer-link">Values</a><br><br><br>
                 <a href="#social-links" class="footer-link">Links</a><br><br><br>
                 <a href="#blog" class="footer-link">Blog</a><br><br><br>
-                <a href="#contact" class="footer-link">Contact</U></a><br>
+                <a href="#contact" class="footer-link">Contact</U></a><br></center>
             </nav>
         </div>
         <a href="https://ayushhardeniya.github.io/">
