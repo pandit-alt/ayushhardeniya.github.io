@@ -85,6 +85,34 @@
             color: var(--accent-blue); 
             transform: translateY(-2px); /* Slight lift effect */
         }
+        
+        /* Support button */
+        nav ul {
+          list-style: none;
+          display: flex;
+          gap: 15px;
+          align-items: center;
+          padding: 0;
+          margin: 0;
+        }
+        
+        nav ul li a {
+          text-decoration: none;
+          color: black;
+          font-family: Arial, sans-serif;
+        }
+        
+        nav ul li a.sponsor-button {
+          background-color: #8A2BE2;
+          color: white;
+          padding: 8px 15px;
+          border-radius: 8px;
+          font-weight: 600;
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+        }
+
 
         /* Mobile Styles */
         .menu-toggle {
