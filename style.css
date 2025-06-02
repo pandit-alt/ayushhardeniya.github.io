@@ -113,29 +113,6 @@
             margin-bottom: 1px;
         }
 
-        
-        /* Support button */
-        .sponsor-button {
-          background-color: #8A2BE2; /* Violet like GitHub sponsor */
-          color: #ffffff;
-          padding: 8px 16px;
-          border-radius: 8px;
-          font-weight: 600;
-          text-decoration: none;
-          font-family: Arial, sans-serif;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          gap: 6px;
-          transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-        
-        .sponsor-button:hover {
-          background-color: #6f1edb; /* Slightly darker violet on hover */
-          transform: scale(1.05);
-          color: #ffffff;
-        }
-
 
         /* Mobile Styles */
         .menu-toggle {
