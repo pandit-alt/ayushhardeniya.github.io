@@ -86,31 +86,31 @@
             transform: translateY(-2px); /* Slight lift effect */
         }
 
-                /* BuyMeACoffee button styling */
-        .sponsor-button-nav {
-          background-color: #ffdd00; /* Soft Yellow */
-          color: #000;
-          padding: 8px 16px;
-          border-radius: 20px;
-          font-weight: 600;
-          transition: background-color 0.3s ease, transform 0.2s ease;
-          text-decoration: none;
-          margin-left: 12px;
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
+        /* BuyMeACoffee button styling */
+        .kofi-button-nav {
+            background-color: #ffdd00; /* Ko-fi yellow */
+            color: #000;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            padding: 0.45rem 1rem;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease-in-out;
         }
         
-        .sponsor-button-nav:hover {
-          background-color: #ffe760;
-          transform: translateY(-2px);
+        .kofi-button-nav:hover {
+            background-color: #ffe85a;
+            transform: translateY(-2px);
         }
         
         .kofi-icon {
-          height: 18px;
-          width: 18px;
-          margin-right: 4px;
-          vertical-align: middle;
+            height: 16px;
+            width: 16px;
+            object-fit: contain;
+            margin-bottom: 1px;
         }
 
         
