@@ -430,38 +430,6 @@
             margin-bottom: 2rem;
         }
 
-        /* About Section */
-
-        /*
-        .about {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-        .about .about-text {
-            flex: 1;
-            min-width: 300px;
-        }
-        .about .about-text p {
-            margin-bottom: 1.2rem;
-            font-size: 1rem;
-            color: #555;
-        }
-        .about .about-image {
-            flex: 1;
-            min-width: 300px;
-            text-align: center;
-        }
-        .about .about-image img {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        } */
-        
-
         /* Timeline */
         * {
           box-sizing: border-box;
@@ -546,6 +514,7 @@
         .timeline-content img {
           width: 100%;
           border-radius: 8px;
+          margin-top: 10px;  
           margin: 10px 0;
         }
         
