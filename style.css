@@ -86,21 +86,44 @@
             transform: translateY(-2px); /* Slight lift effect */
         }
 
+        /* Dropdown Menu */
         .dropdown-menu {
             display: none;
             position: absolute;
-            background: white;
+            background: black; /* Set Black Background */
             padding: 10px;
             border-radius: 5px;
+            list-style: none; /* Ensure it appears as a list */
         }
         
-        .dropdown:hover .dropdown-menu {
+        .dropdown-menu li {
+            padding: 8px;
+        }
+        
+        .dropdown-menu a {
+            color: white; /* Make font clear */
+            text-decoration: none;
+        }
+
+        .nav-item:hover .dropdown-menu {
             display: block;
+        }
+        
+        /* Ko-fi Button Fix */
+        .kofi-container {
+            display: inline-block; /* Ensure it stays aligned */
+        }
+        
+        /* Remove unwanted styling affecting the hamburger */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: block; /* Ensures mobile nav works */
+            }
         }
 
         /* BuyMeACoffee button styling */
-        .kofi-button-nav {
-            background-color: #ffdd00; /* Ko-fi yellow */
+        /* .kofi-button-nav {
+            background-color: #ffdd00; /* Ko-fi yellow 
             color: #000;
             text-decoration: none;
             font-weight: 600;
@@ -123,7 +146,63 @@
             width: 16px;
             object-fit: contain;
             margin-bottom: 1px;
+        } */
+
+        .kofi-container {
+            display: flex; /* Ensures proper placement */
+            justify-content: center; /* Centers in navigation */
+            align-items: center;
         }
+        
+        .kofi-button-nav {
+            background-color: #ffdd00; /* Ko-fi yellow */
+            color: #000;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            padding: 0.45rem 1rem;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease-in-out;
+            position: relative; /* Helps fix layout issue */
+            z-index: 1000; /* Ensures it doesn't overlap other elements */
+        }
+        
+        /* Hover Effect */
+        .kofi-button-nav:hover {
+            background-color: #ffe85a;
+            transform: translateY(-2px);
+        }
+        
+        /* Ko-fi Icon Styling */
+        .kofi-icon {
+            height: 18px; /* Slightly larger for better clarity */
+            width: 18px;
+            object-fit: contain;
+            margin-bottom: 1px;
+        }
+        
+        /* Fixing the Hamburger Menu Conflict */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: flex; /* Ensures mobile layout works */
+                flex-direction: column; /* Stacks items properly */
+            }
+        
+            .kofi-container {
+                margin-top: 10px; /* Adds spacing */
+                text-align: center;
+            }
+        
+            .kofi-button-nav {
+                width: fit-content;
+                padding: 0.5rem 1.2rem;
+            }
+        }
+    
+
 
 
         /* Mobile Styles */
