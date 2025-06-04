@@ -61,8 +61,8 @@
         }
 
         .brand-logo {
-            height: 50px; /* Set a specific height for the logo */
-            width: auto; /* Maintain aspect ratio */
+            height: 50px;
+            width: auto; 
         }
 
         .nav-links {
@@ -90,7 +90,7 @@
         .dropdown-menu {
             display: none;
             position: absolute;
-            background: black; /* Set Black Background */
+            background: black;
             padding: 10px;
             border-radius: 5px;
             list-style: none; /* Ensure it appears as a list */
@@ -101,7 +101,7 @@
         }
         
         .dropdown-menu a {
-            color: white; /* Make font clear */
+            color: white;
             text-decoration: none;
         }
 
@@ -111,7 +111,7 @@
         
         /* Ko-fi Button Fix */
         .kofi-container {
-            display: inline-block; /* Ensure it stays aligned */
+            display: inline-block;
         }
         
         /* Remove unwanted styling affecting the hamburger */
@@ -149,8 +149,8 @@
         } */
 
         .kofi-container {
-            display: flex; /* Ensures proper placement */
-            justify-content: center; /* Centers in navigation */
+            display: flex; 
+            justify-content: center;
             align-items: center;
         }
         
@@ -166,7 +166,7 @@
             align-items: center;
             gap: 6px;
             transition: all 0.3s ease-in-out;
-            position: relative; /* Helps fix layout issue */
+            position: relative;
             z-index: 1000; /* Ensures it doesn't overlap other elements */
         }
         
@@ -178,7 +178,7 @@
         
         /* Ko-fi Icon Styling */
         .kofi-icon {
-            height: 18px; /* Slightly larger for better clarity */
+            height: 18px; 
             width: 18px;
             object-fit: contain;
             margin-bottom: 1px;
@@ -187,12 +187,12 @@
         /* Fixing the Hamburger Menu Conflict */
         @media (max-width: 768px) {
             .nav-links {
-                display: flex; /* Ensures mobile layout works */
-                flex-direction: column; /* Stacks items properly */
+                display: flex; 
+                flex-direction: column;
             }
         
             .kofi-container {
-                margin-top: 10px; /* Adds spacing */
+                margin-top: 10px; 
                 text-align: center;
             }
         
@@ -209,7 +209,7 @@
         .menu-toggle {
             display: block;
             cursor: pointer; 
-            color: white; /* Icon color */
+            color: white;
             font-size: 1.5rem; /*icon*/
         }
 
@@ -219,10 +219,10 @@
                 display: none; /* Hide links by default */
                 flex-direction: column; 
                 position: absolute; 
-                top: 60px; /* Below the navbar */
+                top: 60px;
                 right: 0; 
-                background: black; /* Background color */
-                width: 100%; /* Full width */
+                background: black; 
+                width: 100%; 
                 padding: 1rem 0; 
                 z-index: 999; /* Ensure it appears above other content */
                 opacity: 0; /* Start hidden */
@@ -231,9 +231,9 @@
             }
 
             .nav-links.active {
-                display: flex; /* Show links when active */
-                opacity: 1; /* Fade in */
-                transform: translateY(0); /* Move to original position */
+                display: flex; 
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
@@ -261,10 +261,10 @@
 
         /* Hero Section */
         .hero {
-            height: 100vh; /* Full height */
+            height: 100vh; /* Full ht. */
             display: flex;
             align-items: center;
-            justify-content: flex-start; /* Align content to the left */
+            justify-content: flex-start; /* Align content.to left */
             background: url('/assets/heroimage-aHdesign.png') center/cover no-repeat; /* Center and cover */
             padding: 0 5%; 
             position: relative;
