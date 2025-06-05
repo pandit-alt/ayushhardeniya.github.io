@@ -26,18 +26,18 @@ Here’s a quick breakdown of the core files that power this website:
 
 ✅ 1. Clone the Repository
 You can download the project by running this in your terminal: <br>
-git clone https://github.com/ayushHardeniya/ayushhardeniya.github.io.git
+`git clone https://github.com/ayushHardeniya/ayushhardeniya.github.io.git`
 
 
 No Git? No problem! You can download the ZIP file from GitHub instead.
 
 🔧 2. Open the Project Locally
 Navigate into the folder using:
-cd ayushhardeniya.github.io
+`cd ayushhardeniya.github.io`
 
 
 Then open it in VS Code or any text editor:
-code .  # VS Code users
+`code .  # VS Code users`
 
 
 🌍 3. Preview the Website Locally
@@ -54,7 +54,7 @@ This website is open-source, and your improvements matter! Whether it's UI enhan
 To keep contributions organized, please read our CONTRIBUTING.md file before submitting any changes. It covers: <br>
 ✅ How to fork & clone the repository.<br>
 ✅ How to create branches and follow best practices.<br>
-✅ How to submit pull requests properly.<br>
+✅ How to submit pull requests properly.
 
 ---
 
