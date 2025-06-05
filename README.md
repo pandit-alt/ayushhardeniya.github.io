@@ -56,7 +56,7 @@ Since this is a static website, simply open the index.html file in your browser:
 ### 🤝 Want to Contribute? Here’s How!
 This website is open-source, and your improvements matter! Whether it's UI enhancements, bug fixes, or new features, every contribution helps. <br>
 📜 Contribution Guidelines<br>
-To keep contributions organized, please read our `CONTRIBUTING.md` file before submitting any changes. It covers: <br>
+To keep contributions organized, please read our [CONTRIBUTING.md](https://github.com/ayushHardeniya/ayushhardeniya.github.io/blob/main/CONTRIBUTING.md) file before submitting any changes. It covers: <br>
 ✅ How to fork & clone the repository.<br>
 ✅ How to create branches and follow best practices.<br>
 ✅ How to submit pull requests properly.
