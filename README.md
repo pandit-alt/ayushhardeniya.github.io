@@ -19,13 +19,17 @@ Here’s a quick breakdown of the core files that power this website:
 - 🌐 CNAME → Used for custom domain setup on GitHub Pages.
 - 📜 LICENSE.md → Open-source MIT License.
 
+---
+
 ### 🛠 Getting Started
+
 ✅ 1. Clone the Repository
-You can download the project by running this in your terminal:
+You can download the project by running this in your terminal: <br>
 git clone https://github.com/ayushHardeniya/ayushhardeniya.github.io.git
 
 
 No Git? No problem! You can download the ZIP file from GitHub instead.
+
 🔧 2. Open the Project Locally
 Navigate into the folder using:
 cd ayushhardeniya.github.io
@@ -35,7 +39,7 @@ Then open it in VS Code or any text editor:
 code .  # VS Code users
 
 
-### 🌍 3. Preview the Website Locally
+🌍 3. Preview the Website Locally
 Since this is a static website, simply open the index.html file in your browser:
 - Windows: Double-click index.html to open it.
 - Mac/Linux: Use open index.html in the terminal.
