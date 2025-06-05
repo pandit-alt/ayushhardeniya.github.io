@@ -34,11 +34,15 @@ No Git? No problem! You can download the ZIP file from GitHub instead.
 
 🔧 2. Open the Project Locally
 Navigate into the folder using:
-`cd ayushhardeniya.github.io`
+```bash
+cd ayushhardeniya.github.io
+```
 
 
 Then open it in VS Code or any text editor:
-`code .  # VS Code users`
+```bash
+code .  # VS Code users
+```
 
 
 🌍 3. Preview the Website Locally
@@ -52,7 +56,7 @@ Since this is a static website, simply open the index.html file in your browser:
 ### 🤝 Want to Contribute? Here’s How!
 This website is open-source, and your improvements matter! Whether it's UI enhancements, bug fixes, or new features, every contribution helps. <br>
 📜 Contribution Guidelines<br>
-To keep contributions organized, please read our CONTRIBUTING.md file before submitting any changes. It covers: <br>
+To keep contributions organized, please read our `CONTRIBUTING.md` file before submitting any changes. It covers: <br>
 ✅ How to fork & clone the repository.<br>
 ✅ How to create branches and follow best practices.<br>
 ✅ How to submit pull requests properly.
