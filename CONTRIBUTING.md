@@ -10,11 +10,12 @@ Before jumping in, here are a few things to keep in mind:<br>
 ✅ Ask if unsure – If you’re making major changes, discuss them first in Issues.<br>
 
 ### **🔧 How to Contribute**
-<p>
-You can contribute in two ways:-
-1️⃣ Using VS Code (Recommended for developers)
-2️⃣ Using GitHub.com (No local setup required)
-</p>
+
+You can contribute in two ways:- <br>
+1️⃣ Using VS Code (Recommended for developers) <br>
+2️⃣ Using GitHub.com (No local setup required) <br>
+
+---
 
 <h2> 🛠 Option 1: Contributing via VS Code (Git-Based Workflow) </h2>
 
