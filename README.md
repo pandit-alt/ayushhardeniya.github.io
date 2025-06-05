@@ -5,7 +5,7 @@ Want to improve the site? You can contribute! Let’s build this together.
 
 ---
 
-🚀 Live Website <br>
+🚀 Live Website --> 
 🔗[Visit My Website](https://ayushhardeniya.site/)
 
 ---
@@ -45,6 +45,8 @@ Since this is a static website, simply open the index.html file in your browser:
 - Mac/Linux: Use open index.html in the terminal.
 - VS Code Users: Install Live Server for automatic preview updates.
 
+---
+
 ### 🤝 Want to Contribute? Here’s How!
 This website is open-source, and your improvements matter! Whether it's UI enhancements, bug fixes, or new features, every contribution helps.
 📜 Contribution Guidelines
@@ -53,8 +55,12 @@ To keep contributions organized, please read our CONTRIBUTING.md file before sub
 ✅ How to create branches and follow best practices.
 ✅ How to submit pull requests properly.
 
+---
+
 ### 📜 License
 This project is licensed under the MIT License, meaning anyone can freely use, modify, and distribute it while providing credit.
+
+---
 
 ### 📢 Spread the Word!
 If you find this project useful, ⭐️ star this repository, share it, and help it grow! 🚀
