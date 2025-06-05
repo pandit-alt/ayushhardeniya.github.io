@@ -1,13 +1,13 @@
-### 🤝 Contributing to Ayush Hardeniya’s Personal Website
+<h1> 🤝 Contributing to Ayush's Website </h1>
 
 First off, thank you for considering contributing! 🎉 This website is open-source, and every improvement—big or small—helps make it better. Whether you’re fixing a bug, improving design, or adding a new feature, your contributions matter.
 
 **📌 Before You Start**
-Before jumping in, here are a few things to keep in mind:
-✅ Be respectful – We’re here to collaborate and learn together.
-✅ Follow best practices – Keep code clean, readable, and well-documented.
-✅ Test your changes – Make sure everything works before submitting.
-✅ Ask if unsure – If you’re making major changes, discuss them first in Issues.
+Before jumping in, here are a few things to keep in mind:<br>
+✅ Be respectful – We’re here to collaborate and learn together.<br>
+✅ Follow best practices – Keep code clean, readable, and well-documented.<br>
+✅ Test your changes – Make sure everything works before submitting.<br>
+✅ Ask if unsure – If you’re making major changes, discuss them first in Issues.<br>
 
 ### **🔧 How to Contribute**
 You can contribute in two ways:
