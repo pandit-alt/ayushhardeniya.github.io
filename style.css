@@ -121,6 +121,13 @@
             }
         }
 
+        .menu-toggle {
+            display: block;
+            cursor: pointer; 
+            color: white;
+            font-size: 1.5rem; /*icon*/
+        }
+
         /* BuyMeACoffee button styling */
         /* .kofi-button-nav {
             background-color: #ffdd00; /* Ko-fi yellow 
