@@ -2,6 +2,7 @@
 
 Welcome to the open-source repository for my personal website! This project is built using HTML, CSS, and JavaScript, hosted on GitHub Pages, and designed to be user-friendly, modern, and highly customizable.
 Want to improve the site? You can contribute! Let’s build this together.
+
 ---
 
 🚀 Live Website
