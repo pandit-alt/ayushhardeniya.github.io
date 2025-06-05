@@ -10,11 +10,14 @@ Before jumping in, here are a few things to keep in mind:<br>
 ✅ Ask if unsure – If you’re making major changes, discuss them first in Issues.<br>
 
 ### **🔧 How to Contribute**
-You can contribute in two ways:
+<p>
+You can contribute in two ways:-
 1️⃣ Using VS Code (Recommended for developers)
 2️⃣ Using GitHub.com (No local setup required)
+</p>
 
-**🛠 Option 1: Contributing via VS Code (Git-Based Workflow)**
+<h2> 🛠 Option 1: Contributing via VS Code (Git-Based Workflow) </h2>
+
 1️⃣ Fork the Repository
 Click the Fork button at the top right of this repo to create a copy under your GitHub account.
 
@@ -64,7 +67,7 @@ git push origin feature-name
 
 ---
 
-### **🌐 Option 2: Contributing via GitHub.com (No Local Setup Needed)**
+<h2> **🌐 Option 2: Contributing via GitHub.com (No Local Setup Needed)** </h2>
 
 If you don’t want to install Git or VS Code, you can contribute directly from GitHub’s website.
 1️⃣ Fork the Repository
