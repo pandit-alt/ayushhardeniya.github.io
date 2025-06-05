@@ -26,8 +26,9 @@ Here’s a quick breakdown of the core files that power this website:
 
 ✅ 1. Clone the Repository
 You can download the project by running this in your terminal: <br>
-`git clone https://github.com/ayushHardeniya/ayushhardeniya.github.io.git`
-
+```bash
+git clone https://github.com/ayushHardeniya/ayushhardeniya.github.io.git
+```
 
 No Git? No problem! You can download the ZIP file from GitHub instead.
 
