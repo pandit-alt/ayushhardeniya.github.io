@@ -25,5 +25,5 @@ This written work is licensed under the [Creative Commons Attribution-NonCommerc
 🔗 License Summary:  
 [https://creativecommons.org/licenses/by-nc-nd/4.0/](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
-© 2025 Ayush Sharma
+© 2025 Ayush Sharma <br>
 Published under the name Ayush Hardeniya
