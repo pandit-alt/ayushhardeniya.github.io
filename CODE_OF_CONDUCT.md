@@ -5,7 +5,7 @@
 Welcome to this open-source project!  
 We’re committed to building a space that is **welcoming, inclusive, and respectful** for everyone. Whether you’re fixing bugs, suggesting features, or just starting out — you’re valued here.
 
-## 2️⃣ Expected Behavior
+## 2️⃣ Expected Behaviour
 
 To maintain a healthy and collaborative environment, we expect all contributors to:
 
@@ -15,7 +15,7 @@ To maintain a healthy and collaborative environment, we expect all contributors 
 - ✅ **Collaborate positively** – Support and uplift fellow contributors.
 - ✅ **Follow repository guidelines** – Stick to contribution best practices and project norms.
 
-## 3️⃣ Unacceptable Behavior
+## 3️⃣ Unacceptable Behaviour
 
 The following actions will not be tolerated:
 
@@ -26,7 +26,7 @@ The following actions will not be tolerated:
 
 ## 4️⃣ Reporting Issues
 
-If you witness or experience any behavior that violates this Code of Conduct, you can report it through the following:
+If you witness or experience any behaviour that violates this Code of Conduct, you can report it through the following:
 
 - 📧 **Email**: [connect@ayushhardeniya.site](mailto:connect@ayushhardeniya.site)
 - 🔗 **GitHub Issues**: Feel free to open a respectful issue and tag it as `coc-report`.
@@ -43,7 +43,7 @@ Violation of this Code may result in:
 
 Enforcement decisions are made to protect the community's well-being and productivity.
 
-- Project maintainers (currently [Ayush Hardeniya](https://ayushhardeniya.site))are responsible for clarifying and enforcing this Code of Conduct. Inappropriate behavior may result in removal from contributions, issues, or pull requests.
+- Project maintainers (currently [Ayush Hardeniya](https://ayushhardeniya.site)) are responsible for clarifying and enforcing this Code of Conduct. Inappropriate behaviour may result in removal from contributions, issues, or pull requests.
 
 
 ## 6️⃣ Acknowledgments
