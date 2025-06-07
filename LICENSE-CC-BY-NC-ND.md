@@ -1,7 +1,6 @@
 # Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International
 
-This written work is © 2025 Ayush Sharma (aka Ayush Hardeniya)  
-and is licensed under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License](https://creativecommons.org/licenses/by-nc-nd/4.0/).
+This written work is licensed under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License](https://creativecommons.org/licenses/by-nc-nd/4.0/).
 
 ---
 
@@ -26,4 +25,5 @@ and is licensed under the [Creative Commons Attribution-NonCommercial-NoDerivati
 🔗 License Summary:  
 [https://creativecommons.org/licenses/by-nc-nd/4.0/](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
-© 2025 Ayush Sharma (Ayush Hardeniya)
+© 2025 Ayush Sharma
+Published under the name Ayush Hardeniya
