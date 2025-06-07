@@ -3,7 +3,7 @@
 ## 1️⃣ Our Commitment
 
 Welcome to this open-source project!  
-We’re committed to building a space that is **welcoming, inclusive, and respectful** for everyone. Whether you’re fixing bugs, suggesting features, or just starting out — you’re valued here.
+We’re committed to building a space that is **welcoming, inclusive, and respectful** for everyone. Whether you’re fixing bugs, suggesting features, or just starting out - you’re valued here.
 
 ## 2️⃣ Expected Behaviour
 
