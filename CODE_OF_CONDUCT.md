@@ -53,4 +53,4 @@ It’s designed with clarity, fairness, and collaboration in mind.
 
 ---
 
-_Thanks for being part of this journey. Let's build something awesome — together! 🌱_
+_Thanks for being part of this journey. Let's build something awesome - together! 🌱_
