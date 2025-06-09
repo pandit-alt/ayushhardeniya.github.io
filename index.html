@@ -334,15 +334,78 @@
    
    
     <!-- Blog Section -->
+    <!--
+        <section id="blog">
+        <h2 class="section-title">My Blogs</h2>
+        <div class="container">
+            <div class="blog-card" id="blog-card">
+                <div id="loading-message">Loading... Please wait while we fetch the latest posts.</div>
+                <div id="blog-container"></div>
+            </div>
+        </div>
+    -->
 
     <section id="blog">
-    <h2 class="section-title">My Blogs</h2>
-    <div class="container">
-        <div class="blog-card" id="blog-card">
-            <div id="loading-message">Loading... Please wait while we fetch the latest posts.</div>
-            <div id="blog-container"></div>
+        <h2 class="section-title">My Blogs</h2>
+        <div class="container">
+            <div class="blogs-container">
+                
+                <!-- LifeNotes Section -->
+                <div class="blog-section">
+                    <div class="blog-header">
+                        <div class="blog-icon lifenotes-icon">L</div>
+                        <div>
+                            <h3 class="blog-title">LifeNotes</h3>
+                            <p class="blog-subtitle">Personal stories & reflections on Medium</p>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-content">
+                        <div id="lifenotes-loading" class="loading-message">
+                            Loading LifeNotes... Please wait while we fetch the latest posts.
+                        </div>
+                        <div id="lifenotes-container"></div>
+                    </div>
+                    
+                    <div class="newsletter-section">
+                        <h3 class="newsletter-title">Friday Reflections with Ayush</h3>
+                        <p class="newsletter-text">Join my weekly letter where I share personal stories, ideas, and thoughts—delivered fresh every Friday.</p>
+                        <a href="https://medium.com/@ayushHardeniya/subscribe" target="_blank" class="subscribe-button">
+                            Subscribe on Medium
+                        </a>
+                    </div>
+                </div>
+
+                <!-- CodeNotes Section -->
+                <div class="blog-section">
+                    <div class="blog-header">
+                        <div class="blog-icon codenotes-icon">C</div>
+                        <div>
+                            <h3 class="blog-title">CodeNotes</h3>
+                            <p class="blog-subtitle">Technical insights & coding tutorials on Hashnode</p>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-content">
+                        <div id="codenotes-loading" class="loading-message">
+                            Loading CodeNotes... Please wait while we fetch the latest posts.
+                        </div>
+                        <div id="codenotes-container"></div>
+                    </div>
+                    
+                    <div class="newsletter-section">
+                        <h3 class="newsletter-title">CodeNotes Weekly</h3>
+                        <p class="newsletter-text">Get weekly coding tips, tutorials, and tech insights delivered to your inbox.</p>
+                        <a href="#" target="_blank" class="subscribe-button">
+                            Subscribe to Newsletter
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
         </div>
-    </div>
+    </section>
+
 
 <!-- Newsletter Subscription Section -->
 <div class="newsletter-subscribe">
