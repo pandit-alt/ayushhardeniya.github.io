@@ -83,7 +83,7 @@
         }
 
         .nav-link:hover {
-            color: var(--accent-blue); 
+            color: yellow; 
             transform: translateY(-2px); /* Slight lift effect */
         }
 
@@ -98,7 +98,7 @@
         }
         
         .dropdown-menu li {
-            padding: 8px;
+            padding: 5px;
         }
         
         .dropdown-menu a {
@@ -131,32 +131,7 @@
             z-index: 1001;
         }
 
-        /* BuyMeACoffee button styling */
-        /* .kofi-button-nav {
-            background-color: #ffdd00; /* Ko-fi yellow 
-            color: #000;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.05rem;
-            padding: 0.45rem 1rem;
-            border-radius: 20px;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: all 0.3s ease-in-out;
-        }
-        
-        .kofi-button-nav:hover {
-            background-color: #ffe85a;
-            transform: translateY(-2px);
-        }
-        
-        .kofi-icon {
-            height: 16px;
-            width: 16px;
-            object-fit: contain;
-            margin-bottom: 1px;
-        } */
+        /*BuyMeACoffee Nav Button Styling*/
 
         .kofi-container {
             display: flex; 
