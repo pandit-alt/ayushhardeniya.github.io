@@ -115,7 +115,7 @@
             display: inline-block;
         }
         
-        /* Remove unwanted styling affecting the hamburger */
+        /* hamburger */
         @media (max-width: 768px) {
             .nav-links {
                 display: block; /* Ensures mobile nav works */
@@ -364,10 +364,10 @@
         /* Content Sections */
         section {
             padding: 6rem 5%;
-            margin: 2rem 0; /* for separate sections */
-            border-radius: 10px; /* Rounded corners */
+            margin: 2rem 0;
+            border-radius: 10px; 
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animaation */
         }
 
         section:hover {
@@ -633,7 +633,7 @@
             --primary-color: #2563eb;
             --secondary-color: #64748b;
             --accent-color: #f59e0b;
-            --text-color: #1f2937;
+            --text-color: #81d4fa;
             --text-light: #6b7280;
             --background-color: #ffffff;
             --card-background: #f8fafc;
@@ -884,7 +884,7 @@
             }
         }
 
-/* Contact Section */
+        /* Contact Section */
 
         #contact {
             padding: 6rem 5%;
