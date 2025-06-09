@@ -1,173 +1,54 @@
-// LifeNotes Carousel Class
-        class LifeNotesCarousel {
-            constructor(posts) {
-                this.posts = posts;
-                this.currentIndex = 0;
-                this.isPlaying = true;
-                this.autoPlayInterval = null;
-                this.progressInterval = null;
-                this.autoPlayDuration = 5000; // 5 seconds per slide
-                this.progressWidth = 0;
-                
-                this.init();
-            }
-            
-            init() {
-                this.render();
-                this.bindEvents();
-                this.startAutoPlay();
-            }
-            
-            render() {
-                const container = document.getElementById('lifenotes-container');
-                const track = document.getElementById('lifenotes-track');
-                const indicators = document.getElementById('lifenotes-indicators');
-                
-                // Show container
-                container.style.display = 'block';
-                
-                // Render slides
-                track.innerHTML = this.posts.map(post => {
-                    const title = post.title || "Untitled Post";
-                    const link = post.link || "#";
-                    const pubDate = post.pubDate ? new Date(post.pubDate).toDateString() : 
-                                   post.published ? new Date(post.published).toDateString() :
-                                   "Date not available";
-                    
-                    return `
-                        <div class="carousel-slide">
-                            <a href="${link}" target="_blank" class="carousel-post-title">${title}</a>
-                            <div class="carousel-post-meta">${pubDate}</div>
-                        </div>
-                    `;
-                }).join('');
-                
-                // Render indicators
-                indicators.innerHTML = this.posts.map((_, index) => 
-                    `<div class="carousel-indicator ${index === 0 ? 'active' : ''}" data-index="${index}"></div>`
-                ).join('');
-                
-                this.updateSlidePosition();
-            }
-            
-            bindEvents() {
-                // Navigation buttons
-                document.getElementById('lifenotes-prev').addEventListener('click', () => this.prevSlide());
-                document.getElementById('lifenotes-next').addEventListener('click', () => this.nextSlide());
-                
-                // Pause/Play button
-                document.getElementById('lifenotes-pause').addEventListener('click', () => this.toggleAutoPlay());
-                
-                // Indicators
-                document.querySelectorAll('#lifenotes-indicators .carousel-indicator').forEach(indicator => {
-                    indicator.addEventListener('click', (e) => {
-                        const index = parseInt(e.target.dataset.index);
-                        this.goToSlide(index);
-                    });
-                });
-                
-                // Pause on hover
-                const container = document.getElementById('lifenotes-container');
-                container.addEventListener('mouseenter', () => this.pauseAutoPlay());
-                container.addEventListener('mouseleave', () => this.resumeAutoPlay());
-            }
-            
-            updateSlidePosition() {
-                const track = document.getElementById('lifenotes-track');
-                track.style.transform = `translateX(-${this.currentIndex * 100}%)`;
-                
-                // Update indicators
-                document.querySelectorAll('#lifenotes-indicators .carousel-indicator').forEach((indicator, index) => {
-                    indicator.classList.toggle('active', index === this.currentIndex);
-                });
-            }
-            
-            nextSlide() {
-                this.currentIndex = (this.currentIndex + 1) % this.posts.length;
-                this.updateSlidePosition();
-                this.resetProgress();
-            }
-            
-            prevSlide() {
-                this.currentIndex = (this.currentIndex - 1 + this.posts.length) % this.posts.length;
-                this.updateSlidePosition();
-                this.resetProgress();
-            }
-            
-            goToSlide(index) {
-                this.currentIndex = index;
-                this.updateSlidePosition();
-                this.resetProgress();
-            }
-            
-            startAutoPlay() {
-                if (this.isPlaying) {
-                    this.autoPlayInterval = setInterval(() => this.nextSlide(), this.autoPlayDuration);
-                    this.startProgress();
-                }
-            }
-            
-            stopAutoPlay() {
-                if (this.autoPlayInterval) {
-                    clearInterval(this.autoPlayInterval);
-                    this.autoPlayInterval = null;
-                }
-                this.stopProgress();
-            }
-            
-            pauseAutoPlay() {
-                this.stopAutoPlay();
-            }
-            
-            resumeAutoPlay() {
-                if (this.isPlaying) {
-                    this.startAutoPlay();
-                }
-            }
-            
-            toggleAutoPlay() {
-                const button = document.getElementById('lifenotes-pause');
-                if (this.isPlaying) {
-                    this.isPlaying = false;
-                    this.stopAutoPlay();
-                    button.innerHTML = '▶';
+// Your existing JavaScript code integrated properly
+        
+        // Mobile Menu Toggle (from your existing code)
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (mobileMenu && navLinks) {
+            mobileMenu.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    navLinks.style.animation = 'rollUp 1s ease forwards';
+                    setTimeout(() => {
+                        navLinks.style.display = 'none';
+                    }, 1000);
                 } else {
-                    this.isPlaying = true;
-                    this.startAutoPlay();
-                    button.innerHTML = '⏸';
+                    navLinks.style.display = 'flex';
+                    navLinks.classList.add('active');
+                    navLinks.style.animation = 'rollDown 1s ease forwards';
                 }
-            }
-            
-            startProgress() {
-                this.progressWidth = 0;
-                this.progressInterval = setInterval(() => {
-                    this.progressWidth += (100 / (this.autoPlayDuration / 100));
-                    if (this.progressWidth >= 100) {
-                        this.progressWidth = 100;
-                    }
-                    document.getElementById('lifenotes-progress').style.width = this.progressWidth + '%';
-                }, 100);
-            }
-            
-            stopProgress() {
-                if (this.progressInterval) {
-                    clearInterval(this.progressInterval);
-                    this.progressInterval = null;
-                }
-            }
-            
-            resetProgress() {
-                this.stopProgress();
-                this.progressWidth = 0;
-                document.getElementById('lifenotes-progress').style.width = '0%';
-                if (this.isPlaying) {
-                    this.startProgress();
-                }
-            }
+            });
         }
 
-        // LifeNotes (Medium) - using your existing setup
-        async function fetchLifeNotes() {
+        // Nav link handling
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    navLinks.style.animation = 'rollUp 1s ease forwards';
+                    setTimeout(() => {
+                        navLinks.style.display = 'none';
+                    }, 1000);
+                }
+            });
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        /* YOUR EXISTING Blog Fetching Code - EXACTLY AS PROVIDED */
+        document.addEventListener("DOMContentLoaded", async function () {
+            const blogContainer = document.getElementById("lifenotes-grid");
             const loadingMessage = document.getElementById("lifenotes-loading");
             
             try {
@@ -178,52 +59,72 @@
                     throw new Error("No posts found");
                 }
                 
-                loadingMessage.style.display = "none";
+                // Hide loading message
+                if (loadingMessage) {
+                    loadingMessage.style.display = "none";
+                }
                 
-                // Initialize carousel
-                new LifeNotesCarousel(posts);
+                // Clear container and populate with actual Medium articles
+                blogContainer.innerHTML = '';
+                
+                posts.forEach((post, index) => {
+                    const title = post.title || "Untitled Post";
+                    const link = post.link || "#";
+                    
+                    // Check for different possible date keys (from your existing code)
+                    const pubDate = post.pubDate ? new Date(post.pubDate).toLocaleDateString() : 
+                                   post.published ? new Date(post.published).toLocaleDateString() :
+                                   "Date not available";
+                    
+                    // Create excerpt from available content
+                    const excerpt = post.contentSnippet || post.description || 
+                                   post.summary || "Click to read this article on Medium.";
+                    
+                    const articleCard = document.createElement('article');
+                    articleCard.className = 'blog-card';
+                    articleCard.innerHTML = `
+                        <div class="blog-header">
+                            <div class="blog-image lifenotes"></div>
+                            <div class="blog-title-section">
+                                <span class="blog-category lifenotes">LifeNotes</span>
+                                <h3 class="blog-title">${title}</h3>
+                            </div>
+                        </div>
+                        <p class="blog-excerpt">${excerpt}</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">${pubDate}</span>
+                            <a href="${link}" target="_blank" class="read-time">📖 Read on Medium</a>
+                        </div>
+                    `;
+                    
+                    blogContainer.appendChild(articleCard);
+                });
                 
             } catch (error) {
-                loadingMessage.innerHTML = "Error loading LifeNotes. Please try again later.";
-                console.error("Error fetching LifeNotes:", error);
+                if (loadingMessage) {
+                    loadingMessage.innerHTML = "Error loading posts from Medium. Please try again later.";
+                    loadingMessage.classList.remove('pulse');
+                }
+                console.error("Error fetching Medium blogs:", error);
             }
-        }
-
-        // CodeNotes (Hashnode) - to be implemented
-        async function fetchCodeNotes() {
-            try {
-                // Your CodeNotes fetching logic will go here
-                // const response = await fetch('YOUR_CODENOTES_RSS_ENDPOINT');
-                // const data = await response.json();
-                
-                // For now, show a placeholder
-                document.getElementById('codenotes-loading').innerHTML = 'CodeNotes integration coming soon...';
-                
-                // displayCodeNotes(data);
-            } catch (error) {
-                console.error('Error fetching CodeNotes:', error);
-                document.getElementById('codenotes-loading').innerHTML = 'Failed to load CodeNotes. Please try again later.';
-            }
-        }
-
-        // Remove the old displayLifeNotes function as it's now handled by the carousel class
-
-        function displayCodeNotes(data) {
-            const container = document.getElementById('codenotes-container');
-            if (data && data.items) {
-                container.innerHTML = data.items.slice(0, 5).map(post => `
-                    <article class="blog-post">
-                        <a href="${post.link}" target="_blank" class="post-title">${post.title}</a>
-                        <div class="post-meta">${new Date(post.pubDate).toLocaleDateString()}</div>
-                        <p class="post-excerpt">${post.description?.substring(0, 150)}...</p>
-                    </article>
-                `).join('');
-            }
-        }
-
-        // Initialize the blog sections
-        document.addEventListener('DOMContentLoaded', function() {
-            fetchLifeNotes();
-            fetchCodeNotes();
         });
-    
+
+        // Add scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        // Initialize animations after content loads
+        setTimeout(() => {
+            document.querySelectorAll('.blog-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        }, 500);
