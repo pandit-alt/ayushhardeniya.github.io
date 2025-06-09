@@ -18,9 +18,9 @@
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
         }
 
-        html {
+        /*html {
             scroll-behavior: smooth;
-        }
+        }*/
 
         body {
             background: var(--background);
@@ -75,6 +75,7 @@
             color: white; 
             text-decoration: none;
             font-weight: 600;
+            text-decoration: underline;
             font-size: 1.1rem;
             position: relative;
             padding: 0.5rem;
