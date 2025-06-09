@@ -345,74 +345,51 @@
         </div>
     -->
 
-    <section id="blog">
-        <h2 class="section-title">My Blogs</h2>
-        <div class="container">
-            <div class="blogs-container">
-                
-                <!-- LifeNotes Section -->
-                <div class="blog-section">
-                    <div class="blog-header">
-                        <div class="blog-icon lifenotes-icon">L</div>
-                        <div>
-                            <h3 class="blog-title">LifeNotes</h3>
-                            <p class="blog-subtitle">Personal stories & reflections on Medium</p>
-                        </div>
-                    </div>
-                    
-                    <div class="blog-content">
-                        <div id="lifenotes-loading" class="loading-message">
-                            Loading LifeNotes... Please wait while we fetch the latest posts.
-                        </div>
-                        <div id="lifenotes-container" class="carousel-container" style="display: none;">
-                            <div class="carousel-track" id="lifenotes-track"></div>
-                            <button class="carousel-controls carousel-prev" id="lifenotes-prev">‹</button>
-                            <button class="carousel-controls carousel-next" id="lifenotes-next">›</button>
-                            <button class="carousel-pause-play" id="lifenotes-pause">⏸</button>
-                            <div class="carousel-progress" id="lifenotes-progress"></div>
-                            <div class="carousel-indicators" id="lifenotes-indicators"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="newsletter-section">
-                        <h3 class="newsletter-title">Friday Reflections with Ayush</h3>
-                        <p class="newsletter-text">Join my weekly letter where I share personal stories, ideas, and thoughts—delivered fresh every Friday.</p>
-                        <a href="https://medium.com/@ayushHardeniya/subscribe" target="_blank" class="subscribe-button">
-                            Subscribe on Medium
-                        </a>
-                    </div>
-                </div>
-
-                <!-- CodeNotes Section -->
-                <div class="blog-section">
-                    <div class="blog-header">
-                        <div class="blog-icon codenotes-icon">C</div>
-                        <div>
-                            <h3 class="blog-title">CodeNotes</h3>
-                            <p class="blog-subtitle">Technical insights & coding tutorials on Hashnode</p>
-                        </div>
-                    </div>
-                    
-                    <div class="blog-content">
-                        <div id="codenotes-loading" class="loading-message">
-                            Loading CodeNotes... Please wait while we fetch the latest posts.
-                        </div>
-                        <div id="codenotes-container"></div>
-                    </div>
-                    
-                    <div class="newsletter-section">
-                        <h3 class="newsletter-title">CodeNotes Weekly</h3>
-                        <p class="newsletter-text">Get weekly coding tips, tutorials, and tech insights delivered to your inbox.</p>
-                        <a href="https://blog.ayushhardeniya.site/newsletter" target="_blank" class="subscribe-button">
-                            Subscribe to Newsletter
-                        </a>
-                    </div>
-                </div>
-                
+    
+        <!-- LifeNotes Section -->
+        <section class="blog-section">
+            <div class="section-header">
+                <h2 class="section-title">LifeNotes</h2>
+                <p class="section-subtitle">Personal reflections, growth insights, and life lessons from my journey of becoming more every day.</p>
             </div>
-        </div>
-    </section>
 
+            <div class="blog-grid" id="lifenotes-grid">
+                <!-- Loading message for LifeNotes -->
+                <div id="lifenotes-loading" class="loading-message pulse">Loading latest articles from Medium...</div>
+                <!-- Medium articles will be populated here by your existing JS code -->
+            </div>
+
+            <div class="subscribe-section">
+                <h3 class="subscribe-title">Stay Connected with LifeNotes</h3>
+                <p class="subscribe-description">Get notified when I publish new insights about personal growth, life lessons, and the journey of becoming more every day.</p>
+                <a href="https://medium.com/@ayushhardeniya" class="subscribe-btn" target="_blank">
+                    📝 Subscribe on Medium
+                </a>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- CodeNotes Section -->
+        <section class="blog-section">
+            <div class="section-header">
+                <h2 class="section-title">CodeNotes</h2>
+                <p class="section-subtitle">Technical insights, development tutorials, and coding experiences from my journey in technology and software development.</p>
+            </div>
+
+            <div class="blog-grid" id="codenotes-grid">
+                <!-- CodeNotes will be populated here - you can add your own articles or API -->
+                <div class="loading-message">CodeNotes coming soon...</div>
+            </div>
+
+            <div class="subscribe-section">
+                <h3 class="subscribe-title">Join the CodeNotes Community</h3>
+                <p class="subscribe-description">Subscribe to receive technical insights, development tutorials, and updates on my latest projects and learnings.</p>
+                <a href="#newsletter" class="subscribe-btn codenotes">
+                    ✉️ Subscribe to Newsletter
+                </a>
+            </div>
+        </section>
 
 <!-- Newsletter Subscription Section -->
 <!--
@@ -424,7 +401,6 @@
   </a>
 </div> -->
 
-</section>
     <!-- Contact Section -->
     <section id="contact">
         <h2 class="section-title">Contact</h2>
