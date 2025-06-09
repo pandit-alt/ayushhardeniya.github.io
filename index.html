@@ -346,7 +346,7 @@
     -->
 
     <section id="blog">
-        <h2 class="section-title">My Blogs & Insights</h2>
+        <h2 class="section-title">My Blogs</h2>
         <div class="container">
             <div class="blogs-container">
                 
@@ -364,7 +364,14 @@
                         <div id="lifenotes-loading" class="loading-message">
                             Loading LifeNotes... Please wait while we fetch the latest posts.
                         </div>
-                        <div id="lifenotes-container"></div>
+                        <div id="lifenotes-container" class="carousel-container" style="display: none;">
+                            <div class="carousel-track" id="lifenotes-track"></div>
+                            <button class="carousel-controls carousel-prev" id="lifenotes-prev">‹</button>
+                            <button class="carousel-controls carousel-next" id="lifenotes-next">›</button>
+                            <button class="carousel-pause-play" id="lifenotes-pause">⏸</button>
+                            <div class="carousel-progress" id="lifenotes-progress"></div>
+                            <div class="carousel-indicators" id="lifenotes-indicators"></div>
+                        </div>
                     </div>
                     
                     <div class="newsletter-section">
@@ -396,7 +403,7 @@
                     <div class="newsletter-section">
                         <h3 class="newsletter-title">CodeNotes Weekly</h3>
                         <p class="newsletter-text">Get weekly coding tips, tutorials, and tech insights delivered to your inbox.</p>
-                        <a href="#" target="_blank" class="subscribe-button">
+                        <a href="https://blog.ayushhardeniya.site/newsletter" target="_blank" class="subscribe-button">
                             Subscribe to Newsletter
                         </a>
                     </div>
