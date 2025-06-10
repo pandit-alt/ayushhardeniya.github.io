@@ -527,6 +527,12 @@
           color: #4b5563;
           margin: 0;
         }
+
+        .timeline-item:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-blue);
+            box-shadow: 0 15px 35px rgba(0, 36, 68, 0.1);
+        }
         
         /* Responsive Design */
         @media screen and (max-width: 768px) {
