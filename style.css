@@ -11,7 +11,7 @@
             --section-darker-blue: #81d4fa; /* Slightly Darker Blue */
         }
 
-        /** {
+        {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -20,26 +20,12 @@
 
         /*html {
             scroll-behavior: smooth;
-        }*//*
+        }*/
 
         body {
             background: var(--background);
             color: var(--text-dark);
             line-height: 1.6;
-        }*/
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
-            color: var(--text-dark);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            min-height: 100vh;
         }
 
         a {
@@ -1051,6 +1037,7 @@
                 font-size: 0.9rem;
             }
         }
+
         /* Contact Section */
 
         #contact {
