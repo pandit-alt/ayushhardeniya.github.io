@@ -1,3 +1,42 @@
+// Mobile Menu Toggle
+const mobileMenu = document.getElementById('mobile-menu');
+const navLinks = document.querySelector('.nav-links');
+
+mobileMenu.addEventListener('click', () => {
+    if (navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        navLinks.style.animation = 'rollUp 1s ease forwards';
+        setTimeout(() => {
+            navLinks.style.display = 'none';
+        }, 1000);
+    } else {
+        navLinks.style.display = 'flex';
+        navLinks.classList.add('active');
+        navLinks.style.animation = 'rollDown 1s ease forwards';
+    }
+});
+
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        if (navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            navLinks.style.animation = 'rollUp 1s ease forwards';
+            setTimeout(() => {
+                navLinks.style.display = 'none';
+            }, 1000);
+        }
+    });
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
 
 
 class LifeNotesManager {
