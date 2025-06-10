@@ -334,7 +334,7 @@
    
     <!-- Blog Section -->
     
-        <section id="blog">
+        <!-- <section id="blog">
         <h2 class="section-title">My Blogs</h2>
         <div class="container">
             <div class="blog-card" id="blog-card">
@@ -342,7 +342,78 @@
                 <div id="blog-container"></div>
             </div>
         </div>
-        </section>
+        </section> -->
+
+    <section class="blog-section">
+        <div class="section-header">
+            <h2 class="section-title">Blog</h2>
+            <p class="section-subtitle">Exploring life, technology, and everything in between through personal reflections and technical insights.</p>
+        </div>
+
+        <div class="blog-grid">
+            <!-- LifeNotes Section -->
+            <div class="blog-category">
+                <div class="category-header">
+                    <div class="category-icon lifenotes-icon">📖</div>
+                    <div>
+                        <h3 class="category-title">LifeNotes</h3>
+                        <p class="category-description">Personal thoughts and life experiences from Medium</p>
+                    </div>
+                </div>
+                
+                <div class="blog-container">
+                    <div id="lifenotes-loading" class="loading-message">
+                        Loading latest life stories...
+                    </div>
+                    <div id="lifenotes-container"></div>
+                </div>
+
+                <div class="nav-controls">
+                    <button class="nav-arrow" id="lifenotes-prev" disabled>‹</button>
+                    <span class="nav-info" id="lifenotes-info">1 / 1</span>
+                    <button class="nav-arrow" id="lifenotes-next" disabled>›</button>
+                </div>
+
+                <div class="subscribe-section">
+                    <div class="subscribe-card">
+                        <h4 class="subscribe-title">Subscribe to LifeNotes</h4>
+                        <p class="subscribe-description">Get notified when I share new life experiences and insights</p>
+                        <div class="subscribe-form">
+                            <button class="subscribe-btn" onclick="subscribeToLifeNotes()">Subscribe on Medium</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CodeNotes Section -->
+            <div class="blog-category">
+                <div class="category-header">
+                    <div class="category-icon codenotes-icon">💻</div>
+                    <div>
+                        <h3 class="category-title">CodeNotes</h3>
+                        <p class="category-description">Technical insights and coding tutorials</p>
+                    </div>
+                </div>
+                
+                <div class="blog-container">
+                    <div class="coming-soon">
+                        <div class="coming-soon-icon">🚀</div>
+                        <div class="coming-soon-text">Coming Soon</div>
+                        <p class="coming-soon-desc">Technical blogs and coding tutorials will be available here soon. Stay tuned for in-depth programming insights!</p>
+                    </div>
+                </div>
+
+                <div class="subscribe-section">
+                    <div class="subscribe-card">
+                        <h4 class="subscribe-title">Subscribe to CodeNotes</h4>
+                        <p class="subscribe-description">Be the first to know when technical content goes live</p>
+                        <div class="subscribe-form">
+                            <button class="subscribe-btn" onclick="subscribeToCodeNotes()">Subscribe to Newsletter</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     
     <!-- Contact Section -->
     <section id="contact">
