@@ -185,8 +185,7 @@ class LifeNotesManager {
         }
 
         function subscribeToCodeNotes() {
-            // Redirect to CodeNotes newsletter page
-            window.open('https://blog.ayushhardeniya.com/newsletter', '_blank');
+            window.open('https://blog.ayushhardeniya.site/newsletter', '_blank');
         }
 
         function isValidEmail(email) {
