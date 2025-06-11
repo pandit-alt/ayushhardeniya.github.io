@@ -198,3 +198,32 @@ class LifeNotesManager {
             new LifeNotesManager();
         });
   
+
+        //form - formspree based forwarding
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            // Add loading state
+            const submitBtn = document.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+
+            // Reset after 3 seconds if form doesn't redirect
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 3000);
+        });
+
+        // Simple form validation
+        const form = document.getElementById('contactForm');
+        const inputs = form.querySelectorAll('input[required], textarea[required]');
+
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                if (!this.value.trim()) {
+                    this.style.borderColor = '#e74c3c';
+                } else {
+                    this.style.borderColor = '#27ae60';
+                }
+            });
+        });
