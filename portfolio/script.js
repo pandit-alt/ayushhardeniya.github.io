@@ -65,7 +65,7 @@ window.addEventListener('scroll', () => {
 // Typing animation for hero subtitle
 const heroSubtitle = document.querySelector('.hero-subtitle');
 const titles = [
-    'Full Stack Developer',
+    'Creative Developer',
     'UI/UX Designer', 
     'Creative Problem Solver',
     'Tech Enthusiast'
