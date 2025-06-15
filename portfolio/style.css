@@ -373,7 +373,7 @@ section {
     height: 120px;
     margin: 0 auto 1rem;
     border-radius: 50%;
-    background-image: url('portfolio/assets/prof-image.png');
+    /*background-image: url('portfolio/assets/prof-image.png');*/
     background: var(--gradient);
     display: flex;
     align-items: center;
@@ -383,7 +383,6 @@ section {
 .image-placeholder {
     width: 110px;
     height: 110px;
-    background-image: url('portfolio/assets/prof-image.png');
     background: var(--bg-secondary);
     border-radius: 50%;
     display: flex;
