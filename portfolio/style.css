@@ -373,6 +373,7 @@ section {
     height: 120px;
     margin: 0 auto 1rem;
     border-radius: 50%;
+    background-image: url('portfolio/assets/prof-image.png');
     background: var(--gradient);
     display: flex;
     align-items: center;
