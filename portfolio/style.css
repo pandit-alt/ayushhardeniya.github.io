@@ -411,6 +411,29 @@ section {
     color: var(--text-secondary);
 }
 
+/*names palceholder*/
+.intro-tab {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.06); /* translucent background */
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.4px;
+    padding: 0.6em 1.4em;
+    border-radius: 999px; /* pill shape */
+    margin-bottom: 1rem;
+    backdrop-filter: blur(6px); /* soft glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: color 0.3s ease, background 0.3s ease;
+}
+
+.intro-tab:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--primary-color);
+}
+
+
 .profile-info h4 {
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
