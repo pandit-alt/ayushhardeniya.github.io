@@ -589,11 +589,11 @@ section {
     align-items: center;
     gap: 1rem;
     margin-bottom: 1rem;
-    color: var(--text-secondary);
+    color: white;
 }
 
 .contact-item i {
-    color: var(--primary-color);
+    color: white;
     width: 20px;
 }
 
