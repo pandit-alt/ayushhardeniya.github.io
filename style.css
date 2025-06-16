@@ -278,7 +278,7 @@
             color: var(--primary-blue); 
         }
 
-        /* Letter-by-letter Animation */
+        /* Letter by letter Animation */
         .highlight span {
             opacity: 0; /* Initially hidden */
             animation: fadeIn 3s forwards;
@@ -317,7 +317,7 @@
             .hero {
                 height: 588px; 
                 padding: 2rem 5%; 
-                background: url('/assets/mobilesizehero.jpg') center/contain no-repeat; /* Change to contain for mobile */
+                background: url('/assets/mobilesizehero.jpg') no-repeat center/contain;
             }
 
             .hero h1 {
