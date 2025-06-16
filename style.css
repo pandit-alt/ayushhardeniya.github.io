@@ -89,10 +89,14 @@
         .dropdown-menu {
             display: none;
             position: absolute;
+            top: 100%;
+            left: 0;
             background: black;
             padding: 10px;
             border-radius: 5px;
-            list-style: none; /* Ensure it appears as a list */
+            list-style: none;
+            min-width: 150px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25); /* Matchhing navbar shadow */
         }
         
         .dropdown-menu li {
