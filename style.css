@@ -58,7 +58,7 @@
             transition: all 0.3s ease-in-out;
         }
         
-        /* Create three equal sections */
+        /* Create three sections of navbar */
         .navbar-left,
         .navbar-center,
         .navbar-right {
@@ -88,7 +88,7 @@
         .nav-links {
             display: flex;
             gap: 2rem;
-            align-items: center;
+            /*align-items: center; */
         }
         
         .nav-link {
@@ -132,7 +132,7 @@
             text-decoration: none;
             display: block;
             width: 100%;
-            text-align: left; /* Left align the dropdown links */
+            text-align: left;
             padding: 0;
             font-size: 0.95rem;
             transition: color 0.3s ease;
