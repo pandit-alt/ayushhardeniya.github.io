@@ -90,33 +90,59 @@
 </head>
 <body>
     <!-- Navigation -->
-    <!-- <nav class="navbar">
+    <nav class="navbar">
+    <!-- Left Section: logo/sign. -->
+    <div class="navbar-left">
         <a href="#">
             <img src="signwhitetrans1.png" alt="Ayush Hardeniya's Signature" class="brand-logo">
         </a>
-        <div class="nav-links">
+    </div>
+    
+    <!-- Center - Navigation Links -->
+    <div class="navbar-center">
+        <div class="nav-links" id="nav-links">
             <a href="#herotop" class="nav-link">Home</a>
             <a href="#about" class="nav-link">My Story</a>
-            <a href="#values" class="nav-link">Values</a>
-            <a href="#social-links" class="nav-link">Links</a>
-            <a href="#blog" class="nav-link">Articles</a>
-            <a href="https://blog.ayushhardeniya.site" class="nav-link">DevBlogs</a>
+            
+            <!-- Links Dropdown -->
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link">Links <i class="fas fa-angle-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/portfolio" class="nav-link">• Portfolio</a></li>
+                    <li><a href="#social-links" class="nav-link">• Social Links</a></li>
+                </ul>
+            </div>
+            
+            <!-- Blog Dropdown -->
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link">Blog <i class="fas fa-angle-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#blog" class="nav-link">• LifeNotes</a></li>
+                    <li><a href="#blog" class="nav-link">• CodeNotes</a></li>
+                    <li><a href="#values" class="nav-link">• My Values</a></li>
+                </ul>
+            </div>
+            
             <a href="#contact" class="nav-link">Contact</a>
-            <!--<a href="https://ayushhardeniya.github.io/aHPay/"
-               target="_blank"
-               class="sponsor-button">❤️ Sponsor Me</a>
-            <i class="fas fa-bars menu-toggle" id="mobile-menu"></i> -->
-            <!--<a href="https://ko-fi.com/ayushhardeniya" 
+        </div>
+    </div>
+    
+    <!-- Right... Ko-fi btn + Hamburger -->
+    <div class="navbar-right">
+        <div class="kofi-container">
+            <a href="https://ko-fi.com/ayushhardeniya" 
                target="_blank" 
                class="kofi-button-nav">
                <img src="https://storage.ko-fi.com/cdn/cup-border.png" 
                     alt="Ko-fi" 
                     class="kofi-icon">
-               Buy Me a Coffee
-            </a>
-    </nav> -->
-
-    <nav class="navbar">
+               Buy Me a Coffee</a>
+        </div>
+        <i class="fas fa-bars menu-toggle" id="mobile-menu"></i>
+    </div>
+    </nav>
+        
+    <!-- <nav class="navbar">
     <a href="#">
         <img src="signwhitetrans1.png" alt="Ayush Hardeniya's Signature" class="brand-logo">
     </a>
@@ -124,6 +150,7 @@
         <a href="#herotop" class="nav-link">Home</a>
         <a href="#about" class="nav-link">My Story</a>
         <!-- Links Dropdown- portfolio special -->
+        <!--
         <div class="nav-item dropdown">
             <a href="#" class="nav-link">Links <i class="fas fa-angle-down"></i></a>
             <ul class="dropdown-menu">
@@ -132,6 +159,7 @@
             </ul>
         </div>
             <!-- Blog Dropdown -->
+        <!-- 
         <div class="nav-item dropdown">
             <a href="#" class="nav-link">Blog <i class="fas fa-angle-down"></i></a>
             <ul class="dropdown-menu">
@@ -142,6 +170,7 @@
         </div>
         <a href="#contact" class="nav-link">Contact</a>
         <!-- Ko-Fi Button-->
+    <!--
         <div class="kofi-container">
             <a href="https://ko-fi.com/ayushhardeniya" 
                target="_blank" 
@@ -153,7 +182,7 @@
         </div>
     </div>
         <i class="fas fa-bars menu-toggle" id="mobile-menu"></i>
-</nav>
+</nav> -->
         
     <!-- Hero Section -->
     <section id="herotop" class="hero">
