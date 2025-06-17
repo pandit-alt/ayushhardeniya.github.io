@@ -1,3 +1,205 @@
+.navbar {
+    padding: 0.5rem 5%;
+    background: black; 
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease-in-out;
+}
+
+        .brand-logo {
+            height: 50px;
+            width: auto; 
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;   
+            align-items: center;
+        }
+
+        .nav-link {
+            color: white; 
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            position: relative;
+            /* justify-content: center; */
+            padding: 0.5rem;
+            transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .nav-link:hover {
+            color: yellow; 
+            transform: translateY(-2px); /* Slight lift effect */
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background: black;
+            padding: 10px;
+            border-radius: 5px;
+            list-style: none;
+            min-width: 150px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25); /* Matchhing navbar shadow */
+        }
+        
+        .dropdown-menu li {
+            padding: 5px;
+        }
+        
+        .dropdown-menu a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-item:hover .dropdown-menu {
+            display: block;
+        }
+        
+        /* Ko-fi Button Fix */
+        .kofi-container {
+            display: inline-block;
+        }
+        
+        /* hamburger */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: block; /* mobile nav*/
+            }
+        }
+
+        .menu-toggle {
+            display: block;
+            position: absolute;
+            right: 20px; /* Adjust placement */
+            top: 15px;
+            font-size: 24px;
+            z-index: 1001;
+        }
+
+        /*BuyMeACoffee Nav Button Styling*/
+
+        .kofi-container {
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .kofi-button-nav {
+            background-color: #ffdd00; /* Ko-fi yellow */
+            color: #000;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            padding: 0.45rem 1rem;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            z-index: 1000; /* Ensures it doesn't overlap other elements */
+        }
+        
+        /* Hover Effect */
+        .kofi-button-nav:hover {
+            background-color: #ffe85a;
+            transform: translateY(-2px);
+        }
+        
+        /* Ko-fi Icon Styling */
+        .kofi-icon {
+            height: 18px; 
+            width: 18px;
+            object-fit: contain;
+            margin-bottom: 1px;
+        }
+        
+        /* Fixing the Hamburger Menu Conflict */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: flex; 
+                flex-direction: column;
+            }
+        
+            .kofi-container {
+                margin-top: 10px; 
+                text-align: center;
+            }
+        
+            .kofi-button-nav {
+                width: fit-content;
+                padding: 0.5rem 1.2rem;
+            }
+        }
+    
+
+
+
+        /* Mobile Styles */
+        .menu-toggle {
+            display: block;
+            cursor: pointer; 
+            color: white;
+            font-size: 1.5rem; /*icon*/
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Hide links by default */
+                flex-direction: column; 
+                position: absolute; 
+                top: 60px;
+                right: 0; 
+                background: black; 
+                width: 100%; 
+                padding: 1rem 0; 
+                z-index: 999; /* Ensure it appears above other content */
+                opacity: 0; /* Start hidden */
+                transform: translateY(-20px); 
+                transition: opacity 0.3s ease, transform 0.3s ease;
+            }
+
+            .nav-links.active {
+                display: flex; 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes rollDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes rollUp {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+        }
+
+
 .blog-card {
     position: relative;
     background: #fff;
