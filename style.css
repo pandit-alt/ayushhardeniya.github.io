@@ -1,10 +1,10 @@
         :root {
-            --primary-light: #e0f7fa; /* Light Cyan */
-            --primary-blue: #002444; /* Original Primary Blue */
-            --accent-blue: #4db6ac; /* Light Teal */
-            --background: #f3f4f6; /* Light Gray */
+            --primary-light: #e0f7fa; /* Light Cyan (skyblue type) */
+            --primary-blue: #002444; /* Original primary blue */
+            --accent-blue: #4db6ac; /* Light teal */
+            --background: #f3f4f6; /* Light gray */
             --text-dark: #111827; /* Dark Gray */
-            --section-background: #ffffff; /* White */
+            --section-background: #ffffff; /* white */
             --section-light-blue: #e1f5fe; /* Light Blue */
             --section-dark-blue: #b3e5fc; /* Soft Blue */
             --section-darker-blue: #81d4fa; /* Slightly Darker Blue */
