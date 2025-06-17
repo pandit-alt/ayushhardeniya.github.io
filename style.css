@@ -53,40 +53,59 @@
             top: 0;
             z-index: 1000;
             display: flex;
-            justify-content: space-between;
             align-items: center;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
             transition: all 0.3s ease-in-out;
         }
-
+        
+        /* Create three equal sections */
+        .navbar-left,
+        .navbar-center,
+        .navbar-right {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+        
+        .navbar-left {
+            justify-content: flex-start;
+        }
+        
+        .navbar-center {
+            justify-content: center;
+        }
+        
+        .navbar-right {
+            justify-content: flex-end;
+            gap: 1rem; /* Space between Ko-fi button and hamburger */
+        }
+        
         .brand-logo {
             height: 50px;
             width: auto; 
         }
-
+        
         .nav-links {
             display: flex;
             gap: 2rem;
-            justify-content: center;   
             align-items: center;
         }
-
+        
         .nav-link {
             color: white; 
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1rem;
             position: relative;
-            /* justify-content: center; */
             padding: 0.5rem;
             transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
         }
-
+        
         .nav-link:hover {
             color: yellow; 
-            transform: translateY(-2px); /* Slight lift effect */
+            transform: translateY(-2px);
         }
-
+        
         /* Dropdown Menu */
         .dropdown-menu {
             display: none;
@@ -95,46 +114,44 @@
             padding: 10px;
             border-radius: 5px;
             list-style: none;
-            min-width: 150px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25); /* Matchhing navbar shadow */
+            min-width: 180px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+            top: 100%;
+            left: 0;
+            margin: 0;
         }
         
         .dropdown-menu li {
-            padding: 5px;
+            padding: 8px 12px;
+            text-align: left; /* Ensure left alignment */
+            width: 100%;
         }
         
         .dropdown-menu a {
             color: white;
             text-decoration: none;
+            display: block;
+            width: 100%;
+            text-align: left; /* Left align the dropdown links */
+            padding: 0;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
         }
-
-        .nav-item:hover .dropdown-menu {
+        
+        .dropdown-menu a:hover {
+            color: yellow;
+        }
+        
+        .nav-item {
+            position: relative; /* Important for dropdown positioning */
+        }
+        
+        .nav-item:hover .dropdown-menu,
+        .dropdown:hover .dropdown-menu {
             display: block;
         }
         
-        /* Ko-fi Button Fix */
-        .kofi-container {
-            display: inline-block;
-        }
-        
-        /* hamburger */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: block; /* mobile nav*/
-            }
-        }
-
-        .menu-toggle {
-            display: block;
-            position: absolute;
-            right: 20px; /* Adjust placement */
-            top: 15px;
-            font-size: 24px;
-            z-index: 1001;
-        }
-
-        /*BuyMeACoffee Nav Button Styling*/
-
+        /* Ko-fi Button Styling */
         .kofi-container {
             display: flex; 
             justify-content: center;
@@ -142,7 +159,7 @@
         }
         
         .kofi-button-nav {
-            background-color: #ffdd00; /* Ko-fi yellow */
+            background-color: #ffdd00;
             color: #000;
             text-decoration: none;
             font-weight: 600;
@@ -154,16 +171,14 @@
             gap: 6px;
             transition: all 0.3s ease-in-out;
             position: relative;
-            z-index: 1000; /* Ensures it doesn't overlap other elements */
+            z-index: 1000;
         }
         
-        /* Hover Effect */
         .kofi-button-nav:hover {
             background-color: #ffe85a;
             transform: translateY(-2px);
         }
         
-        /* Ko-fi Icon Styling */
         .kofi-icon {
             height: 18px; 
             width: 18px;
@@ -171,59 +186,78 @@
             margin-bottom: 1px;
         }
         
-        /* Fixing the Hamburger Menu Conflict */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: flex; 
-                flex-direction: column;
-            }
-        
-            .kofi-container {
-                margin-top: 10px; 
-                text-align: center;
-            }
-        
-            .kofi-button-nav {
-                width: fit-content;
-                padding: 0.5rem 1.2rem;
-            }
-        }
-    
-
-
-
-        /* Mobile Styles */
+        /* Hamburger Menu */
         .menu-toggle {
-            display: block;
+            display: none; /* Hide on desktop */
             cursor: pointer; 
             color: white;
-            font-size: 1.5rem; /*icon*/
+            font-size: 1.5rem;
         }
-
-        /* Media Queries */
-        @media (max-width: 768px) {
+        
+        /* Desktop: Show nav-links, hide hamburger */
+        @media (min-width: 769px) {
+            .menu-toggle {
+                display: none;
+            }
+            
             .nav-links {
-                display: none; /* Hide links by default */
-                flex-direction: column; 
-                position: absolute; 
+                display: flex;
+            }
+        }
+        
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            /* Change to space-between for mobile to accommodate hamburger */
+            .navbar {
+                justify-content: space-between;
+            }
+            
+            /* Reset the three-column layout for mobile */
+            .navbar-left,
+            .navbar-center,
+            .navbar-right {
+                flex: none;
+            }
+            
+            .navbar-center {
+                position: absolute;
                 top: 60px;
-                right: 0; 
-                background: black; 
+                left: 0;
+                right: 0;
+                background: black;
+                z-index: 999;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                flex-direction: column; 
                 width: 100%; 
                 padding: 1rem 0; 
-                z-index: 999; /* Ensure it appears above other content */
-                opacity: 0; /* Start hidden */
+                opacity: 0;
                 transform: translateY(-20px); 
                 transition: opacity 0.3s ease, transform 0.3s ease;
             }
-
+        
             .nav-links.active {
                 display: flex; 
                 opacity: 1;
                 transform: translateY(0);
             }
+            
+            .kofi-container {
+                margin-right: 1rem; /* Add some space before hamburger */
+            }
+            
+            .kofi-button-nav {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
         }
-
+        
         @keyframes rollDown {
             from {
                 opacity: 0;
@@ -234,7 +268,7 @@
                 transform: translateY(0);
             }
         }
-
+        
         @keyframes rollUp {
             from {
                 opacity: 1;
@@ -244,14 +278,15 @@
                 opacity: 0;
                 transform: translateY(-20px);
             }
-        }
+        }        
 
+        
         /* Hero Section */
         .hero {
             height: 100vh; /* Full ht. */
             display: flex;
             align-items: center;
-            justify-content: flex-start; /* Align content.to left */
+            justify-content: flex-start; /* left alignment */
             background: url('/assets/heroimage-aHdesign.png') center/cover no-repeat; /* Center and cover */
             padding: 0 5%; 
             position: relative;
@@ -262,27 +297,27 @@
             text-align: left; 
             max-width: 500px; 
             color: --primary-blue;
-            z-index: 1; /* Ensure it appears above the background */
+            z-index: 1; /* stack over flow */
         }
 
         /* Hero Section Styling */
         .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem); /* Responsive font size */
+            font-size: clamp(2.5rem, 5vw, 4rem); /* Responsive Font size */
             margin-bottom: 1.5rem;
             margin-top: 2rem; 
             line-height: 1.2; 
         }
 
-        /* Animated Name: Ayush Hardeniya */
+        /* Animated name... */
         .highlight {
             font-size: clamp(3rem, 6vw, 5rem);
             font-weight: bold;
             color: var(--primary-blue); 
         }
 
-        /* Letter by letter Animation */
+        /* Leter by letter Animation */
         .highlight span {
-            opacity: 0; /* Initially hidden */
+            opacity: 0;
             animation: fadeIn 3s forwards;
         }
 
@@ -369,7 +404,7 @@
             margin: 2rem 0;
             border-radius: 10px; 
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animaation */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         section:hover {
@@ -400,7 +435,7 @@
         /* Contact Section */
         #contact {
             background: var(--section-light-blue); 
-            color: var(--text-dark); /* text color for contrast */
+            color: var(--text-dark);
         }
 
         .section-title {
