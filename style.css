@@ -64,7 +64,6 @@
         .navbar-right {
             flex: 1;
             display: flex;
-            align-items: center;
         }
         
         .navbar-left {
