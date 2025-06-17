@@ -52,29 +52,24 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
             align-items: center;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
             transition: all 0.3s ease-in-out;
         }
         
         .navbar-left {
-            flex: 1;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
+            justify-self: start;
         }
         
         .navbar-center {
-            flex: 1;
-            display: flex;
-            justify-content: center;
+            justify-self: center;
         }
         
         .navbar-right {
-            flex: 1;
+            justify-self: end;
             display: flex;
-            justify-content: flex-end;
             align-items: center;
             gap: 1rem;
         }
@@ -95,17 +90,11 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1rem;
-            position: relative;
             padding: 0.5rem;
             transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
             display: inline-flex;
-            /*align-items: center; */
-            gap: 0.5rem;
-        }
-        
-        .nav-link i {
-            font-size: 0.9rem;
-            line-height: 1;
+            align-items: center;
+            gap: 0.3rem;
         }
         
         .nav-link:hover {
@@ -115,8 +104,6 @@
         
         .nav-item {
             position: relative;
-            display: flex;
-            align-items: center;
         }
         
         .dropdown-menu {
@@ -135,17 +122,12 @@
         
         .dropdown-menu li {
             padding: 8px 12px;
-            text-align: left;
-            width: 100%;
         }
         
         .dropdown-menu a {
             color: white;
             text-decoration: none;
             display: block;
-            width: 100%;
-            text-align: left;
-            padding: 0;
             font-size: 0.95rem;
             transition: color 0.3s ease;
         }
@@ -154,15 +136,8 @@
             color: yellow;
         }
         
-        .nav-item:hover .dropdown-menu,
-        .dropdown:hover .dropdown-menu {
+        .nav-item:hover .dropdown-menu {
             display: block;
-        }
-        
-        .kofi-container {
-            display: flex; 
-            justify-content: center;
-            align-items: center;
         }
         
         .kofi-button-nav {
@@ -177,8 +152,6 @@
             align-items: center;
             gap: 6px;
             transition: all 0.3s ease-in-out;
-            position: relative;
-            z-index: 1000;
         }
         
         .kofi-button-nav:hover {
@@ -190,7 +163,6 @@
             height: 18px; 
             width: 18px;
             object-fit: contain;
-            margin-bottom: 1px;
         }
         
         .menu-toggle {
@@ -204,13 +176,14 @@
             .menu-toggle {
                 display: none;
             }
-            
-            .nav-links {
-                display: flex;
-            }
         }
         
         @media (max-width: 768px) {
+            .navbar {
+                grid-template-columns: auto 1fr auto;
+                gap: 1rem;
+            }
+            
             .menu-toggle {
                 display: block;
             }
@@ -222,6 +195,7 @@
                 right: 0;
                 background: black;
                 z-index: 999;
+                justify-self: stretch;
             }
             
             .nav-links {
@@ -244,29 +218,7 @@
                 padding: 0.4rem 0.8rem;
                 font-size: 0.9rem;
             }
-        }
-        
-        @keyframes rollDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes rollUp {
-            from {
-                opacity: 1;
-                transform: translateY(0);
-            }
-            to {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-        }            
+        } 
         
         /* Hero Section */
         .hero {
