@@ -46,179 +46,300 @@
 
         /* Navigation */
         .navbar {
-            padding: 0.5rem 5%;
-            background: black; 
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            display: grid;
-            grid-template-columns: 1fr 2fr 1fr;
-            align-items: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-            transition: all 0.3s ease-in-out;
-        }
-        
-        .navbar-left {
-            justify-self: start;
-        }
-        
-        .navbar-center {
-            justify-self: center;
-        }
-        
-        .navbar-right {
-            justify-self: end;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .brand-logo {
-            height: 50px;
-            width: auto; 
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-        
-        .nav-link {
-            color: white; 
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            padding: 0.5rem;
-            transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
-        }
-        
-        .nav-link:hover {
-            color: yellow; 
-            transform: translateY(-2px);
-        }
-        
-        .nav-item {
-            position: relative;
-        }
-        
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            background: black;
-            padding: 10px;
-            border-radius: 5px;
-            list-style: none;
-            min-width: 180px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-            top: 100%;
-            left: 0;
-            margin: 0;
-        }
-        
-        .dropdown-menu li {
-            padding: 8px 12px;
-        }
-        
-        .dropdown-menu a {
-            color: white;
-            text-decoration: none;
-            display: block;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-        }
-        
-        .dropdown-menu a:hover {
-            color: yellow;
-        }
-        
-        .nav-item:hover .dropdown-menu {
-            display: block;
-        }
-        
-        .kofi-button-nav {
-            background-color: #ffdd00;
-            color: #000;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.05rem;
-            padding: 0.45rem 1rem;
-            border-radius: 20px;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: all 0.3s ease-in-out;
-        }
-        
-        .kofi-button-nav:hover {
-            background-color: #ffe85a;
-            transform: translateY(-2px);
-        }
-        
-        .kofi-icon {
-            height: 18px; 
-            width: 18px;
-            object-fit: contain;
-        }
-        
-        .menu-toggle {
-            cursor: pointer; 
-            color: white;
-            font-size: 1.5rem;
-            display: none;
-        }
-        
-        @media (min-width: 769px) {
-            .menu-toggle {
-                display: none;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .navbar {
-                grid-template-columns: auto 1fr auto;
-                gap: 1rem;
-            }
-            
-            .menu-toggle {
-                display: block;
-            }
-            
-            .navbar-center {
-                position: absolute;
-                top: 60px;
-                left: 0;
-                right: 0;
-                background: black;
-                z-index: 999;
-                justify-self: stretch;
-            }
-            
-            .nav-links {
-                display: none;
-                flex-direction: column; 
-                width: 100%; 
-                padding: 1rem 0; 
-                opacity: 0;
-                transform: translateY(-20px); 
-                transition: opacity 0.3s ease, transform 0.3s ease;
-            }
-        
-            .nav-links.active {
-                display: flex; 
-                opacity: 1;
-                transform: translateY(0);
-            }
-            
-            .kofi-button-nav {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.9rem;
-            }
-        } 
+    padding: 0.5rem 5%;
+    background: black; 
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-left {
+    justify-self: start;
+}
+
+.navbar-center {
+    justify-self: center;
+}
+
+.navbar-right {
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.brand-logo {
+    height: 50px;
+    width: auto; 
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: white; 
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.5rem;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.nav-link:hover {
+    color: yellow; 
+    transform: translateY(-2px);
+}
+
+.nav-item {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background: black;
+    padding: 10px;
+    border-radius: 5px;
+    list-style: none;
+    min-width: 180px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    top: 100%;
+    left: 0;
+    margin: 0;
+}
+
+.dropdown-menu li {
+    padding: 8px 12px;
+}
+
+.dropdown-menu a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    color: yellow;
+}
+
+.nav-item:hover .dropdown-menu {
+    display: block;
+}
+
+.kofi-button-nav {
+    background-color: #ffdd00;
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    padding: 0.45rem 1rem;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease-in-out;
+}
+
+.kofi-button-nav:hover {
+    background-color: #ffe85a;
+    transform: translateY(-2px);
+}
+
+.kofi-icon {
+    height: 18px; 
+    width: 18px;
+    object-fit: contain;
+}
+
+.menu-toggle {
+    cursor: pointer; 
+    color: white;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+/* Hide Ko-fi on mobile, show on desktop */
+.desktop-only {
+    display: block;
+}
+
+/* Full Page Mobile Menu */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    z-index: 9999;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-menu-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+.mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    border-bottom: 1px solid #333;
+}
+
+.mobile-logo {
+    height: 40px;
+    width: auto;
+}
+
+.mobile-close {
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.mobile-close:hover {
+    color: yellow;
+}
+
+.mobile-menu-content {
+    padding: 2rem 5%;
+    height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.mobile-nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0.2rem 0;
+    transition: color 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.mobile-nav-link:hover {
+    color: yellow;
+}
+
+.mobile-nav-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+}
+
+.mobile-nav-title {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 0.5rem 0;
+}
+
+.mobile-nav-submenu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-left: 0rem;
+}
+
+.mobile-nav-sublink {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 400;
+    padding: 0rem 0;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.mobile-nav-sublink:before {
+    content: "–";
+    margin-right: 0.5rem;
+    color: #666;
+}
+
+.mobile-nav-sublink:hover {
+    color: yellow;
+}
+
+.mobile-kofi-container {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #333;
+}
+
+.mobile-kofi-button {
+    background-color: #ffdd00;
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+.mobile-kofi-button:hover {
+    background-color: #ffe85a;
+    transform: translateY(-2px);
+}
+
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        grid-template-columns: auto 1fr auto;
+        gap: 1rem;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .desktop-only {
+        display: none;
+    }
+    
+    .navbar-center {
+        display: none; /* Hide desktop nav on mobile */
+    }
+}
         
         /* Hero Section */
         .hero {

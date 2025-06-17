@@ -91,14 +91,14 @@
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-    <!-- Left Section: logo/sign. -->
+    <!-- Left Section: Logo -->
     <div class="navbar-left">
         <a href="#">
             <img src="signwhitetrans1.png" alt="Ayush Hardeniya's Signature" class="brand-logo">
         </a>
     </div>
     
-    <!-- Center - Navigation Links -->
+    <!-- Center Section: Navigation Links -->
     <div class="navbar-center">
         <div class="nav-links" id="nav-links">
             <a href="#herotop" class="nav-link">Home</a>
@@ -127,9 +127,10 @@
         </div>
     </div>
     
-    <!-- Right... Ko-fi btn + Hamburger -->
+    <!-- Right Section: Ko-fi Button + Hamburger -->
     <div class="navbar-right">
-        <div class="kofi-container">
+        <!-- Ko-fi button only visible on desktop -->
+        <div class="kofi-container desktop-only">
             <a href="https://ko-fi.com/ayushhardeniya" 
                target="_blank" 
                class="kofi-button-nav">
@@ -140,6 +141,53 @@
         </div>
         <i class="fas fa-bars menu-toggle" id="mobile-menu"></i>
     </div>
+</nav>
+
+<!-- Full Page Mobile Menu -->
+<div class="mobile-menu-overlay" id="mobile-menu-overlay">
+    <div class="mobile-menu-header">
+        <a href="#">
+            <img src="signwhitetrans1.png" alt="Ayush Hardeniya's Signature" class="mobile-logo">
+        </a>
+        <i class="fas fa-times mobile-close" id="mobile-close"></i>
+    </div>
+    
+    <div class="mobile-menu-content">
+        <nav class="mobile-nav">
+            <a href="#herotop" class="mobile-nav-link">Home</a>
+            <a href="#about" class="mobile-nav-link">My Story</a>
+            
+            <div class="mobile-nav-section">
+                <span class="mobile-nav-title">Links</span>
+                <div class="mobile-nav-submenu">
+                    <a href="/portfolio" class="mobile-nav-sublink">Portfolio</a>
+                    <a href="#social-links" class="mobile-nav-sublink">Social Links</a>
+                </div>
+            </div>
+            
+            <div class="mobile-nav-section">
+                <span class="mobile-nav-title">Blog</span>
+                <div class="mobile-nav-submenu">
+                    <a href="#blog" class="mobile-nav-sublink">LifeNotes</a>
+                    <a href="#blog" class="mobile-nav-sublink">CodeNotes</a>
+                    <a href="#values" class="mobile-nav-sublink">My Values</a>
+                </div>
+            </div>
+            
+            <a href="#contact" class="mobile-nav-link">Contact</a>
+        </nav>
+        
+        <div class="mobile-kofi-container">
+            <a href="https://ko-fi.com/ayushhardeniya" 
+               target="_blank" 
+               class="mobile-kofi-button">
+               <img src="https://storage.ko-fi.com/cdn/cup-border.png" 
+                    alt="Ko-fi" 
+                    class="kofi-icon">
+               Buy Me a Coffee</a>
+        </div>
+    </div>
+</div>
     </nav>
         
     <!-- <nav class="navbar">

@@ -1,43 +1,54 @@
-// Mobile Menu Toggle
-const mobileMenu = document.getElementById('mobile-menu');
-const navLinks = document.querySelector('.nav-links');
+// Mobile Menu Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.getElementById('mobile-menu');
+    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+    const mobileClose = document.getElementById('mobile-close');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link, .mobile-nav-sublink');
 
-mobileMenu.addEventListener('click', () => {
-    if (navLinks.classList.contains('active')) {
-        navLinks.classList.remove('active');
-        navLinks.style.animation = 'rollUp 1s ease forwards';
-        setTimeout(() => {
-            navLinks.style.display = 'none';
-        }, 1000);
-    } else {
-        navLinks.style.display = 'flex';
-        navLinks.classList.add('active');
-        navLinks.style.animation = 'rollDown 1s ease forwards';
+    // Open mobile menu
+    mobileMenuToggle.addEventListener('click', function() {
+        mobileMenuOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    });
+
+    // Close mobile menu
+    function closeMobileMenu() {
+        mobileMenuOverlay.classList.remove('active');
+        document.body.style.overflow = 'auto'; // Re-enable scrolling
     }
-});
 
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        if (navLinks.classList.contains('active')) {
-            navLinks.classList.remove('active');
-            navLinks.style.animation = 'rollUp 1s ease forwards';
-            setTimeout(() => {
-                navLinks.style.display = 'none';
-            }, 1000);
+    // Close menu when clicking close button
+    mobileClose.addEventListener('click', closeMobileMenu);
+
+    // Close menu when clicking on overlay background
+    mobileMenuOverlay.addEventListener('click', function(e) {
+        if (e.target === mobileMenuOverlay) {
+            closeMobileMenu();
+        }
+    });
+
+    // Close menu when clicking on nav links
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            // Small delay to allow navigation to complete
+            setTimeout(closeMobileMenu, 100);
+        });
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileMenuOverlay.classList.contains('active')) {
+            closeMobileMenu();
+        }
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768 && mobileMenuOverlay.classList.contains('active')) {
+            closeMobileMenu();
         }
     });
 });
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-
 
 class LifeNotesManager {
             constructor() {
