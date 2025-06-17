@@ -45,6 +45,7 @@
         }
 
         /* Navigation */
+        /* Navigation */
         .navbar {
             padding: 0.5rem 5%;
             background: black; 
@@ -58,25 +59,27 @@
             transition: all 0.3s ease-in-out;
         }
         
-        /* Create three sections of navbar */
-        .navbar-left,
-        .navbar-center,
-        .navbar-right {
+        /* Create three equal sections */
+        .navbar-left {
             flex: 1;
             display: flex;
-        }
-        
-        .navbar-left {
             justify-content: flex-start;
+            align-items: center;
         }
         
         .navbar-center {
+            flex: 1;
+            display: flex;
             justify-content: center;
+            /* NO align-items here - let nav-links handle their own alignment */
         }
         
         .navbar-right {
+            flex: 1;
+            display: flex;
             justify-content: flex-end;
-            gap: 1rem; /* Space b/wn Ko-fi button & hamburger */
+            align-items: center;
+            gap: 1rem;
         }
         
         .brand-logo {
@@ -86,8 +89,8 @@
         
         .nav-links {
             display: flex;
-            gap: 1.5rem;
-            /*align-items: center; */
+            gap: 2rem;
+            align-items: center; /* This handles the nav links alignment */
         }
         
         .nav-link {
@@ -103,6 +106,11 @@
         .nav-link:hover {
             color: yellow; 
             transform: translateY(-2px);
+        }
+        
+        /* Nav item positioning for dropdowns */
+        .nav-item {
+            position: relative;
         }
         
         /* Dropdown Menu */
@@ -122,7 +130,7 @@
         
         .dropdown-menu li {
             padding: 8px 12px;
-            text-align: left; /* Ensure left alignment */
+            text-align: left;
             width: 100%;
         }
         
@@ -139,10 +147,6 @@
         
         .dropdown-menu a:hover {
             color: yellow;
-        }
-        
-        .nav-item {
-            position: relative; /* Imp. for dropdown positioning */
         }
         
         .nav-item:hover .dropdown-menu,
@@ -187,13 +191,13 @@
         
         /* Hamburger Menu */
         .menu-toggle {
-            display: flex;
             cursor: pointer; 
             color: white;
             font-size: 1.5rem;
+            display: none; /* Hide on desktop */
         }
         
-        /* Desktop: Show nav-links, hide hamburger */
+        /* Desktop */
         @media (min-width: 769px) {
             .menu-toggle {
                 display: none;
@@ -206,16 +210,8 @@
         
         /* Mobile Styles */
         @media (max-width: 768px) {
-            /* Change to space-between for mobile to accommodate hamburger */
-            .navbar {
-                justify-content: space-between;
-            }
-            
-            /* Reset the three-column layout for mobile */
-            .navbar-left,
-            .navbar-center,
-            .navbar-right {
-                flex: none;
+            .menu-toggle {
+                display: block;
             }
             
             .navbar-center {
@@ -225,10 +221,6 @@
                 right: 0;
                 background: black;
                 z-index: 999;
-            }
-            
-            .menu-toggle {
-                display: block;
             }
             
             .nav-links {
@@ -245,10 +237,6 @@
                 display: flex; 
                 opacity: 1;
                 transform: translateY(0);
-            }
-            
-            .kofi-container {
-                margin-right: 1rem; /* Add some space before hamburger */
             }
             
             .kofi-button-nav {
@@ -277,8 +265,7 @@
                 opacity: 0;
                 transform: translateY(-20px);
             }
-        }        
-
+        }            
         
         /* Hero Section */
         .hero {
