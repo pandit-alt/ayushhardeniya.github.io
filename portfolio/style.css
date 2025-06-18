@@ -1,4 +1,4 @@
-/* overall styles. */
+/* overall styles (global). */
 * {
     margin: 0;
     padding: 0;
@@ -39,7 +39,7 @@ body {
     padding: 0 20px;
 }
 
-/* Navigation */
+/* Navigation  */
 .navbar {
     position: fixed;
     top: 0;
@@ -108,7 +108,7 @@ body {
     width: 100%;
 }
 
-/*resume button*/
+/*resume btn  */
 .re-button {
     color: var(--primary-color);
     background-color: rgba(255, 255, 255, 0.05); /* translucent background */
@@ -419,7 +419,7 @@ section {
     font-weight: 500;
     font-size: 1rem;
     letter-spacing: 0.4px;
-    padding: 2,5em 1.4em;
+    padding: 0.8em 3.8em;
     border-radius: 999px; /* pill shape */
     margin-bottom: 1rem;
     backdrop-filter: blur(6px); /* soft glass effect */
