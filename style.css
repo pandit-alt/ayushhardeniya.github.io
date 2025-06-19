@@ -44,8 +44,8 @@
             margin: 0 auto;
         }
 
-        /* Navigation */
-        .navbar {
+/* Navigation */
+.navbar {
     padding: 0.5rem 5%;
     background: black; 
     position: fixed;
@@ -89,12 +89,12 @@
     color: white; 
     text-decoration: none;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     padding: 0.5rem;
     transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
     display: inline-flex;
     align-items: center;
-    gap: 0.3rem;
+    gap: 0.1rem;
 }
 
 .nav-link:hover {
@@ -451,7 +451,7 @@
         .highlight span:nth-child(12) { animation-delay: 2.4s; }
         .highlight span:nth-child(13) { animation-delay: 2.6s; }
         .highlight span:nth-child(14) { animation-delay: 2.8s; }
-        .highlight span:nth-child(15) { animation-delay: 3s; } /* Added for '!' */
+        .highlight span:nth-child(15) { animation-delay: 3s; } /* Adding for ! at last */
 
             .hero p {
                 font-size: 0.8rem; /* Smaller fontt for mobile */
