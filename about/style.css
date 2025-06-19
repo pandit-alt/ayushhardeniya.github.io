@@ -1,0 +1,16 @@
+.about-section {
+  padding: 60px 20px;
+  background-color: #f9f9ff;
+  color: #333;
+  line-height: 1.7;
+}
+
+.about-section h3 {
+  margin-top: 40px;
+  color: #444;
+}
+.about-section .ending-note {
+  font-style: italic;
+  margin-top: 2em;
+  color: #555;
+}

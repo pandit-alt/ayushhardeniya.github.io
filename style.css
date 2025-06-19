@@ -534,7 +534,8 @@
           width: 90%;
           max-width: 1100px;
           margin: 0 auto;
-          padding: 100px 0;
+          padding: 30px 0;
+          color:#3498db;
         }
         
         .timeline-line {
@@ -1392,3 +1393,34 @@
                 padding: 15px;
             }
         }
+
+
+/* About page styles */
+.about-section {
+  padding: 60px 20px;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.7;
+}
+.about-content{
+    max-width: 600px;
+    margin: 0 auto;
+    color:#111827;
+    font-style: oblique;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.about-section h3 {
+  margin-top: 40px;
+  color: #444;
+}
+.about-section .ending-note {
+  font-style: italic;
+  margin-top: 2em;
+  color: #555;
+}
+.about-summary{
+    font-style: italic;
+    color:rgba(102, 126, 234, 0.4);
+    font-size: 1.0rem;
+}
