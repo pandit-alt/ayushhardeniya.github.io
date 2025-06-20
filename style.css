@@ -1431,6 +1431,23 @@ highlight {
   margin-top: 40px;
   color: #444;
 }
+
+.about-video-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+.about-video-container video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
 .about-section .ending-note {
   font-style: italic;
   margin-top: 2em;
