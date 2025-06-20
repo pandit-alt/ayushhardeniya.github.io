@@ -344,8 +344,8 @@ section {
     align-items: center;
 }
 
-.about-text h3 {
-    font-size: 1.8rem;
+.about-text h2 {
+    font-size: 2.0rem;
     margin-bottom: 1.5rem;
     color: var(--accent-color);
 }
