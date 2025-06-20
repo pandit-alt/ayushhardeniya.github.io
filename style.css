@@ -368,7 +368,6 @@ img {
     display: none;
   }
 }
-This
 
 .hero-content {
     text-align: left; 
@@ -435,7 +434,7 @@ This
 }
 
 .hero h1 {
-    font-size: 2.0rem; /* Smaller font for mobile */
+    font-size: 2.0rem; /* Smaller for mobile view */
     margin-top: 390px;
     color: #c2bbbb;
 }
