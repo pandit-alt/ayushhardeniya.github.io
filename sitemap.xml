@@ -1,18 +1,25 @@
-<!-- This file is created for improving SEO, and to list my website on search engine, ranked above as much possible-->
-
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with free Online Sitemap Generator www.xml-sitemaps.com -->
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                      http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
+  <!-- Sitemap for Ayush Hardeniya’s personal website -->
 
-<url>
-  <loc>https://ayushhardeniya.site/</loc>
-  <lastmod>2025-05-27T21:59:00+00:00</lastmod>
-</url>
+  <url>
+    <loc>https://ayushhardeniya.site/</loc>
+    <lastmod>2025-05-27</lastmod>
+  </url>
 
+  <url>
+    <loc>https://ayushhardeniya.site/about</loc>
+    <lastmod>2025-06-18</lastmod>
+  </url>
+
+  <url>
+    <loc>https://ayushhardeniya.site/portfolio</loc>
+    <lastmod>2025-06-18</lastmod>
+  </url>
 
 </urlset>
