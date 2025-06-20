@@ -1434,7 +1434,7 @@ highlight {
 
 .about-video-container {
   width: 100%;
-  max-width: 600px;
+  max-width: 700px;
   margin: 2rem auto;
   border-radius: 12px;
   overflow: hidden;
@@ -1448,6 +1448,14 @@ highlight {
   display: block;
   border-radius: 12px;
 }
+
+/* responsiveness */
+@media (max-width: 480px) {
+  .about-video-container {
+    max-width: 95%;
+  }
+}
+
 .about-section .ending-note {
   font-style: italic;
   margin-top: 2em;
