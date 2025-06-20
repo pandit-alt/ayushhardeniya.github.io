@@ -211,7 +211,6 @@ projectCards.forEach(card => {
 const contactForm = document.querySelector('.contact-form form');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
         
         // Get form data
         const formData = new FormData(contactForm);
@@ -235,7 +234,7 @@ if (contactForm) {
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
             contactForm.reset();
-            showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
+            showNotification('Message sent successfully! I\'ll get back to you within 36 Hours.', 'success');
         }, 2000);
     });
 }
