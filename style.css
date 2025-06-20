@@ -370,6 +370,35 @@ img {
   }
 }
 
+/* Video Styling */
+.bg-hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Show/hide based on screen */
+.mobile-only {
+  display: none;
+}
+.desktop-only {
+  display: block;
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+  .mobile-only {
+    display: block;
+  }
+  .desktop-only {
+    display: none;
+  }
+}
+
 .hero-content {
     text-align: left; 
     max-width: 500px; 
@@ -430,13 +459,14 @@ img {
 /* Mobile Styles */
 @media (max-width: 768px) {
     .hero {
-        height: 588px; 
+        height: 675px; 
         padding: 2rem 5%; 
-        background: url('/assets/mobilesizehero.jpg') no-repeat center/contain;
+        /*background: url('/assets/mobile-hero.mp4') no-repeat center/contain;*/
+        overflow: hidden;
 }
 
 .hero h1 {
-    font-size: 2.0rem; /* Smaller for mobile view */
+    font-size: 2.0rem; /* small for mobile view */
     margin-top: 390px;
     color: #c2bbbb;
 }
@@ -448,11 +478,11 @@ highlight {
     font-size: 2.8rem;
 }
 
-            /* Animation Keyframes */
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
+/* Animation Keyframes */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
 
         /* Delay each letter (including !) */
         .highlight span:nth-child(1) { animation-delay: 0.2s; }
