@@ -3,7 +3,7 @@
   background-color: #f9f9ff;
   color: #333;
   line-height: 1.7;
-}
+                    }                          /*THIS IS NOT LINKED, MAIN STYLE.CSS IS LINKED AS ../style.css */
 
 .about-section h3 {
   margin-top: 40px;
