@@ -9,15 +9,10 @@
   margin-top: 40px;
   color: #444;
 }
-.about-section .ending-note {
-  font-style: italic;
-  margin-top: 2em;
-  color: #555;
-}
 
 .about-video-container {
-  width: 60%;
-  max-width: 450px;
+  width: 100%;
+  max-width: 600px;
   margin: 2rem auto;
   border-radius: 12px;
   overflow: hidden;
@@ -26,7 +21,14 @@
 }
 
 .about-video-container video {
-  width: 60%;
+  width: 100%;
   height: auto;
   display: block;
+  border-radius: 12px;
+}
+
+.about-section .ending-note {
+  font-style: italic;
+  margin-top: 2em;
+  color: #555;
 }
