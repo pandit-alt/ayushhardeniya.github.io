@@ -1,48 +1,48 @@
-        :root {
-            --primary-light: #e0f7fa; /* Light Cyan (skyblue type) */
-            --primary-blue: #002444; /* Original primary blue */
-            --accent-blue: #4db6ac; /* Light teal */
-            --background: #f3f4f6; /* Light gray */
-            --text-dark: #111827; /* Dark Gray */
-            --section-background: #ffffff; /* white */
-            --section-light-blue: #e1f5fe; /* Light Blue */
-            --section-dark-blue: #b3e5fc; /* Soft Blue */
-            --section-darker-blue: #81d4fa; /* Slightly Darker Blue */
-        }
+:root {
+    --primary-light: #e0f7fa; /* Light Cyan (skyblue type) */
+    --primary-blue: #002444; /* Original primary blue */
+    --accent-blue: #4db6ac; /* Light teal */
+    --background: #f3f4f6; /* Light gray */
+    --text-dark: #111827; /* Dark Gray */
+    --section-background: #ffffff; /* white */
+    --section-light-blue: #e1f5fe; /* Light Blue */
+    --section-dark-blue: #b3e5fc; /* Soft Blue */
+    --section-darker-blue: #81d4fa; /* Slightly Darker Blue */
+}
 
-        {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-        }
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
 
         /*html {
             scroll-behavior: smooth;
         }*/
 
-        body {
-            background: var(--background);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
+body {
+    background: var(--background);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-        img {
-            max-width: 100%;
-            display: block;
-        }
+img {
+    max-width: 100%;
+    display: block;
+}
 
-        /* General Styles */
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+/* General Styles */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
 /* Navigation */
 .navbar {
@@ -365,7 +365,7 @@
         .hero-content {
             text-align: left; 
             max-width: 500px; 
-            color: --primary-blue;
+            color: #ffffff;
             z-index: 1; /* stack over flow */
         }
 
@@ -381,7 +381,7 @@
         .highlight {
             font-size: clamp(3rem, 6vw, 5rem);
             font-weight: bold;
-            color: var(--primary-blue); 
+            color: #3eedf8; 
         }
 
         /* Leter by letter Animation */
