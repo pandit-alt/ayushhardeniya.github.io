@@ -18,9 +18,9 @@
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-        /*html {
-            scroll-behavior: smooth;
-        }*/
+/*html {
+    scroll-behavior: smooth;
+}*/
 
 body {
     background: var(--background);
@@ -38,7 +38,7 @@ img {
     display: block;
 }
 
-/* General Styles */
+/* General style */
 .container {
     width: 90%;
     max-width: 1200px;
