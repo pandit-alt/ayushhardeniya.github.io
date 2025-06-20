@@ -1307,9 +1307,9 @@ highlight {
         }
 
         .footer-grid {
-            display: flex; /* Use flexbox for layout */
+            display: flex;
             flex-direction: column; /* Stack items vertically on small screens */
-            gap: 2rem; /* Space b/wn sections */
+            gap: 2rem;  /* Space b/wn sections */
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -1344,7 +1344,7 @@ highlight {
         }
 
         .quick-links {
-            text-align: center; /* Center align quick links */
+            text-align: center; 
             margin-top: 10px;
         }
 
@@ -1360,9 +1360,10 @@ highlight {
             margin-top: 4rem;
             padding-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.2);
+            opacity: 0.6; 
         }
 
-        /* Media Queries for Responsive Design */
+        /* Media Queries -responsiveness */
         @media (min-width: 768px) {
             .footer-grid {
                 flex-direction: column; /* Change to row layout on larger screens */
@@ -1374,7 +1375,7 @@ highlight {
             }
         }
 
-        /* Responsive Blog Card */
+        /* Blog Card styles */
         .blog-card {
             width: 100%;
             max-width: 360px;
@@ -1390,7 +1391,6 @@ highlight {
             transform: translateY(-5px);
         }
         
-        /* Responsive Subscription Card */
         .subscription-card {
             width: 100%;
             max-width: 260px;
@@ -1402,7 +1402,7 @@ highlight {
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         
-        /* Adjustments for small screens */
+        /* responsiveness */
         @media (max-width: 768px) {
             .blog-card,
             .subscription-card {
