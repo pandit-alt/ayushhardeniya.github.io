@@ -364,7 +364,7 @@ img {
 
 /* Hide on small screens */
 @media (max-width: 768px) {
-  .hero-bg-desktop {
+  .hero-background {
     display: none;
   }
 }
