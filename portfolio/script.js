@@ -209,34 +209,59 @@ projectCards.forEach(card => {
 
 // Contact form handling
 const contactForm = document.querySelector('.contact-form form');
+
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        
-        // Get form data
-        const formData = new FormData(contactForm);
-        const name = contactForm.querySelector('input[type="text"]').value;
-        const email = contactForm.querySelector('input[type="email"]').value;
-        const message = contactForm.querySelector('textarea').value;
-        
+    contactForm.addEventListener('submit', () => {
+        const name = contactForm.querySelector('input[name="name"]').value;
+        const email = contactForm.querySelector('input[name="email"]').value;
+        const message = contactForm.querySelector('textarea[name="message"]').value;
+
+        const submitBtn = contactForm.querySelector('.btn-primary');
+
         // Simple validation
         if (!name || !email || !message) {
             showNotification('Please fill in all fields', 'error');
+            submitBtn.disabled = false;
             return;
         }
-        
-        // Simulate form submission
-        const submitBtn = contactForm.querySelector('.btn-primary');
-        const originalText = submitBtn.textContent;
+
+        // Update UI only, don't block form
         submitBtn.textContent = 'Sending...';
         submitBtn.disabled = true;
-        
-        setTimeout(() => {
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-            contactForm.reset();
-            showNotification('Message sent successfully! I\'ll get back to you within 36 Hours.', 'success');
-        }, 2000);
     });
+}
+
+// Notification handler (toast-style)
+function showNotification(message, type = 'success') {
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.textContent = message;
+
+    // Optional styling (minimal)
+    Object.assign(notification.style, {
+        position: 'fixed',
+        top: '20px',
+        right: '20px',
+        padding: '12px 18px',
+        borderRadius: '8px',
+        background: type === 'error' ? '#e74c3c' : '#2ecc71',
+        color: '#fff',
+        fontSize: '14px',
+        zIndex: 9999,
+        boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+        opacity: 0,
+        transition: 'opacity 0.3s ease'
+    });
+
+    document.body.appendChild(notification);
+    setTimeout(() => {
+        notification.style.opacity = 1;
+    }, 100);
+
+    setTimeout(() => {
+        notification.style.opacity = 0;
+        setTimeout(() => notification.remove(), 500);
+    }, 4000);
 }
 
 // Notification system
