@@ -391,11 +391,14 @@ img {
 
 /* Mobile view adjustments */
 @media (max-width: 768px) {
-  .mobile-only {
+    .mobile-only {
     display: block;
   }
-  .desktop-only {
+    .desktop-only {
     display: none;
+  }
+    .bg-hero-video {
+    object-fit: contain; /* try using 'cover' for full-screen video */
   }
 }
 
