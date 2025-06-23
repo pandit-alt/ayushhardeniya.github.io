@@ -347,8 +347,8 @@ img {
     height: 100vh; /* Full ht. */
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* left alignment */
-    /* background: url('/assets/heroimage-aHdesign.png') center/cover no-repeat; /* Center and cover */
+    justify-content: flex-start; /* left alignnent */
+    /* background: url('/assets/heroimage-aHdesign.png') center/cover no-repeat; /* Center & cover */
     padding: 0 5%; 
     position: relative;
     overflow: hidden; 
@@ -363,7 +363,7 @@ img {
     z-index: 1;
 }        
 
-/* Hide on mobile */
+/* Hide on mobile as we are using custom video/photo for mobile view */
 @media (max-width: 768px) {
   .hero-background {
     display: none;
