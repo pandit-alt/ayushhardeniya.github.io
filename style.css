@@ -398,7 +398,7 @@ img {
     display: none;
   }
     .bg-hero-video {
-    object-fit: contain; /* try using 'cover' for full-screen video */
+    object-fit: cover; /* try using 'cover' for full-screen video */
   }
 }
 
