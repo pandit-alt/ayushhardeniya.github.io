@@ -481,6 +481,13 @@ highlight {
     font-size: 2.8rem;
 }
 
+.hero-content {
+    text-align: left; 
+    max-width: 500px; 
+    color: #111827;
+    z-index: 2; /* stack over flow */
+}
+
 /* Animation Keyframes */
 @keyframes fadeIn {
     0% { opacity: 0; }
