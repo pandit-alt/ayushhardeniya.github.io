@@ -477,7 +477,7 @@ img {
 highlight {
     font-size: clamp(3rem, 6vw, 5rem);
     font-weight: bold;
-    color: #b2aaaa;
+    color: var(--text-dark);
     font-size: 2.8rem;
 }
 
