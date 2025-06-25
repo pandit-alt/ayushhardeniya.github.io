@@ -398,7 +398,7 @@ img {
     display: none;
   }
     .bg-hero-video {
-    object-fit: cover; /* try using 'cover' for full-screen video */
+    object-fit: cover; /* for full screen cover-occupancy */
   }
 }
 
@@ -464,8 +464,10 @@ img {
     .hero {
         height: 675px; 
         padding: 2rem 5%; 
-        /*background: url('/assets/mobile-hero.mp4') no-repeat center/contain;*/
+        background: url('/assets/website-preview-mob.png') no-repeat center/contain;*/
         overflow: hidden;
+        object-fit: cover;
+        
 }
 
 .hero h1 {
