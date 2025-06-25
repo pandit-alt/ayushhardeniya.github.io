@@ -464,7 +464,7 @@ img {
     .hero {
         height: 675px; 
         padding: 2rem 5%; 
-        background: url('/assets/website-pw-mob.png') no-repeat center/contain;*/
+        /*background: url('/assets/website-pw-mob.png') no-repeat center/contain;*/
         overflow: hidden;
         object-fit: cover;
         
