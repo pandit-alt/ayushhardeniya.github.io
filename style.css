@@ -6,9 +6,9 @@
     --background: #f3f4f6; /* Light gray */
     --text-dark: #111827; /* Dark Gray */
     --section-background: #ffffff; /* white */
-    --section-light-blue: #e1f5fe; /* Light Blue */
-    --section-dark-blue: #b3e5fc; /* Soft Blue */
-    --section-darker-blue: #81d4fa; /* Slightly Darker Blue */
+    --section-light-blue: #e1f5fe; /* Light Blue for section bcg */
+    --section-dark-blue: #b3e5fc; /* Soft Blue for bcg*/
+    --section-darker-blue: #81d4fa; /* Slightly Darker Blue for footer*/
 }
 
 {
@@ -602,7 +602,7 @@ highlight {
           max-width: 1100px;
           margin: 0 auto;
           padding: 30px 0;
-          color:#3498db;
+          color: var(--section-dark-blue);
         }
         
         .timeline-line {
