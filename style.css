@@ -1465,14 +1465,14 @@ highlight {
 /* About page styles */
 .about-section {
   padding: 60px 20px;
-  background-color: #ffffff;
+  background-color: var(--section-darker-blue);
   color: #333;
   line-height: 1.7;
 }
 .about-content{
     max-width: 600px;
     margin: 0 auto;
-    color:#111827;
+    color: #000000;
     font-style: oblique;
     font-weight: bold;
     font-size: 1.2rem;
