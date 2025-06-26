@@ -494,7 +494,9 @@ highlight {
 }
 
 .hero p{
-    color: #1A1A40;
+    color: var(--section-darker-blue);
+    font-weight: bold;
+    
 }
 
 /* Animation Keyframes */
@@ -602,6 +604,7 @@ highlight {
           max-width: 1100px;
           margin: 0 auto;
           padding: 30px 0;
+          background: var(--accent-blue);
           color: var(--accent-blue);
         }
         
@@ -1465,7 +1468,7 @@ highlight {
 /* About page styles */
 .about-section {
   padding: 60px 20px;
-  background-color: var(--section-darker-blue);
+  background-color: var(--primary-blue);
   color: #333;
   line-height: 1.7;
 }
