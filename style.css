@@ -405,7 +405,7 @@ img {
 .hero-content {
     text-align: left; 
     max-width: 500px; 
-    color: #ffffff;
+    color: #1A1A40;
     z-index: 2; /* stack over flow */
 }
 
