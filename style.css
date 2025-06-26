@@ -405,7 +405,7 @@ img {
 .hero-content {
     text-align: left; 
     max-width: 500px; 
-    color: #1A1A40;
+    color: #ffffff;
     z-index: 2; /* stack over flow */
 }
 
@@ -473,7 +473,7 @@ img {
 .hero h1 {
     font-size: 2.0rem; /* small for mobile view */
     margin-top: 390px;
-    color: var(--text-dark);
+    color: #1A1A40;
 }
 
 highlight {
