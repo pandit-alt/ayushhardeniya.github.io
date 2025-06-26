@@ -611,7 +611,7 @@ highlight {
           bottom: 0;
           left: 50%;
           width: 4px;
-          background: #d1d5db;
+          background: var(--accent-blue);
           transform: translateX(-50%);
           z-index: 1;
         }
