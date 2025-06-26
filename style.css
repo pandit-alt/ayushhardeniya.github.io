@@ -1,14 +1,14 @@
 /* Global Styles */
 :root {
-    --primary-light: #e0f7fa; /* Light Cyan (skyblue type) */
-    --primary-blue: #002444; /* Original primary blue */
+    --primary-light: #e0f7fa; /* Light Cyan (lightest version of sky blue) */
+    --primary-blue: #002444; /* Original primary blue footer*/
     --accent-blue: #4db6ac; /* Light teal */
     --background: #f3f4f6; /* Light gray */
     --text-dark: #111827; /* Dark Gray */
     --section-background: #ffffff; /* white */
-    --section-light-blue: #e1f5fe; /* Light Blue for section bcg */
-    --section-dark-blue: #b3e5fc; /* Soft Blue for bcg*/
-    --section-darker-blue: #81d4fa; /* Slightly Darker Blue for footer*/
+    --section-light-blue: #e1f5fe; /* Light Blue for section bcg (skyblue version)*/
+    --section-dark-blue: #b3e5fc; /* Soft Blue for bcg (skyblue version)*/
+    --section-darker-blue: #81d4fa; /* Slightly Darker Blue (skyblue version)*/
 }
 
 {
@@ -602,7 +602,7 @@ highlight {
           max-width: 1100px;
           margin: 0 auto;
           padding: 30px 0;
-          color: var(--section-dark-blue);
+          color: var(--accent-blue);
         }
         
         .timeline-line {
