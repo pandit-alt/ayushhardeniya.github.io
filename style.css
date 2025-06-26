@@ -456,10 +456,13 @@ img {
 
 .hero p {
     font-size: 1.5rem; 
-    margin: 0 auto 2rem; /* space below paraa*/
+    margin: 0 auto 2rem;/* space below paraa*/
+    color: #ffffff;
 }
 
+
 /* Mobile Styles */
+
 @media (max-width: 768px) {
     .hero {
         height: 675px; 
@@ -488,6 +491,10 @@ highlight {
     max-width: 500px; 
     color: #111827;
     z-index: 2; /* stack over flow */
+}
+
+.hero p{
+    color: var(--text-dark);
 }
 
 /* Animation Keyframes */
